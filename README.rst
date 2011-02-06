@@ -46,6 +46,14 @@ students whose interests focus on communication skills.
 This project may be interesting to students even at the very early stages, and should garner more
 and more attention as widening data streams suggest widening application.
 
+Ideas for student work
+......................
+
+**skynet** (as above ... many subasts in web design etc)
+
+**navigator** use sunrise/sunset times to determine latitude and longitude, perhaps using R, with the sun.angle() function in the oce package.
+
+
 
 Notes on work
 -------------
