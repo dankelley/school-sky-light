@@ -59,6 +59,7 @@ $5.10 Cds.  Analog.  Interfaces to microcontrollers.  3-pin PCB connector
 
 .. image:: dfrobot-ambient-light-sensor-1-B.jpg
 .. image:: dfrobot-ambient-light-sensor-B.jpg
+.. image:: https://github.com/dankelley/school-sky-light/blob/master/dfrobot-ambient-light-sensor-1-B.jpg
 
 Data-logging processor
 ......................
