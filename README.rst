@@ -53,27 +53,23 @@ Notes on work
 Light sensor
 ............
 
-* http://www.robotshop.ca/dfrobot-ambient-light-sensor-1.html
-
-$5.10 Cds.  Analog.  Interfaces to microcontrollers.  3-pin PCB connector
-
-.. image:: dfrobot-ambient-light-sensor-1-B.jpg
-.. image:: dfrobot-ambient-light-sensor-B.jpg
+DFRobot Ambient Light Sensor (http://www.robotshop.ca/dfrobot-ambient-light-sensor-1.html).  At
+about $5, it would make sense to get a few, to see if there are inter-unit differences.
 
 Data-logging processor
 ......................
 
-There are many possibilities.  I'll narrow to arduino, but even then there are many.  One is
+There are many possibilities.  I'll narrow to arduino, partly because they are popular (and kids may
+be using them for robots, already) and cheap.  A movie at http://youtu.be/yYjtB_3en4s is quite
+helpful in describing the various types of arduino.
 
-* http://www.robotshop.ca/dfrobot-dfrduino-usb-microcontroller-atmega328-4.html
+The default arduino, and a good choice for early experiments may be
+the $30 Arduino Uno USB Microcontroller (https://admin.robotshop.ca/productinfo.aspx?pc=rb-ard-18).
 
-just for example.   It takes 6 analog inputs, which is fine.  It's USB compatible (I guess) but so,
-it seems, are most of them.  One thing is that it says it can work with C.  Another one
-(http://www.robotshop.ca/arduino-uno-microcontroller.html) I looked at seems to be mainly for
-robots.
+It also makes sense to get a $13 enclosure case (http://www.robotshop.ca/sfe-arduino-project-enclosure.html).
 
-Software
-........
+Arduino software is available (http://arduino.cc/en/Main/Software).
 
-http://arduino.cc/en/Main/Software
+**QUESTION**: are there any good books to speed up the learning process?
+
 
