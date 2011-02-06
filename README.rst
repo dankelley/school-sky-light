@@ -77,4 +77,6 @@ Open issues and questions
 
 1. **QUESTION**: are there any good books to speed up the learning process?
 
+* Maybe buy a kit plus 2 books, from amazon (http://www.amazon.com/Arduino-UNO-board/dp/B004CG4CN4/ref=pd_sim_b_6)
 
+* There is an O'Reilly book (and they are almost always excellent) coming out in a week (http://www.amazon.com/Arduino-Cookbook-Oreilly-Cookbooks-Margolis/dp/0596802471/ref=pd_sim_b_13)
