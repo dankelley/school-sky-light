@@ -60,16 +60,21 @@ Data-logging processor
 ......................
 
 There are many possibilities.  I'll narrow to arduino, partly because they are popular (and kids may
-be using them for robots, already) and cheap.  A movie at http://youtu.be/yYjtB_3en4s is quite
-helpful in describing the various types of arduino.
+be using them for robots, already) and cheap.  Robotshop.ca has a movie
+(http://youtu.be/yYjtB_3en4s) that is quite helpful in describing the various types of arduino.
 
-The default arduino, and a good choice for early experiments may be
-the $30 Arduino Uno USB Microcontroller (https://admin.robotshop.ca/productinfo.aspx?pc=rb-ard-18).
+For initial work, the best would be to get a $48 kit, which also gives jumper cables, a breadboard, and
+a power supply (http://www.robotshop.ca/robotshop-arduino-basic-kit-7.html).
 
-It also makes sense to get a $13 enclosure case (http://www.robotshop.ca/sfe-arduino-project-enclosure.html).
+If this seems promising, the second stage would be to start on self-contained units, e.g. wrapping
+also a $13 enclosure case (http://www.robotshop.ca/sfe-arduino-project-enclosure.html) around the
+$30 Arduino Uno USB Microcontroller (https://admin.robotshop.ca/productinfo.aspx?pc=rb-ard-18).
 
 Arduino software is available (http://arduino.cc/en/Main/Software).
 
-**QUESTION**: are there any good books to speed up the learning process?
+Open issues and questions
+.........................
+
+1. **QUESTION**: are there any good books to speed up the learning process?
 
 
