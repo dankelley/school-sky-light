@@ -3,7 +3,7 @@ library(oce)
 use.refraction <- TRUE
 D <- 2.0
 elevation.misfit <- function(e) {
-    mean(ifelse(e > 0, abs(e), 10*abs(e)))
+    mean(ifelse(e > 0, abs(e)^2, 1*abs(e)^2))
 }
 angle.misfit.1 <- function(x) { # lat
     elevation <- sun.angle(t0, x[1], lon, use.refraction)$elevation
