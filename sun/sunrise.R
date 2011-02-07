@@ -1,3 +1,4 @@
+##http://www.timeanddate.com/worldclock/astronomy.html?n=286&month=2&year=2011&obj=sun&afl=-11&day=1
 library(oce)
 use.refraction <- TRUE
 D <- 2.0
@@ -24,8 +25,8 @@ angle.misfit.day <- function(x) { # lat lon (given trise, tset)
     ## the angle has an ~1deg negative offset when below the horizon
     elevation.misfit(elevation.rise) + elevation.misfit(elevation.rise)
 }
-lat <- 44+39/60
-lon <- -(63+36/60)
+lat <- 44+38/60                        #http://www.timeanddate.com/worldclock/city.html?n=286
+lon <- -(63+35/60)                     #http://www.timeanddate.com/worldclock/city.html?n=286
 
 ## http://www.timeanddate.com/worldclock/astronomy.html?n=286
 d <- read.table('sunrise.dat', header=FALSE)
@@ -34,12 +35,8 @@ sunrise <- as.POSIXct(paste(d$V1, d$V2), tz="UTC") + tz
 sunset <- as.POSIXct(paste(d$V1, d$V3), tz="UTC") + tz + 12 * 3600
 # http://en.wikipedia.org/wiki/Angular_diameter
 tex <- 0.75 
-if (FALSE) {
-    sun.time <- 31/60 / 360 * 24 * 3600
-    sunrise <- sunrise + sun.time
-    sunset <- sunset - sun.time
-}
 mod <- seq(-10, 10, 0.1)
+pdf("fit-1.pdf", width=8.5, height=11)
 par(mfrow=c(4,1), mar=c(3,3,1,1), mgp=c(3/2,2/3,0))
 for (s in 1:length(d$V1)) {
     cat("s=",s,"\n")
@@ -55,12 +52,9 @@ for (s in 1:length(d$V1)) {
     abline(h=0)
     abline(v=lat, col='blue')
     mtext(paste("Sunrise:", format(sunrise[s])), adj=1, line=-1, cex=tex)
-    mtext(paste("actual: ", format(lat, digits=5), "N  ", format(lon,digits=5), "E", sep=""),
-          adj=1, line=-2, col='blue', cex=tex)
-    mtext(paste("fit:    ", format(latfit, digits=5), "N  ", format(lonfit,digits=5), "E", sep=""),
-          adj=1, line=-3, col='red', cex=tex)
+    mtext(sprintf("Actual: %6.2fN %6.2fE  fit: %6.2fN %6.2fE ", lat, lon, latfit, lonfit), adj=1, line=-2, cex=tex)
     error <- geod.dist(lat, lon, latfit, lonfit)
-    mtext(sprintf("Misfit: %.1f km", error), adj=1, line=-4, cex=tex)
+    mtext(sprintf("Misfit: %.1f km ", error), adj=1, line=-3, cex=tex)
     abline(v=latfit, col='red')
     elevation <- NULL
     for (m in mod)
@@ -82,12 +76,9 @@ for (s in 1:length(d$V1)) {
     abline(h=0)
     abline(v=lat, col='blue')
     mtext(paste("Sunset:", format(sunset[s])), adj=1, line=-1, cex=tex)
-    mtext(paste("actual: ", format(lat, digits=5), "N  ", format(lon,digits=5), "E", sep=""),
-          adj=1, line=-2, col='blue', cex=tex)
-    mtext(paste("fit:    ", format(latfit, digits=5), "N  ", format(lonfit,digits=5), "E", sep=""),
-          adj=1, line=-3, col='red', cex=tex)
+    mtext(sprintf("Actual: %6.2fN %6.2fE  fit: %6.2fN %6.2fE ", lat, lon, latfit, lonfit), adj=1, line=-2, cex=tex)
     error <- geod.dist(lat, lon, latfit, lonfit)
-    mtext(sprintf("Misfit: %.1f km", error), adj=1, line=-4, cex=tex)
+    mtext(sprintf("Misfit: %.1f km ", error), adj=1, line=-3, cex=tex)
     abline(v=latfit, col='red')
     elevation <- NULL
     for (m in mod)
@@ -97,12 +88,9 @@ for (s in 1:length(d$V1)) {
     abline(v=lon, col='blue')
     abline(v=lonfit, col='red')
 }
+dev.off()
 
-for (t0 in sunrise) print(optim(c(50,0),angle.misfit)$par)
-for (t0 in sunset) print(optim(c(50,0),angle.misfit)$par)
-t0 <- sunrise[1]; print(optim(c(0,0),angle.misfit)$par)
-t0 <- sunset[1];  print(optim(c(0,0),angle.misfit)$par)
-warning("performs poorly when trying for both lat and lon\n")
+pdf("map.pdf", width=8.5, height=11)
 fitlon <- fitlat <- NULL
 for (s in 1:length(sunrise)) {
     trise <- sunrise[s]
@@ -116,8 +104,26 @@ for (s in 1:length(sunrise)) {
 }
 par(mfrow=c(1,1))
 data(coastline.world)
-plot(coastline.world, xlim=c(-70, -50), ylim=c(40,55),axes=TRUE)
+plot(coastline.world, center=c(lat, lon), span=1500)
+abline(v=lon, h=lat)
 points(fitlon, fitlat, col='red', pch='+', cex=1.5)
 title("can the data be wrong?")
+dev.off()
 
+##
+pdf("rise-set-timing.pdf",width=8.5,height=11)
+n <- min(5, length(sunrise))
+par(mfrow=c(n, 2))
+dt <- seq(-120,120,1)
+for (s in seq(1, length(sunrise), length.out=n)) {   # only sample
+    ylim <- c(-1.5, 0.3)
+    oce.plot.ts(sunrise[s]+dt, sun.angle(sunrise[s]+dt, lat, lon)$elevation,
+                ylab="Elevation", ylim=ylim,lwd=2)
+    abline(h=0)
+    abline(v=sunrise[s])
+    oce.plot.ts(sunset[s]+dt, sun.angle(sunset[s]+dt, lat, lon)$elevation,ylim=ylim,lwd=2)
+    abline(h=0)
+    abline(v=sunset[s])
+}
+dev.off()
 
