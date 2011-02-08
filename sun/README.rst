@@ -5,3 +5,10 @@ for both lat and lon, the answer is consistently off, with locations being in Qu
 (rise-set-timing.pdf).  I don't think the problem is with the width of the solar disk (temporary
 tests, not producing graphs).
 
+Resources.
+http://www.timeanddate.com/worldclock/sunearth.html?n=0&month=2&day=7&year=2011&hour=21&min=30&sec=0
+
+20110207-sunrise.png
+20110207-sunset.png
+
+
