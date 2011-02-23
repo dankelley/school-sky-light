@@ -1,5 +1,7 @@
-all: test1 test2
-test1: test1.c
+#./test1 /dev/tty.usbmodem5d11 >> /Users/kelley/Sites/skynet/skynet.dat
+
+all: logger1
+logger1: logger1.c
 	gcc -o $@ $<
-test2: test2.c
-	gcc -o $@ $<
+
+
