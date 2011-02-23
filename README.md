@@ -1,9 +1,9 @@
 # Concept
 
-*A darkening sky* is a good indicator of the onset of bad weather.  We look up
-at the sky to decide whether to run to the shelter, on an unsettled day.
-Weather forecasts do not address broad issues of weather variations over days
-and hundreds of kilometers, but people have still rely on the sky for quick,
+A darkening sky is a good indicator of the onset of bad weather.  We look up at
+the sky to decide whether to run to the shelter, on an unsettled day.  Weather
+forecasts do not address broad issues of weather variations over days and
+hundreds of kilometers, but people have still rely on the sky for quick,
 localized forecasts.  
 
 A limitation of this observer-based forecasting is that even small-scale
@@ -69,38 +69,53 @@ application.
 
 ### Light sensor
 
-DFRobot Ambient Light Sensor
-(http://www.robotshop.ca/dfrobot-ambient-light-sensor-1.html).  At about $5, it
-would make sense to get a few, to see if there are inter-unit differences.
+[DFRobot Ambient Light
+Sensor](http://www.robotshop.ca/dfrobot-ambient-light-sensor-1.html).  At about
+$5, it would make sense to get a few, to see if there are inter-unit
+differences.  
 
-Schematics:
-http://www.dfrobot.com/wiki/index.php?title=DFRobot_Ambient_Light_Sensor_(SKU:DFR0026_)
+**Connections** Need to use jumpers to connect; see the [pin-out
+schematic](http://www.dfrobot.com/wiki/index.php?title=DFRobot_Ambient_Light_Sensor_(SKU:DFR0026_))
+
+**Read serial port**
+
+    screen /dev/tty.usbmodem621 9600
+
+CHECK: I didn't set the baud rate, but it was wonky, so I think I have to.)  Notes: get out of screen by
+
+    C-a d
+
+Another method may be 
+
+    cu -s 9600 -l /dev/tty.usbmodem621
+
+But I guess I should just figure out a C way. 
+
+Or do I log it with crontab?
 
 ### Data-logging processor
 
 There are many possibilities.  I will narrow to arduino, partly because they
 are popular (and kids may be using them for robots, already) and cheap.
-Robotshop.ca has a movie (http://youtu.be/yYjtB_3en4s) that is quite helpful in
+Robotshop.ca has a [movie](http://youtu.be/yYjtB_3en4s) that is quite helpful in
 describing the various types of arduino.
 
-For initial work, the best would be to get a $48 kit, which also gives jumper
-cables, a breadboard, and a power supply
-(http://www.robotshop.ca/robotshop-arduino-basic-kit-7.html).
+For initial work, the best would be to get a $48
+[kit](http://www.robotshop.ca/robotshop-arduino-basic-kit-7.html), which also
+gives jumper cables, a breadboard, and a power supply.
 
 If this seems promising, the second stage would be to start on self-contained
-units, e.g. wrapping also a $13 enclosure case
-(http://www.robotshop.ca/sfe-arduino-project-enclosure.html) around the $30
-Arduino Uno USB Microcontroller
-(https://admin.robotshop.ca/productinfo.aspx?pc=rb-ard-18).
+units, e.g. wrapping also a $13 
+[enclosure case](http://www.robotshop.ca/sfe-arduino-project-enclosure.html) around the $30
+[Arduino Uno USB Microcontroller](https://admin.robotshop.ca/productinfo.aspx?pc=rb-ard-18).
 
-Arduino software is available (http://arduino.cc/en/Main/Software).
+Arduino software is available [online](http://arduino.cc/en/Main/Software).
 
 ## Open issues and questions
 
 1. **QUESTION**: are there any good books to speed up the learning process?
 
-* Maybe buy a kit plus 2 books, from amazon
-  (http://www.amazon.com/Arduino-UNO-board/dp/B004CG4CN4/ref=pd_sim_b_6)
+* Maybe buy a kit plus 2 books, from [amazon](http://www.amazon.com/Arduino-UNO-board/dp/B004CG4CN4/ref=pd_sim_b_6)
 
-* There is an O'Reilly book (and they are almost always excellent) coming out
-  in a week (http://www.amazon.com/Arduino-Cookbook-Oreilly-Cookbooks-Margolis/dp/0596802471/ref=pd_sim_b_13)
+* There is an O'Reilly 
+[book](http://www.amazon.com/Arduino-Cookbook-Oreilly-Cookbooks-Margolis/dp/0596802471/ref=pd_sim_b_13)
