@@ -81,29 +81,36 @@ schematic](http://www.dfrobot.com/wiki/index.php?title=DFRobot_Ambient_Light_Sen
 
     screen /dev/tty.usbmodem621 9600
 
-CHECK: I didn't set the baud rate, but it was wonky, so I think I have to.)  Notes: get out of screen by
+To kill a screen, do
 
     C-a K
 
-To see running screens, use
+within it.  You may also detach, with ``C-a C-d``, and in that case, use
 
     ``screen -ls``
-To reattach, use the identifier for that screen, e.g.
+
+to see the screen identifier.  You may reattach to this later using that
+identifier, e.g.
 
     screen -D -R 2998.ttys001.remit
 
-and then you can kill with ``C-a K``.
+and *then* you can kill with ``C-a K``.  (I couldn't figout out how to kill a
+detached screen; the manpage is daunting.)
 
-to see which ones are still there.  To kill one, do
 
-kkk
 Another method may be 
 
     cu -s 9600 -l /dev/tty.usbmodem621
 
-But I guess I should just figure out a C way. 
+But I guess I should just figure out a C way, so I can write a daemon to
+calculate stats and store them where a webserver can get them. 
 
-Or do I log it with crontab?
+### Calibration
+
+First, some rough values.  In the morning (0710) on a clear day, direct
+sunlight gave 42, pointing to ceiling gave 300, and pointing to the window (but
+not the sun) gave 210.  At night, covered in a room lit by one lamp, the
+reading was 1023.  
 
 ### Data-logging processor
 
@@ -131,3 +138,7 @@ Arduino software is available [online](http://arduino.cc/en/Main/Software).
 
 * There is an O'Reilly 
 [book](http://www.amazon.com/Arduino-Cookbook-Oreilly-Cookbooks-Margolis/dp/0596802471/ref=pd_sim_b_13)
+
+* How to read the serial port? [python](http://mbed.org/cookbook/Interfacing-with-Python)
+[C](http://stackoverflow.com/questions/2504714/reading-serial-data-from-c-osx-dev-tty)
+
