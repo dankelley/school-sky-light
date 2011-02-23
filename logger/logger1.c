@@ -23,10 +23,10 @@ int main(int argc,char** argv)
     char timeformatted[70];
 
     if (argc !=  2) {
-        printf("Usage: %s /dev/ttyS1 (for example)\n", argv[0]);
+        fprintf(stderr, "Usage: %s /dev/ttyS1 (for example)\n", argv[0]);
         exit(1);
     }
-    printf("Type 'q' to quit\n");
+    fprintf(stderr, "Type 'q' to quit\n");
 
     memset(&stdio, 0, sizeof(stdio));
     stdio.c_iflag = 0;
@@ -59,17 +59,17 @@ int main(int argc,char** argv)
                 time(&seconds);
                 timeinfo = localtime(&seconds);
                 strftime(timeformatted, sizeof(timeformatted)-1, "%Y-%m-%d %H:%M:%S", timeinfo);
-                if (first) 
+                if (first) {
                     first = 0;
-                else
+                } else {
                     printf("%s %s", timeformatted, buf); // FIXME: out by one time unit
+                    fflush(stdout);
+                }
                 ic = 0;
             }
         }
-        if (read(STDIN_FILENO, &c, 1) > 0) 
-            write(tty_fd, &c, 1);                     // if new data is available on the console, send it to the serial port
         usleep(10000);                                // sleep 0.1 seconds
     }
-    printf("Do\n     stty sane\n    to reset your terminal\n");
+    fprintf(stderr, "Do\n     stty sane\n    to reset your terminal\n");
     close(tty_fd);
 }
