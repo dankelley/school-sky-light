@@ -1,3 +1,5 @@
+/* http://en.wikibooks.org/wiki/Serial_Programming:Unix/termios */
+/* NOTE: this uses the whole CPU, hence the 'max' debugging fire-break */
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
