@@ -83,8 +83,20 @@ schematic](http://www.dfrobot.com/wiki/index.php?title=DFRobot_Ambient_Light_Sen
 
 CHECK: I didn't set the baud rate, but it was wonky, so I think I have to.)  Notes: get out of screen by
 
-    C-a d
+    C-a K
 
+To see running screens, use
+
+    ``screen -ls``
+To reattach, use the identifier for that screen, e.g.
+
+    screen -D -R 2998.ttys001.remit
+
+and then you can kill with ``C-a K``.
+
+to see which ones are still there.  To kill one, do
+
+kkk
 Another method may be 
 
     cu -s 9600 -l /dev/tty.usbmodem621
