@@ -26,7 +26,7 @@ int main(int argc,char** argv)
         fprintf(stderr, "Usage: %s /dev/ttyS1 (for example)\n", argv[0]);
         exit(1);
     }
-    fprintf(stderr, "Type 'q' to quit\n");
+    //fprintf(stderr, "Type 'q' to quit\n");
 
     memset(&stdio, 0, sizeof(stdio));
     stdio.c_iflag = 0;
