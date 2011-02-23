@@ -139,6 +139,13 @@ Arduino software is available [online](http://arduino.cc/en/Main/Software).
 * There is an O'Reilly 
 [book](http://www.amazon.com/Arduino-Cookbook-Oreilly-Cookbooks-Margolis/dp/0596802471/ref=pd_sim_b_13)
 
-* How to read the serial port? [python](http://mbed.org/cookbook/Interfacing-with-Python)
-[C](http://stackoverflow.com/questions/2504714/reading-serial-data-from-c-osx-dev-tty)
+### reading serial port
+
+- [python](http://mbed.org/cookbook/Interfacing-with-Python)
+
+- [C (poor stackoverflow)](http://stackoverflow.com/questions/2504714/reading-serial-data-from-c-osx-dev-tty)
+
+- [wikibook Serial_Linux](http://en.wikibooks.org/wiki/Serial_Programming:Serial_Linux)
+
+- [wikibook termios](http://en.wikibooks.org/wiki/Serial_Programming:Unix/termios)
 
