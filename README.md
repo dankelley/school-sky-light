@@ -149,3 +149,29 @@ Arduino software is available [online](http://arduino.cc/en/Main/Software).
 
 - [wikibook termios](http://en.wikibooks.org/wiki/Serial_Programming:Unix/termios)
 
+
+### daemons
+
+- [linix junky blog](http://linux-junky.blogspot.com/2010/03/writing-daemon-in-c-or-daemonize.html)
+
+- [peter lombardo](http://peterlombardo.wikidot.com/linux-daemon-in-c)
+
+- [systhread](http://www.systhread.net/texts/200508cdaemon2.php#one)
+
+- [fork manpage](http://linux.die.net/man/2/fork)
+
+### stats
+
+    xmean = sum(x) / n
+
+    xstddev = sqrt(sum((x - xbar)^2) / (n - 1))
+    
+    > x <- rnorm(100)
+    > n <- length(x)
+    > xmean <- sum(x) / n
+    > xmean - mean(x)
+    [1] 0
+    > xvar <- sum((x - xmean)^2)/(n-1)
+    > xvar - var(x)
+    [1] -2.220446e-16
+        
