@@ -166,12 +166,10 @@ Arduino software is available [online](http://arduino.cc/en/Main/Software).
 
     xstddev = sqrt(sum((x - xbar)^2) / (n - 1))
     
-    > x <- rnorm(100)
-    > n <- length(x)
-    > xmean <- sum(x) / n
-    > xmean - mean(x)
-    [1] 0
-    > xvar <- sum((x - xmean)^2)/(n-1)
+    > x<-rnorm(100)
+    > Sx<-sum(x)
+    > Sxx<-sum(x^2)
+    > n<-length(x)
+    > xvar<-(Sxx - Sx * Sx / n) / (n-1)
     > xvar - var(x)
-    [1] -2.220446e-16
-        
+    [1] 0
