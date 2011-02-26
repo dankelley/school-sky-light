@@ -1,1 +1,2 @@
-read serial port | id:c0440938a55335167c99715d7a4eca7f61145293
+slave logger should not mess with the digital pin | id:a047af91ca5908dbe67a75229e8d0f0c8909379c
+read serial port                                  | id:c0440938a55335167c99715d7a4eca7f61145293
