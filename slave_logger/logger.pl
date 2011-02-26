@@ -24,7 +24,7 @@ $log->autoflush(1);
 #    last if $val;
 #}
 
-print FH "1\n";
+print FH "3\n";
 while (1) {
     my $val = <FH>;
     next unless $val;
@@ -34,5 +34,5 @@ while (1) {
     print STDERR time . ' ' . $val . "\n";
 
     sleep 10;
-    print FH "1\n";
+    print FH "3\n";
 }

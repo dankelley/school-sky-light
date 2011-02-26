@@ -1,26 +1,28 @@
-// http://thegrebs.com/docs/arduino-thermistor.html
-int pinDivEn = 4;
-int pinDivRead = 1;
+// Master-slave with 'n' points averaged per value
+const int n = 4;
+int pinRead = 1;
 int pinLED = 13;
 
 void setup()
 {
     Serial.begin(9600);
     pinMode(pinLED, OUTPUT);
-    pinMode(pinDivEn, OUTPUT);
     Serial.println("READY");
 }
 
 void loop()
 {
     if (Serial.available() > 0) {
-        digitalWrite(pinDivEn, HIGH);
         digitalWrite(pinLED, HIGH);
         delay(100);
+        int command;
         while (Serial.available() > 0)
-            int serByte = Serial.read();
-        Serial.println(analogRead(pinDivRead));
-        digitalWrite(pinDivEn, LOW);
+            command = Serial.read();
+        float mean = 0.0;
+        for (int i = 0; i < n; i++)
+            mean = mean + analogRead(pinRead); 
+        mean = mean / n;
+        Serial.println(int(mean), DEC);
         digitalWrite(pinLED, LOW);
     }
 }
