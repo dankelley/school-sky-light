@@ -10,23 +10,25 @@
     <body>
         <p><img src="plot.png" alt="plot"/></p>
 
-        <p>The black line is the mean in each minute.  The <a
-            href="skynet.dat">data</a> are light measurements made a <a
+        <p>The graph indicates temporal variation of light intensity in an office in
+        Halifax, Nova Scotia.  The <a href="skynet.dat">measurements</a> were done by
+        <a
             href="http://www.robotshop.ca/dfrobot-ambient-light-sensor.html">DFRobot
             Ambient Light Sensor</a> connected to an <a
             href="http://www.robotshop.ca/arduino-uno-microcontroller-2.html">Arduino
-            Uno microcontroller</a>, which is driven by <a
-            href="code/light_to_serial.pde">controlling program</a> that places
-        the data onto a serial port running through a USB interface.  A <a
-            href="code/logger2.c">C program</a> captures this serial stream,
-        time-stamps the data, and forms statistical measures at 1-minute
-        intervals. At 10 minute intervals, an <a href="code/plot.R">R
-            program</a> reads these data and creates the image shown above.
-        </p>
+            Uno microcontroller</a>, which is subject to a <a
+            href="code/light_to_serial.pde">controlling program</a> that
+        supplies real-time data to a computer over a USB interface.  The
+        computer uses a <a href="code/logger2.c">C program</a> to capture the
+        serial stream, calculate statistical measures in 1-minute intervals,
+        and append the results to a file on the computer.  At 10 minute
+        intervals, an <a href="code/plot.R">R program</a> reads the file and
+        creates the image shown above.</p>
 
-        <p>Sunrise/sunset detection <a
-            href="code/sunrise_sunset.png">diagram</a> and <a
-            href="code/sunrise_sunset.R">R code</a>.</p>
+        <p>Once per day, sunrise and sunset are inferred from the light
+        intensity variation, and compared with actual times from celestial
+        calculations; see the <a href="code/sunrise_sunset.png">diagram</a> and
+        <a href="code/sunrise_sunset.R">R code</a>.</p>
 
         <p>This project is developed in the open; see <a href="http://github.com/dankelley/school-sky-light/">GitHub</a>.
         </p>
