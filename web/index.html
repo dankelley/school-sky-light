@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/> 
+        <title>SKYNET</title>
+        <meta name="Author" content="Dan Kelley"/>
+        <meta name="keywords" content="skynet"/>
+    </head>
+    <body>
+        <p><img src="plot.png" alt="plot"/></p>
+
+        <p>The black line is the mean in each minute.  The <a
+            href="skynet.dat">data</a> are light measurements made a <a
+            href="http://www.robotshop.ca/dfrobot-ambient-light-sensor.html">DFRobot
+            Ambient Light Sensor</a> connected to an <a
+            href="http://www.robotshop.ca/arduino-uno-microcontroller-2.html">Arduino
+            Uno microcontroller</a>, which is driven by <a
+            href="code/light_to_serial.pde">controlling program</a> that places
+        the data onto a serial port running through a USB interface.  A <a
+            href="code/logger2.c">C program</a> captures this serial stream,
+        time-stamps the data, and forms statistical measures at 1-minute
+        intervals. At 10 minute intervals, an <a href="code/plot.R">R
+            program</a> reads these data and creates the image shown above.
+        </p>
+
+        <p>Sunrise/sunset detection <a
+            href="code/sunrise_sunset.png">diagram</a> and <a
+            href="code/sunrise_sunset.R">R code</a>.</p>
+
+        <p>This project is developed in the open; see <a href="http://github.com/dankelley/school-sky-light/">GitHub</a>.
+        </p>
+
+    </body>
+
+</html>
