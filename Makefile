@@ -1,6 +1,6 @@
-all: README.html
-%.html : %.rst
-	rst2html.py $< > $@
+all: README.md
+%.html : %.md
+	markdown $< > $@
 
 force:
 web: force
@@ -9,5 +9,4 @@ web: force
 	cp slave_logger/msl.c ~/Sites/skynet/code
 	cp slave_logger/slave_logger.pde ~/Sites/skynet/code
 	cp web/index.html ~/Sites/skynet
-
-
+	cp web/code/calibration.R ~/Sites/skynet/code
