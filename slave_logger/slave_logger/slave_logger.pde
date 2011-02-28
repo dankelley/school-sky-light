@@ -1,5 +1,5 @@
-// Master-slave with 'n' points averaged per value
-const int n = 4;
+// /dev/tty.usbmodem3a21
+
 int pinRead = 1;
 int pinLED = 13;
 
@@ -18,11 +18,7 @@ void loop()
         int command;
         while (Serial.available() > 0)
             command = Serial.read();
-        float mean = 0.0;
-        for (int i = 0; i < n; i++)
-            mean = mean + analogRead(pinRead); 
-        mean = mean / n;
-        Serial.println(int(mean), DEC);
+        Serial.println(analogRead(pinRead), DEC);
         digitalWrite(pinLED, LOW);
     }
 }
