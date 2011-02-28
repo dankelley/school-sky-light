@@ -3,7 +3,7 @@ png("calibration.png", width=800, height=600, pointsize=14)
 ## curl http://emit.phys.ocean.dal.ca/~kelley/skynet/skynet.dat > skynet.dat
 ## curl http://emit.phys.ocean.dal.ca/~kelley/skynet/skynet-02.dat > skynet-02.dat
 light <- function(count) 100 * (1023 - count) / 1023
-d1 <- read.table('../skynet.dat', header=FALSE)
+d1 <- read.table('../skynet-01.dat', header=FALSE)
 d2 <- read.table('../skynet-02.dat', header=FALSE)
 d2 <- d2[-1,] # drop first point, thought to be a startup problem
 t1 <- as.POSIXct(paste(d1$V1, d1$V2))

@@ -1,5 +1,5 @@
 library(oce)
-d <- read.table('../skynet.dat', header=FALSE)
+d <- read.table('../skynet-01.dat', header=FALSE)
 t <- as.POSIXct(paste(d$V1, d$V2))
 light  <- 100 * (1023 - d$V3) / 1023
 std <- d$V4
