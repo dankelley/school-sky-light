@@ -1,3 +1,4 @@
+// used for /dev/tty.usbmodem5d11
 void setup()
 {
     Serial.begin(9600);

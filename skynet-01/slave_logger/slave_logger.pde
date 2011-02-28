@@ -1,5 +1,5 @@
-// /dev/tty.usbmodem3a21 skynet-2.dat
-// /dev/tty.usbmodem5d11 skynet.dat
+// /dev/tty.usbmodem5d11 skynet-01.dat
+// /dev/tty.usbmodem3a21 skynet-02.dat
 
 int pinRead = 0;
 int pinLED = 13;
@@ -15,10 +15,9 @@ void loop()
 {
     if (Serial.available() > 0) {
         digitalWrite(pinLED, HIGH);
-        delay(100);
-        int command;
         while (Serial.available() > 0)
-            command = Serial.read();
+            Serial.read();
+        delay(100);
         Serial.println(analogRead(pinRead), DEC);
         digitalWrite(pinLED, LOW);
     }
