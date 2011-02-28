@@ -19,6 +19,9 @@ lines(t2, light2, col='red')
 ##legend("topright", col=c("black", "red"), legend=c("Sensor 1", "Sensor 2"), lwd=1, bg="white")
 par(mar=c(3,3,2,2))
 light1i <- approx(as.numeric(t1), light1, as.numeric(t2))$y
+ok <- !is.na(light1i) & !is.na(light2)
+light1i <- light1i[ok]
+light2 <- light2[ok]
 plot(light1i, light2, xlab="Sensor 1", ylab="Sensor 2")
 m <- lm(light2~light1i + I(light1i^2))
 xx <- seq(min(light1i), max(light1i), length.out=100)
