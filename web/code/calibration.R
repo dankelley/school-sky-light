@@ -1,5 +1,5 @@
 library(oce)
-png("calibration.png", width=800, height=600, pointsize=14)
+png("calibration.png", width=800, height=800, pointsize=14)
 ## curl http://emit.phys.ocean.dal.ca/~kelley/skynet/skynet-01.dat > skynet-01.dat
 ## curl http://emit.phys.ocean.dal.ca/~kelley/skynet/skynet-02.dat > skynet-02.dat
 light <- function(count) 100 * (1023 - count) / 1023
