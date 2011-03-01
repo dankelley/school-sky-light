@@ -4,9 +4,11 @@ hfx.sun.angle <- function(t) sun.angle(t, lat=44+39/60, lon=-(63+36/60))$elevati
 ##d <- read.table("http://emit.phys.ocean.dal.ca/~kelley/skynet/skynet.dat", header=FALSE)
 d <- read.table("../skynet-01.dat", header=FALSE)
 time <- as.POSIXct(paste(d$V1, d$V2), tz="UTC") + 4 * 3600
-light <- 100*(1023-d$V3)/1023
+time <- time
+light <- (100*(1023-d$V3)/1023)
 oce.plot.ts(time, light, ylab="Light intensity (percent)", ylim=c(0, 100))
-lines(time, 50*(light>1), col='gray', lwd=4)
+dark <- 3
+lines(time, 50*(light>dark), col='gray', lwd=4)
 tr <- range(time)
 days <- seq(trunc(tr[1], "days"), trunc(tr[2]+86400), "days")
 for (day in days) {
