@@ -1,6 +1,5 @@
-if (!interactive())
-    png("sunrise_sunset.png", width=800, height=400, pointsize=16)
 library(oce)
+png("sunrise_sunset.png", width=800, height=300, pointsize=12)
 hfx.sun.angle <- function(t) sun.angle(t, lat=44+39/60, lon=-(63+36/60))$elevation
 ##d <- read.table("http://emit.phys.ocean.dal.ca/~kelley/skynet/skynet.dat", header=FALSE)
 d <- read.table("../skynet-01.dat", header=FALSE)
