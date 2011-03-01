@@ -1,0 +1,352 @@
+/* References:
+http://www.wellstyled.com/tools/colorscheme2/index-en.html
+*/
+
+HTML, BODY {
+  font-family:'Lucida Grande',Geneva,Arial,Verdana,sans-serif;
+  font-size:12px;
+  font-style:normal;
+  font-variant:normal;
+  font-weight:normal;
+  line-height:1.4em;
+  margin: 0;
+  padding: 0;
+}
+
+p { margin-bottom: 12px; margin-left: 10px;}
+
+.footer {
+  clear: both;
+  font-size: small;
+  color: #996633;
+  background-color: white;
+  margin-left: 1em;
+}
+
+TABLE {
+  font-size: 13px;
+  line-height: 1.25em;
+}
+A:link, A:visited {
+  text-decoration: underline;
+  color: #0000cc;
+  background-color:#FFFFFF;
+}
+A:active {
+  text-decoration: underline;
+  color: #FF0000;
+  background-color:#FFFFFF;
+}
+A:hover {
+  color: red;
+  background-color: #ffffaa;
+}
+B  { font-weight: bold; }
+TT { font-family: Courier, fixed, monospace; color: #333333; background-color: white}
+h1, h2, h3, h4 {font-family:georgia,serif;  color:black;}
+h1 {
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 1.0em;
+  margin-top: 20px;
+  margin-bottom: 3px;
+  margin-left: 10px;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.1em;
+  margin-bottom: 0px;
+  margin-left: 10px;
+}
+h3 { font-weight: bold; font-size: 1em; line-height: 18px; margin-left: 10px;}
+h4 { font-weight: bold; font-size: 10px; line-height: 18px; margin-left: 10px;}
+
+P  {
+  margin-left: 0.8em;
+}
+.submenu {
+  bottom:10px;
+  right:0px;
+  float:right;
+  margin-top: 0;
+  padding-right: 10px;
+  clear:both;
+  background:url('images/underlay-light.png') repeat right top;
+}
+.submenu ul {
+  margin:0;
+  padding:1px 10px 0px 3px; /*top right bottom left*/
+  list-style:none;
+  background:url('images/underlay-light.png') repeat right top;
+  clear:both;
+  height: 20px;
+}
+.submenu li {
+  /* border: 1px solid #ccc;*/
+  /* background:#eee;*/
+  /* display:inline;*/
+  float:left;
+  margin:0;
+  /* margin:0px 0px 2px 2px; /*top right bottom left*/
+  padding:0px 5px 0px 5px; /*top right bottom left*/
+  background:url('images/underlay-dark.png') repeat right top;
+  /* background:url('images/tab_off_ns1.png') no-repeat left top;*/
+  /* padding:0 0 0 0px; */
+}
+.submenu ul li a {
+  float:left;
+  font-size:0.8em;
+  padding:0px 5px 0px 5px;
+  /* margin: 0px 2px 0px 2px; /*top right bottom left*/
+  /* background:#eee;*/
+  text-decoration:none;
+  font-weight: bold;
+  color: #666;
+  background-color: #00ccee;
+  /* padding:2px;*/
+  background:url('images/underlay-dark.png'); /* repeat right top;*/
+}
+
+.submenu #current, .submenu #current a {
+  background:url('images/underlay-light.png');
+  color: black;
+  background-color: white;
+}
+
+.query {font-family: Lucidatypewriter,monospace; color: black; background-color: #FFFFCC}
+.login_status { 
+  border-top: 1px solid #996b0a; 
+  border-bottom: 1px solid #996b0a; 
+  background-color:#ffffcc;
+  color: #2e2003;
+}
+.login_menu {
+  color: white;
+  background-color:#ffffcc;
+  height: 1em;
+  margin: 0px;
+  padding: 0px 0px 3px 0px;
+  text-align: left;
+}
+.login_menu a {
+  color: #366899; /* top-banner solid colour */
+  background-color:#ffffcc;
+  padding: 0 3px 0 3px;
+  text-decoration: none;
+}
+.login_menu a:hover {
+  text-decoration: underline;
+}
+.error {
+  background-color: #FF99CC;
+  color: black;
+}
+.rightjustify {
+  margin: 1ex;
+  float: right;
+}
+.leftjustify {
+  margin: 1ex;
+  float: right;
+}
+
+.username {
+  color: black;
+  background-color: #FFF;
+}
+fieldset {
+  color: #666;
+  background-color: #e1edec;
+  border: solid 1px black;
+}
+legend {
+  background-color: white;
+  color: black;
+  border: solid 1px black;
+}
+a.member_action {
+  color: #0000EE;
+  background-color: #e1edec;
+  line-height: 1.5;
+  padding: 2px 4px 2px 2px;  
+}
+
+/* */
+.main-base {
+  background: url('images/header.png') bottom left repeat-x #37689a;
+}
+.main-logo-1 {
+  position:relative;
+  background: url('images/headerlogo.png') bottom left no-repeat transparent;
+  border: 0px solid white;
+  height: 68px;
+}
+.main-logo-2 {
+  position:relative;
+  font-size: 36px;
+  padding: 10px 10px 10px 10px;
+  color: #e0bf04;
+  background: url('images/header.png') bottom left no-repeat transparent;
+}
+.main-nav {
+  position:absolute;
+  bottom:0px;
+  right:0px;
+}
+.main-nav ul {
+  font-size: 12px;
+  margin:0;
+  padding:10px 10px 0px 1px; /*top right bottom left*/
+  list-style:none;
+}
+.main-nav li {
+  display:inline;
+  float:left;
+  background:url('images/tab_off_ns1.png') no-repeat left top;
+  margin:0;
+  padding:0 0 0 5px;
+}
+.main-nav a {
+  float:left;
+  display:block;
+  background:url('images/tab_off_ns2.png') no-repeat right top;
+  padding:8px 15px 3px 8px;
+  text-decoration:none;
+  font-weight: bold;
+  color: black;
+}
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+.main-nav a {float:none;}
+/* End IE5-Mac hack */
+.main-nav a:visited {
+  color: black;
+} 
+.main-nav li:hover {
+  background-position:0% -163px;
+}
+
+.main-nav li:hover a {
+  background-position:100% -163px;
+}
+
+.main-nav #current {
+  background:url('images/tab_on_ns1.png') no-repeat left top;                
+}
+
+.main-nav #current a {
+  background:url('images/tab_on_ns2.png') no-repeat right top;
+  padding-bottom:4px;
+}
+/* end of navigation */
+
+.header-table {
+  width: 650px; 
+  border: none;
+}
+.loginareafancy {
+  width: 100%;
+  height: 113px;
+  position: relative;
+  background-image: url('images/background-01.jpg');
+  background-repeat: repeat-x;
+  background-position: center top;
+}
+.loginareaplain {
+  width: 100%;
+  height: 2em;
+  background: #007aab;
+}
+.loginareaplain .user-control {
+  color: white;
+  background: #007aab;
+}
+.loginareaplain .user-control a, .loginareaplain .user-control a:visited {
+  color: white;
+  background: #007aab;
+  text-decoration: none;
+}
+.login-line {
+  float: right;
+  text-align: right;
+  padding: 3px 3px 3px 3px;
+  margin-top: 8px;
+  margin-right: 8px;
+  font-size: 14px;
+  color: white;
+  background: transparent;
+}
+.login-line .user-name {
+  color: white;
+}
+.login-line a, .login-line a:visited {
+  color: yellow;
+  text-decoration: none;
+  background: transparent;
+}
+.login-line a:hover {
+  background: yellow;
+  color: #007aab;
+}
+.logo {
+  float: left;
+}
+.signin {
+  text-align: right;
+  padding-top: 6px;
+  margin-right: 8px;
+  font-size: 12px;
+  background: transparent;
+}
+.join {
+  text-align: right;
+  padding-top: 80px;
+  padding-left:20px;
+  margin-left: 20px;
+  margin-right: 10px;
+  font-size: 12px;
+  background: transparent;
+}
+.lhs {
+  float: left;
+  width: 10%;
+  background: #ffaaff;
+}
+.lhs ul {
+  margin:0;
+  padding:1px 10px 0px 3px; /*top right bottom left*/
+  padding:0;
+  list-style:none;
+  clear:both;
+  height: 20px;
+}
+.lhs ul li, .lhs ul li a {
+  float:left;
+  padding:0px 5px 0px 5px;
+  /* margin: 0px 2px 0px 2px; /*top right bottom left*/
+  text-decoration:none;
+  font-weight: bold;
+  color: #666;
+  /* padding:2px;*/
+  clear: both;
+}
+
+.lhs ul li #current, .lhs ul li #current a {
+  background: red;
+  color: black;
+  float: left;
+}
+
+.rhs {
+  float: right;
+  width:90%;
+  background: #ccffff;
+}
+
+.iesucks {
+  color:red;
+  background: yellow;
+  font-weight: bold;
+  padding: 5px;
+}
