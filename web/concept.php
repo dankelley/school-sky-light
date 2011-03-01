@@ -2,7 +2,11 @@
 Despite the accuracy of weather forecasts over days and hundreds of kilometers, 
 people still look up to the sky when deciding whether to run to a bus shelter.  
 What they are doing is making short-range weather predictions based on changes 
-in sky brightness.  This works reasonably well, but it can be improved by 
+in sky brightness.
+</p>
+
+<p>
+This works reasonably well, but it can be improved by 
 observing the sky at several locations at the same time.  If a storm is coming 
 up the coast, people in Yarmouth will see darkening skys before their friends 
 in Halifax do.  What if we could get many observers, and get them to 

@@ -1,30 +1,35 @@
 <!-- vim: set filetype=html -->
 <p>
-The were done by <a 
+<b>Apparatus.</b> The measurements are made with a <a 
 href="http://www.robotshop.ca/dfrobot-ambient-light-sensor.html">DFRobot
-            Ambient Light Sensor</a> connected to an <a
+            Ambient Light Sensor</a> connected to a "slave" <a
             href="http://www.robotshop.ca/arduino-uno-microcontroller-2.html">Arduino
-            Uno microcontroller</a>, which is subject to a <a
-            href="code/slave_logger.pde">controlling program</a> that
-        supplies real-time data to a computer over a USB interface.  The
-        computer uses a <a href="code/msl.c">C program</a> to capture the
-        serial stream, calculate statistical measures in 1-minute intervals,
-        and append the results to a file on the computer.  At regular
-        intervals, a master computer updates all graphs with the following R 
-programs:
+            Uno microcontroller</a> that transmits data 
+        to a "master" computer over a USB interface.
+</p>
+
+<p>
+<b>Software.</b>  The master computer uses the "cron" system command to organize the graphing and analysis of the data at regular intervals.  The computer programs are as follows.</p>
 <ul>
-<li> <a href="code/plot.R">code.R</a>
-<li> <a href="code/sunrise_sunset.R">sunrise_sunset.R</a>.
-<li> <a href="code/calibration.R">calibration.R</a>
+<li> <a href="code/slave_logger.pde">slave_logger.pde</a> (code driving the microcontroller's data acquisition
+<li> <a href="code/msl.c">msl.c</a> (code used by the master computer to drive the slave microcontroller)
+<li> <a href="code/plot.R">code.R</a>a (R code used to graph light versus time)
+<li> <a href="code/calibration.R">calibration.R</a> (calibrates two sensors, as shown below)
+<li> <a href="code/sunrise_sunset.R">sunrise_sunset.R</a> (not documented here yet)
 </ul>
-</p>
 
 <p>
-Measurement files: <a href="skynet-01.dat">skynet-01.dat</a> and <a href="skynet-02.dat">skynet-02.dat</a>.
+<b>Data.</b>
 </p>
+<ul>
+<li> <a href="skynet-01.dat">skynet-01.dat</a>
+<li> <a href="skynet-02.dat">skynet-02.dat</a>
+</ul>
 
 <p>
-Inter-sensor calibrations are graphed below.
+Inter-sensor calibrations are graphed below.  Note that the sensors are only 
+approximately co-located, and so some of the variation may result from the fact 
+that they are in different shadows, or reflections, as the day progresses.
 </p>
 
 <p>
