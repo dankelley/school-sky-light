@@ -1,68 +1,41 @@
 <p>
-A darkening sky is a good indicator of the onset of bad weather.  We look up at 
-the sky to decide whether to run to the shelter, on an unsettled day.  Weather
-forecasts do not address broad issues of weather variations over days and
-hundreds of kilometers, but people have still rely on the sky for quick,
-localized forecasts.
+Despite the accuracy of weather forecasts over days and hundreds of kilometers, 
+people still look up to the sky when deciding whether to run to a bus shelter.  
+What they are doing is making short-range weather predictions based on changes 
+in sky brightness.  This works reasonably well, but it can be improved by 
+observing the sky at several locations at the same time.  If a storm is coming 
+up the coast, people in Yarmouth will see darkening skys before their friends 
+in Halifax do.  What if we could get many observers, and get them to 
+communicate often?  Could we form an informal weather prediction scheme?
 </p>
 
 <p>
-A limitation of this observer-based forecasting is that even small-scale
-weather patterns are not entirely localized.  Events such as fronts and
-thunderstorms tend to sweep across regions, so that one neighborhood could warn
-another of impending bad weather.
+There are two ways to set up a sky-observing network.  One is to get 
+Environment Canada to do it.  Certainly, they could do it well, given more 
+resources.  But why should they have all the fun?  With today's technology, it 
+is possible for members of the public to set up the sensor network, in a 
+measurement analog to the WikiPedia project.
 </p>
 
 <p>
-The idea of this project is to develop a network of skylight sensors that would
-mimic the human eye, testing for darkening of the sky hour by hour, or even
-minute by minute.  The network would need to cover populated areas in a
-reasonable data density, say one sensor per square kilometre or so.  The
-national weather service could do that in a professional way, probably at great
-expense for equipment, networking, and maintenance.
+SkyNet is intended to spearhead this project, and to do it in a way that has a 
+larger aim.  The idea is to put the sensors in schools.  This will yield good 
+sampling coverage, because all populated areas have schools.  More importantly, 
+perhaps, it provides educational opportunities for students, for it is they who 
+will construct the devices, calibrate them, network them, and develop web-based 
+tools to analyse and distribute the data.  There are numerous educational 
+opportunities in Skynet, for students interested in weather, of course, but 
+also for students interested in electronics, in computers, in statistics, in 
+organizing teams, in communicating with the public, and so on.
 </p>
 
 <p>
-But there is another way-- put the sensors in schools.  Let the students build
-the sensors, network them, write the code to integrate them, and perform
-regular calibration and other maintenance.   Each of the steps would provide
-students with fun, and good learning experiences.  Building the sensors would
-help them to learn about the physics of light sensing and about the electronics
-of data logging.  Networking and coding provide the chance to learn about
-computing hardware and software.  And the maintenance would do two important
-things.  First, it would continually reinforce the lessons about physics and
-electronics, spreading the learning across the entire class, so that it does
-not end at the construction phase.  Second,  it would underline for the
-students the importance of assessing and documenting data quality, a topic that
-occupies scientists for much of their time, but that is seldom discussed in
-textbooks.
-</p>
-
-<p>
-The sensors could be built for under $100 each, putting them well within the
-reach of schools.  The networking would be free, since the sensors could be
-connected to existing networked computers.  And the data compilation and
-presentation on the web would be free, with work done by students themselves.
-Schools are spaced at a distance of a few kilometers in towns and cities, so
-the data sampling density would be very high.  (There is no reason that
-students would not put these sensors on their homes, either, yielding even
-higher data densities.)
-</p>
-
-<p>
-Beyond some initial proof-of-concept work on the electronics and on computer
-security, there would be no need for wide organization of the project.  The
-students could run it, themselves.  One model would be a single hosting
-computer, perhaps at Environment Canada.  But another model, probably of more
-interest to the students, would be a distributed model, using peer-to-peer
-methods.
-</p>
-
-<p>
-As to the name of the project, and a logo to distinguish it, and an aesthetic
-theme for the project website, these are things best decided by students, and
-provide avenues for participation of students whose interests focus on
-communication skills.
+Everything about the project is within reach.  The sensors could be built for 
+about $50 each, so any school could afford one on each side of the school, or 
+even one in each classroom.   Computers are already in the classroom, so 
+networking will be easy.  Setting up a "cloud" for computing should not be 
+hard, and would give opportunities for local companies (or even environment 
+Canada) to help out.
 </p>
 
 <p>
