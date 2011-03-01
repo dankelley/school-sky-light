@@ -4,9 +4,7 @@ all: README.md
 
 force:
 web: force
-	cp light_to_serial/light_to_serial.pde ~/Sites/skynet/code
 	cp skynet-01/msl.c ~/Sites/skynet/code
-	cp skynet-01/slave_logger/slave_logger.pde ~/Sites/skynet/code
 	cp web/*php ~/Sites/skynet
 	cp web/code/sunrise_sunset.R ~/Sites/skynet/code
 	cp web/code/calibration.R ~/Sites/skynet/code
