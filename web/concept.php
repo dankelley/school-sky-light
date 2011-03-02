@@ -1,61 +1,70 @@
 <!-- vim: set filetype=html -->
 <p>
-Despite the accuracy of weather forecasts over intervals of days,
-people examine sky darkness to the to see if a downpour is imminent, or whether 
-a storm is ending.  This sort of short-range weather prediction has proven 
-useful for uncounted years.  The eye tells much.
+Despite the accuracy of weather forecasts over long intervals, people examine 
+the brightness of the sky, to see if they should rush to avoid a downpour, and 
+to see whether a storm is coming to an end.  This method of short-range weather 
+prediction has proven itself over uncounted years.
 </p>
 
 <p>
-Today, though, there is something new.  We can <i>combine</i> many eyes.  If 
-a storm is coming up the coast, people in Yarmouth will see darkening skies 
-before their friends in Halifax do, and a simple phone call could create a 
-reasonable forecast for a few hours span.  And, of course, the forecast would 
-get better if people in Bridgewater joined conversation.  A dozen friends (with 
-time on their hands) could do a reasonable job of tracking a storm over a 
-100-kilometre interval.
+Nowadays, we can do better, by combine observations spread out over wide areas.  
+If a storm is coming up the coast, people in Yarmouth will see darkening skies 
+before their friends in Halifax do, and so a phone call yields a forecast that 
+will be reasonably valid over a few hours.  And the forecast could very well 
+improve, if people in Bridgewater joined conversation.  Indeed, a dozen friends 
+(with time on their hands) could do a reasonable job of tracking a storm over a 
+province.
 </p>
 
 <p>
-However, people generally lack the time watch the sky all day long, and phoning 
-becomes impractical when more than a small number of friends are involved.  The 
-best plan is to automate things.  There are two ways to do this.  One is to get 
-Environment Canada to do it.  Certainly, they could do it well, if given more 
-resources.  But why should they have all the fun?  With today's technology, it 
-is possible for members of the public to set up the sensor network.
+The problem is that people lack the time watch the sky for hours on end, and 
+phoning is not practical when if the number of observers gets large.  Clearly, 
+the solution is to automate the observation and the reporting, and two methods 
+come to mind.  One is to get Environment Canada to do it.  Certainly, they 
+could do it, given the resources.  But that would be expensive.  Besides, why 
+should civil servants have all the fun?  With today's technology, it is 
+entirely possible for the public to set up the sensor network.
 </p>
 
 <p>
-This is where SkyNet comes in.  It is a project to put sky-brightness sensors 
-in schools.  This placement will good spatial coverage, because all populated 
-areas have schools.  Costs will be kept down by having the work be done by 
-students, for whom this could provide diverse learning opportunities (and a 
-great deal of fun).  The devices themselves (described elsewhere on this 
-website) would be constructed by students, who would also calibrate the 
-sensors, perform statistical analyses, feed the data into web streams, and so 
-forth.  The work would teach students not just about meteorology, but also 
-enginnering, electronics, statistics, and computing design.  Students not 
-inclined in such ways could participate  by organizing teams, doing public 
-outreach, and so forth.  Schools could compete to deploy more sensors and to 
-invent new ways to process the data.  They could also design new sensors, for 
-such things as barometric pressure, humudity, and wind speed; many things that 
-were once complicated are now reasonably easy, partly because of a 
-do-it-yourself movement involving microcontrollers in robotics.
+The SkyNet project proposes to establish a sensor network in schools.  This 
+will good spatial coverage, because all populated areas have schools.  Costs 
+will be low because the work be done by students, for whom this could provide 
+diverse learning opportunities--and a great deal of fun.  The devices 
+themselves (described elsewhere on this website) would be constructed by 
+the students.  And the students would also calibrate the sensors, perform 
+statistical analyses, feed the data into web streams, and so forth.  In doing 
+this work (which they would likely regard as play), they would learn
+not just about meteorology, but also enginnering, electronics, statistics, and 
+computing.  Students not inclined in such ways could participate  by organizing 
+teams, doing public outreach, and so forth.  There are even opportunities for 
+students interested in history and archaeology, because observing the sky was 
+once a very large focus for people.  Teamwork skills would be honed by doing 
+the work, and it seems likely that schools would find ways to engage in 
+friendly competition to get the best data, or to make the best weather 
+predictions.
+<p>
+
+<p>
+There is no reason for the project to end with the measurement of light.  
+Students could also design new sensors, to measure such things as barometric 
+pressure, humudity, and wind speed.  Many things that were complicated to 
+measure a generation ago are now within easy reach.  We are living in an era of 
+do-it-yourself computing and microcontrol, a particularly relevant component of 
+which is the growing interest in robotics in schools.
 </p>
 
 <p>
 Everything about the project is within easy reach.  The sensors could be built 
-for about $50 each, so any school could afford to build several.  Computers are 
-already in the classroom, so networking will be easy.  Setting up a "cloud" for 
-computing should not be hard, and would give opportunities for local companies 
-to participate.
+for about $50 each, so schools could afford to build several.  Computers are 
+already in the classrooms, so data logging and networking will be easy.  
+Setting up a "cloud" for computing will be beyond the students, but would provide
+good opportunities for local companies (or, beter yet, universities) to 
+participate.
 </p>
 
 <p>
-This project should be interesting to many students, and it affords a wealth of 
-learning opportunities.  And it seems likely that students would feel 
-considerable excitement, when they see that they can predict weather in a way 
-that joins together ancient "sky watching" methods with the latest in 
-electronics and computing.
+It seems likely that students would feel considerable excitement, when they see 
+that they can predict short-term local weather as well as the national weather service.
 </p>
 
