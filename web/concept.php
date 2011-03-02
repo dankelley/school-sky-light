@@ -1,9 +1,8 @@
 <!-- vim:set spell filetype=html: -->
 <p>
-Despite the accuracy of weather forecasts over long intervals, people examine 
-the brightness of the sky, to see if they should rush to avoid a downpour, and 
-to see whether a storm is coming to an end.  This method of short-range weather 
-prediction has proven itself over uncounted years.
+Despite the accuracy of modern weather forecasts, people assess the brightness
+of the sky when deciding whether to run to avoid a downpour.  Eyes are all we
+need to make short term forecasts.
 </p>
 
 <p>
