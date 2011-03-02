@@ -1,4 +1,4 @@
-<!-- vim: set filetype=html -->
+<!-- vim:set spell filetype=html: -->
 <p>
 <b>Apparatus.</b> The measurements are made with a <a 
 href="http://www.robotshop.ca/dfrobot-ambient-light-sensor.html">DFRobot

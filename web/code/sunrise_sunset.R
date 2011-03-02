@@ -6,6 +6,8 @@ d <- read.table("../skynet-01.dat", header=FALSE)
 time <- as.POSIXct(paste(d$V1, d$V2), tz="UTC") + 4 * 3600
 time <- time
 light <- (100*(1023-d$V3)/1023)
+lights.on <- light > 75
+light[lights.on] <- NA
 oce.plot.ts(time, light, ylab="Light intensity (percent)", ylim=c(0, 100))
 dark <- 3
 lines(time, 50*(light>dark), col='gray', lwd=4)

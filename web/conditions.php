@@ -1,4 +1,4 @@
-<!-- vim: set filetype=html -->
+<!-- vim:set spell filetype=html: -->
 <p>
 <img src="code/plot.png" alt="plot"/>
 </p>
@@ -12,9 +12,9 @@ use of overhead lights in the office.
 
 <p>
 The graph below shows some early tests with detection of sunrise and sunset 
-times, from which students could infer the location of the observation, 
-teaching something that their seafaring ancesters would have understdood 
-easily.
+times.  Students could use these times to infer the location of the 
+observation, putting them in touch with something that their seafaring 
+ancestors would have understood easily.
 </p>
 
 <p>

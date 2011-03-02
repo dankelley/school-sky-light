@@ -1,3 +1,4 @@
+<!-- vim:set spell filetype=html: -->
 <p>
 A darkening sky is a good indicator of the onset of bad weather.  We look up at 
 the sky to decide whether to run to the shelter, on an unsettled day.  Weather

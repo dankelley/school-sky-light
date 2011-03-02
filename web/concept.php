@@ -1,4 +1,4 @@
-<!-- vim: set filetype=html -->
+<!-- vim:set spell filetype=html: -->
 <p>
 Despite the accuracy of weather forecasts over long intervals, people examine 
 the brightness of the sky, to see if they should rush to avoid a downpour, and 
@@ -35,7 +35,7 @@ themselves (described elsewhere on this website) would be constructed by
 the students.  And the students would also calibrate the sensors, perform 
 statistical analyses, feed the data into web streams, and so forth.  In doing 
 this work (which they would likely regard as play), they would learn
-not just about meteorology, but also enginnering, electronics, statistics, and 
+not just about meteorology, but also engineering, electronics, statistics, and 
 computing.  Students not inclined in such ways could participate  by organizing 
 teams, doing public outreach, and so forth.  There are even opportunities for 
 students interested in history and archaeology, because observing the sky was 
@@ -48,7 +48,7 @@ predictions.
 <p>
 There is no reason for the project to end with the measurement of light.  
 Students could also design new sensors, to measure such things as barometric 
-pressure, humudity, and wind speed.  Many things that were complicated to 
+pressure, humidity, and wind speed.  Many things that were complicated to 
 measure a generation ago are now within easy reach.  We are living in an era of 
 do-it-yourself computing and microcontrol, a particularly relevant component of 
 which is the growing interest in robotics in schools.
@@ -59,8 +59,7 @@ Everything about the project is within easy reach.  The sensors could be built
 for about $50 each, so schools could afford to build several.  Computers are 
 already in the classrooms, so data logging and networking will be easy.  
 Setting up a "cloud" for computing will be beyond the students, but would provide
-good opportunities for local companies (or, beter yet, universities) to 
-participate.
+good opportunities for local companies or universities to participate.
 </p>
 
 <p>

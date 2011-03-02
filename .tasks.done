@@ -1,4 +1,4 @@
-use master-slave logging | id:4a452fd961aa36d16d171276c3cb9e2e116ce785
-slave logger should not mess with the digital pin | id:a047af91ca5908dbe67a75229e8d0f0c8909379c
-read serial port | id:c0440938a55335167c99715d7a4eca7f61145293
+use master-slave logging                            | id:4a452fd961aa36d16d171276c3cb9e2e116ce785
+slave logger should not mess with the digital pin   | id:a047af91ca5908dbe67a75229e8d0f0c8909379c
+read serial port                                    | id:c0440938a55335167c99715d7a4eca7f61145293
 are the timeseries diff from calibration or signal? | id:cb79d1fe5e9594c1fb9585213c0c7198685d2c2e
