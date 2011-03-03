@@ -17,20 +17,14 @@ href="http://www.robotshop.ca/dfrobot-ambient-light-sensor.html">DFRobot
 <li> <a href="code/calibration.R">calibration.R</a> (calibrates two sensors, as shown below)
 <li> <a href="code/sunrise_sunset.R">sunrise_sunset.R</a> (not documented here yet)
 </ul>
-
-<p>
-<b>Data.</b>
 </p>
-<ul>
-<li> <a href="skynet-01.dat">skynet-01.dat</a>
-<li> <a href="skynet-02.dat">skynet-02.dat</a>
-</ul>
 
-<p>
-Inter-sensor calibrations are graphed below.  Note that the sensors are only 
-approximately co-located, and so some of the variation may result from the fact 
-that they are in different shadows, or reflections, as the day progresses.
-</p>
+<p> <b>Data.</b> There are two sensors working at the moment, <a
+    href="skynet-01.dat">skynet-01.dat</a> and <a
+    href="skynet-02.dat">skynet-02.dat</a>.  A comparison of their signals is
+shown below.  (Note that the sensors are only approximately co-located, and so
+some of the variation may result from the fact that they are in different
+shadows, or reflections, as the day progresses.) </p>
 
 <p>
 <img src="code/calibration.png" alt="calibration.png"/>

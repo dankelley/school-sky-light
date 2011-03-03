@@ -1,68 +1,42 @@
 <!-- vim:set spell filetype=html: -->
-<p>
-Despite the accuracy of modern weather forecasts, people assess the brightness
-of the sky when deciding whether to run to avoid a downpour.  Eyes are all we
-need to make short term forecasts.
-</p>
+<p> The sky darkens quickly before a sudden downpour, and slowly as a front
+comes in over the course of a few hours.  This is why, even with modern
+forecasts, people rely on sky brightness as a rough predictor of local weather
+changes over short time intervals.  This works locally, but it could be made to
+work over larger distances.  If a storm rolls northeast up the coast of Nova
+Scotia, skies will darken in Yarmouth a few hours before bad weather gets to
+Halifax.  The same goes for other directions of storm travel, and so a network
+of observers could create a crude "weather forecast" simply by observing skies
+and making phone calls.  </p>
 
-<p>
-Nowadays, we can do better, by combine observations spread out over wide areas.  
-If a storm is coming up the coast, people in Yarmouth will see darkening skies 
-before their friends in Halifax do, and so a phone call yields a forecast that 
-will be reasonably valid over a few hours.  And the forecast could very well 
-improve, if people in Bridgewater joined conversation.  Indeed, a dozen friends 
-(with time on their hands) could do a reasonable job of tracking a storm over a 
-province.
-</p>
+<p> But most people can't watch the sky all day, and are not willing to make
+dozens of phone calls every hour.  Luckily, it is easy to automate the whole
+process.  This is where SkyNet comes in.  The idea is to place sky brightness
+sensors in the schools.  This has the advantage of providing good coverage
+across populated regions.  Also, schools have computers that can be used to log
+the observations and distribute them.  And, finally and most importantly, the
+process provides diverse learning experiences for students.  </p>
 
-<p>
-The problem is that people lack the time watch the sky for hours on end, and 
-phoning is not practical when if the number of observers gets large.  Clearly, 
-the solution is to automate the observation and the reporting, and two methods 
-come to mind.  One is to get Environment Canada to do it.  Certainly, they 
-could do it, given the resources.  But that would be expensive.  Besides, why 
-should civil servants have all the fun?  With today's technology, it is 
-entirely possible for the public to set up the sensor network.
-</p>
+<p>The devices themselves (described elsewhere on this website) would be
+constructed by the students.  And the students would also calibrate the
+sensors, invent and perform statistical analyses, pour the data into web
+streams, and so forth.  In doing this work (which they would likely regard as
+play), they would learn about much more than meteorology.  Technically-minded students
+would enjoy honing skills in engineering, electronics, statistics, and
+computing.  Business-minded students could participate by organizing team-work,
+working with sponsors, or commercializing their results.  Students interested
+in writing could do public outreach.  Historians won't be left out, because
+studying the sky was the basis of navigation until just a few decades ago.  The
+list goes on; the point is that SkyNet could offer much, to many students.</p>
 
-<p>
-The SkyNet project proposes to establish a sensor network in schools.  This 
-will good spatial coverage, because all populated areas have schools.  Costs 
-will be low because the work be done by students, for whom this could provide 
-diverse learning opportunities--and a great deal of fun.  The devices 
-themselves (described elsewhere on this website) would be constructed by 
-the students.  And the students would also calibrate the sensors, perform 
-statistical analyses, feed the data into web streams, and so forth.  In doing 
-this work (which they would likely regard as play), they would learn
-not just about meteorology, but also engineering, electronics, statistics, and 
-computing.  Students not inclined in such ways could participate  by organizing 
-teams, doing public outreach, and so forth.  There are even opportunities for 
-students interested in history and archaeology, because observing the sky was 
-once a very large focus for people.  Teamwork skills would be honed by doing 
-the work, and it seems likely that schools would find ways to engage in 
-friendly competition to get the best data, or to make the best weather 
-predictions.
-<p>
+<p>There is no reason for the project to end with the measurement of light.
+Students could also design new sensors, to measure such things as barometric
+pressure, humidity, and wind speed.  Many things that were complicated to
+measure a generation ago are now within easy reach.  We are living in an era of
+do-it-yourself computing and microcontrol, a particularly relevant component of
+which is the growing interest in robotics in schools.  </p>
 
-<p>
-There is no reason for the project to end with the measurement of light.  
-Students could also design new sensors, to measure such things as barometric 
-pressure, humidity, and wind speed.  Many things that were complicated to 
-measure a generation ago are now within easy reach.  We are living in an era of 
-do-it-yourself computing and microcontrol, a particularly relevant component of 
-which is the growing interest in robotics in schools.
-</p>
-
-<p>
-Everything about the project is within easy reach.  The sensors could be built 
-for about $50 each, so schools could afford to build several.  Computers are 
-already in the classrooms, so data logging and networking will be easy.  
-Setting up a "cloud" for computing will be beyond the students, but would provide
-good opportunities for local companies or universities to participate.
-</p>
-
-<p>
-It seems likely that students would feel considerable excitement, when they see 
-that they can predict short-term local weather as well as the national weather service.
-</p>
+<p>It seems likely that people would start to consult SkyNet for informal
+short-term local weather forecasts.  Can anyone doubt the excitement, and
+pride, that students would feel when that happens?</p>
 
