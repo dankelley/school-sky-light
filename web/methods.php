@@ -1,5 +1,10 @@
 <!-- vim:set spell filetype=html: -->
 <p>
+<b>Development.</b> This project is developed in the open on <a 
+href="http://github.com/dankelley/school-sky-light/">github.com</a>.
+</p>
+
+<p>
 <b>Apparatus.</b> The measurements are made with a <a 
 href="http://www.robotshop.ca/dfrobot-ambient-light-sensor.html">DFRobot
             Ambient Light Sensor</a> connected to a "slave" <a

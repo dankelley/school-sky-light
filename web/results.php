@@ -4,9 +4,9 @@ parse_str($_SERVER['QUERY_STRING']);
 
 if ("$subtab" == "") {
 echo '<p>
-<a href="?tab=applications&amp;subtab=weather">Weather</a>
+<a href="?tab=results&amp;subtab=weather">Weather</a>
 |
-<a href="?tab=applications&amp;subtab=solar_navigation">Solar Navigation</a>
+<a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a>
 </p>';
 }
 
@@ -15,18 +15,27 @@ echo '<p>
 <p>
 Weather
 | 
-<a href="?tab=applications&amp;subtab=solar_navigation">Solar Navigation</a>
+<a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a>
 </p>';
 echo '
 <h1>Weather</h1>
-<p>(FILL IN)</p>
+<p>
+<img src="code/plot.png" alt="plot"/>
+</p>
+
+<p>
+The graph indicates temporal variation of light intensity in an office in 
+Halifax, Nova Scotia, updated at 10-minute intervals based on 1-minute averages 
+of data measured at 10-second intervals.  Readings of about 80% result from the 
+use of overhead lights in the office.
+</p>
 ';
 }
 
 if ("$subtab" == "solar_navigation") {
 echo '<p>
 <p>
-<a href="?tab=applications&amp;subtab=weather">Weather</a>
+<a href="?tab=results&amp;subtab=weather">Weather</a>
 | 
 Solar Navigation
 </p>';

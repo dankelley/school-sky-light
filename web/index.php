@@ -1,8 +1,8 @@
 <?php
 require("tabbed_site.php");
-$tab_titles    = array("Concept","Conditions","Applications","Methods","Development");
-$tab_nicknames = array("concept","conditions","applications","methods","development");
-$tab_pages     = array("concept.php","conditions.php","applications.php","methods.php","development.php");
+$tab_titles    = array("Introduction","Results","Methods");
+$tab_nicknames = array("introduction","results","methods");
+$tab_pages     = array("introduction.php","results.php","methods.php");
 $ts = new tabbed_site(
 	$title         = "SkyNet",
 	$tab_titles    = $tab_titles,
