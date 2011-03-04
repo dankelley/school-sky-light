@@ -10,13 +10,3 @@ of data measured at 10-second intervals.  Readings of about 80% result from the
 use of overhead lights in the office.
 </p>
 
-<p>
-The graph below shows some early tests with detection of sunrise and sunset 
-times.  Students could use these times to infer the location of the 
-observation, putting them in touch with something that their seafaring 
-ancestors would have understood easily.
-</p>
-
-<p>
-<img src="code/sunrise_sunset.png" alt="sunrise_sunset.png"/>
-</p>
