@@ -40,12 +40,12 @@ legend("topleft", lwd=c(1, 1, 1, 1),
 dev.off()
 
 ## map
-png("solar_navigation_map.png", width=800, height=600, pointsize=12)
+png("solar_navigation_map.png", width=500, height=300, pointsize=12)
 lat.hfx <- 44.65
 lon.hfx <- (-63.55274)
 par(mfrow=c(1,1))
 data(coastline.world)
-plot(coastline.world, center=c(lat.hfx, lon.hfx), span=1000, debug=3)
+plot(coastline.world, center=c(lat.hfx, lon.hfx), span=1000)
 ## Find lat and lon using all sunrises and sunsets
 o <- optim(c(1,1), mismatch, hessian=TRUE)
 lat <- o$par[1]
