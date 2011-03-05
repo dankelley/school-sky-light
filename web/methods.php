@@ -31,7 +31,5 @@ shown below.  (Note that the sensors are only approximately co-located, and so
 some of the variation may result from the fact that they are in different
 shadows, or reflections, as the day progresses.) </p>
 
-<p>
-<img src="code/calibration.png" alt="calibration.png"/>
-</p>
+<p> <img src="code/calibration.png" alt="calibration.png"/> </p>
 
