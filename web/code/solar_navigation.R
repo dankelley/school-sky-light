@@ -1,5 +1,5 @@
 library(oce)
-png("solar_navigation_timeseries.png", width=800, height=300, pointsize=12)
+png("solar_navigation_timeseries.png", width=700, height=300, pointsize=13)
 mismatch <- function(latlon) 
 {
     ##cat(sprintf("%.2f %.2f\n", latlon[1], latlon[2]))
@@ -40,12 +40,12 @@ legend("topleft", lwd=c(1, 1, 1, 1),
 dev.off()
 
 ## map
-png("solar_navigation_map.png", width=500, height=300, pointsize=12)
+png("solar_navigation_map.png", width=700, height=300, pointsize=13)
 lat.hfx <- 44.65
 lon.hfx <- (-63.55274)
 par(mfrow=c(1,1))
 data(coastline.world)
-plot(coastline.world, center=c(lat.hfx, lon.hfx), span=1000)
+plot(coastline.world, center=c(lat.hfx, lon.hfx), span=700)
 ## Find lat and lon using all sunrises and sunsets
 o <- optim(c(1,1), mismatch, hessian=TRUE)
 lat <- o$par[1]
@@ -53,8 +53,9 @@ lon <- o$par[2]
 ## Indicate the spot on a map, and show the uncertainty
 lat.err <- sqrt(o$value / o$hessian[1,1]) / 2
 lon.err <- sqrt(o$value / o$hessian[2,2]) / 2
-lines(rep(lon, 2), lat + lat.err * c(-1, 1), lwd=3, col='red', lty='dotted')
-lines(lon + lon.err*c(-1, 1), rep(lat, 2), lwd=3, col='red', lty='dotted')
-points(lon.hfx, lat.hfx, pch=20, cex=3, col='blue')
-points(lon, lat, pch=19, cex=3, col='red')
-legend("topright", col=c("blue", "red"), pch=20, pt.cex=3, legend=c("Actual", "Inferred"))
+lines(rep(lon, 2), lat + lat.err * c(-1, 1), lwd=3, col='red')
+lines(lon + lon.err*c(-1, 1), rep(lat, 2), lwd=3, col='red')
+points(lon.hfx, lat.hfx, pch=0, cex=2, col='blue', lwd=2)
+points(lon, lat, pch=1, cex=2, col='red', lwd=2)
+legend("topright", col=c("blue", "red"), pch=c(0,1), pt.cex=2,
+       legend=c("Actual", "Inferred"))
