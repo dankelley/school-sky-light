@@ -3,8 +3,9 @@ if (!interactive())
     png("solar_navigation_timeseries.png", width=800, height=300, pointsize=12)
 mismatch <- function(latlon) 
 {
-    sun.angle(rise, latlon[1], latlon[2])$elevation^2 +
-    sun.angle(set, latlon[1], latlon[2])$elevation^2
+    ##cat(sprintf("%.2f %.2f\n", latlon[1], latlon[2]))
+    sum(sun.angle(rises, latlon[1], latlon[2])$elevation^2) +
+    sum(sun.angle(sets, latlon[1], latlon[2])$elevation^2)
 }
 
 hfx.sun.angle <- function(t) sun.angle(t, lat=44+39/60, lon=-(63+36/60))$elevation
@@ -20,33 +21,18 @@ dn <- smooth(as.numeric((light.smoothed - light.floor) > 1))
 lines(time, light.floor, col='blue', lty='dashed')
 rises <- time[which(diff(dn) > 0)]
 sets <- time[which(diff(dn) < 0)]
-## Trim false starts
+## Trim false starts, and then pair up rises and sets
 if (rises[1] > sets[1])
     sets <- sets[-1]
-## Only consider 'rises' and 'sets' in pairs
 nrises <- length(rises)
 if (length(sets) < nrises)
     rises <- rises[1:length(sets)]
 if (length(sets) > nrises)
     sets <- sets[1:nrises]
 nrises <- length(rises)
+## Indicate on the graph
 rug(rises, col='red', lwd=4)
 rug(sets, col='blue', lwd=4)
-## Distances
-lat.hfx <- 44.65
-lon.hfx <- (-63.55274)
-lats <- NULL
-lons <- NULL
-for (i in 1:nrises) {
-    rise <- rises[i] + 0*4*3600
-    set <- sets[i] + 0*4*3600
-    result <- optim(c(1,1), mismatch)
-    dist <- geod.dist(result$par[1], result$par[2], lat.hfx, lon.hfx)
-    lats <- c(lats, result$par[1])
-    lons <- c(lons, result$par[2])
-    cat(i, nrises, format(rise), format(set), dist, "\n")
-}
-
 legend("topleft", lwd=c(1, 1, 1, 1), 
        col=c("black", "blue", "red", "blue"),
        lty=c("solid", "dashed", "solid", "solid"),
@@ -57,12 +43,21 @@ dev.off()
 ## map
 if (!interactive())
     png("solar_navigation_map.png", width=800, height=600, pointsize=12)
+lat.hfx <- 44.65
+lon.hfx <- (-63.55274)
 par(mfrow=c(1,1))
 data(coastline.world)
-plot(coastline.world, center=c(lat.hfx, lon.hfx), span=3000)
-points(lons, lats, pch=21, cex=2, bg='white', col='blue', lwd=5)
-set <- mean(sets)
-rise <- mean(rises)
-overall <- optim(c(1,1), mismatch)$par
-points(overall[2], overall[1], cex=4, bg="white", col='red', lwd=5)
-
+plot(coastline.world, center=c(lat.hfx, lon.hfx), span=1000, debug=3)
+## Find lat and lon using all sunrises and sunsets
+o <- optim(c(1,1), mismatch, hessian=TRUE)
+lat <- o$par[1]
+lon <- o$par[2]
+## Indicate the spot on a map, and show the uncertainty
+lat.err <- sqrt(o$value / o$hessian[1,1]) / 2
+lon.err <- sqrt(o$value / o$hessian[2,2]) / 2
+lines(rep(lon, 2), lat + lat.err * c(-1, 1), lwd=3, col='red', lty='dotted')
+lines(lon + lon.err*c(-1, 1), rep(lat, 2), lwd=3, col='red', lty='dotted')
+points(lon.hfx, lat.hfx, pch=20, cex=3, col='blue')
+points(lon, lat, pch=19, cex=3, col='red')
+legend("topright", col=c("blue", "red"), pch=20, pt.cex=3, legend=c("Actual", "Inferred"))
+print(par('mar'))
