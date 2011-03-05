@@ -45,10 +45,12 @@ echo '
 
         <p> <img src="code/solar_navigation_timeseries.png" alt="solar_navigation_timeseries.png"/> </p>
 
-        <p>The graph shown above is the result of early tests with detection of 
-        sunrise and sunset times.  Students could use these times to infer the 
-        location of the observation, as illustrated below.  Both graphs are 
-        made by an R script called <a href="code/solar_navigation.R">solar_navigation.R</a>.</p>
+        <p>The graph shown above is the result of early tests with automatic 
+        detection of sunrise and sunset times.  The graph shown below indicates 
+        the observation location in Halifax, Nova Scotia, along with an 
+        inference of that location based on sunrise and sunset times.  Both 
+        graphs are made by an R script called <a 
+            href="code/solar_navigation.R">solar_navigation.R</a>.</p>
 
         <p> <img src="code/solar_navigation_map.png" alt="solar_navigation_map.png"/> </p>
 
