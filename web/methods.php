@@ -1,4 +1,4 @@
-<!-- vim:set spell filetype=html: -->
+<!-- vim:set spell filetype=php: -->
 <p>
 <b>Development.</b> This project is developed in the open on <a 
 href="http://github.com/dankelley/school-sky-light/">github.com</a>.

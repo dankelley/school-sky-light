@@ -1,4 +1,4 @@
-<!-- vim:set spell filetype=html: -->
+<!-- vim:set spell filetype=php: -->
 <p>Despite modern weather forecasts, we still use sky brightness as a predictor
 of local weather. Everyone knows that the sky darkens in the minutes before a
 summer-afternoon downpour.  And the slower arrival of fronts is heralded by
