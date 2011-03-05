@@ -1,72 +1,60 @@
 library(oce)
-if (!interactive())
-    png("solar_navigation_timeseries.png", width=800, height=300, pointsize=12)
-
+png("solar_navigation_timeseries.png", width=800, height=300, pointsize=12)
 mismatch <- function(latlon) 
 {
-    sun.angle(rise, latlon[1], latlon[2])$elevation^2 + sun.angle(set, latlon[1], latlon[2])$elevation^2
+    ##cat(sprintf("%.2f %.2f\n", latlon[1], latlon[2]))
+    sum(sun.angle(rises, latlon[1], latlon[2])$elevation^2) +
+    sum(sun.angle(sets, latlon[1], latlon[2])$elevation^2)
 }
 
 hfx.sun.angle <- function(t) sun.angle(t, lat=44+39/60, lon=-(63+36/60))$elevation
 d <- read.table("http://emit.phys.ocean.dal.ca/~kelley/skynet/skynet-01.dat", header=FALSE)
-#d <- read.table("../skynet-01.dat", header=FALSE)
+##d <- read.table("../skynet-01.dat", header=FALSE)
 time <- as.POSIXct(paste(d$V1, d$V2), tz="UTC") + 4 * 3600
 light <- (100*(1023-d$V3)/1023)
-## FIXME: The nighttime level changed on March 1 (for reasons unknown), so the 
-## FIXME: best 'dark' in the beginning is 1/2, but later it needs to be 3 or so.
-## FIXME: We need a runmin() function.  Would that be hard to implement in oce?
-dark <- 2
-light.smoothed <- supsmu(time, light, span=5/length(light))$y
-sunrise.inferred <- time[which(diff(light.smoothed > dark) == 1)]
-print(sunrise.inferred)
-sunset.inferred <- time[which(diff(light.smoothed > dark) == -1)]
-print(sunset.inferred)
-if (sunrise.inferred[1] > sunset.inferred[1])
-    sunrise <- sunrise[-1]
-ndays <- min(length(sunrise.inferred), length(sunset.inferred))
-sunrise.inferred <- sunrise.inferred[1:ndays]
-sunset.inferred <- sunset.inferred[1:ndays]
 oce.plot.ts(time, light, ylab="Light intensity (percent)", ylim=c(0, 100))
-rug(sunrise.inferred, side=1, col='red', lty='dotted')
-rug(sunset.inferred, side=1, col='blue', lty='dotted')
-tr <- range(time)
-days <- seq(trunc(tr[1], "days"), trunc(tr[2]+86400), "days")
-
-## Distances
-lat.hfx <- 44.65
-lon.hfx <- (-63.55274)
-lats <- NULL
-lons <- NULL
-for (day in 1:ndays) {
-    rise <- sunrise.inferred[day] + 0*4*3600
-    set <- sunset.inferred[day] + 0*4*3600
-    result <- optim(c(1,1), mismatch)
-    dist <- geod.dist(result$par[1], result$par[2], lat.hfx, lon.hfx)
-    lats <- c(lats, result$par[1])
-    lons <- c(lons, result$par[2])
-    print(dist)
-}
-
-for (day in days) {
-    result <- optim(c(1,1), mismatch)
-    sunrise <- oce.bisect(hfx.sun.angle, day, day + 12 * 3600)
-    #abline(v=number.as.POSIXct(sunrise), col='red')
-    sunset <- oce.bisect(hfx.sun.angle, day + 12*3600, day + 24 * 3600)
-    #abline(v=number.as.POSIXct(sunset), col='blue')
-}
-legend("topleft", lwd=c(1, 1, 1, 1),
-       col=c("black", "red", "red", "blue", "blue"),
-       lty=c("solid", "dotted", "solid", "dotted", "solid"),
-       legend=c("Observed", "Sunrise [inferred]", "Sunrise [theoretical]", "Sunset [inferred]", "Sunset [theoretical]"),
+light.smoothed <- kernapply(light, kernel("daniell", 3), circular=TRUE)
+dim.light <- ifelse(light.smoothed < 5, light, runif(length(light), 0, 5))
+light.floor <- runmed(dim.light, k=25*60+1)
+dn <- smooth(as.numeric((light.smoothed - light.floor) > 1))
+lines(time, light.floor, col='blue', lty='dashed')
+rises <- time[which(diff(dn) > 0)]
+sets <- time[which(diff(dn) < 0)]
+## Trim false starts, and then pair up rises and sets
+if (rises[1] > sets[1])
+    sets <- sets[-1]
+nrises <- length(rises)
+if (length(sets) < nrises)
+    rises <- rises[1:length(sets)]
+if (length(sets) > nrises)
+    sets <- sets[1:nrises]
+nrises <- length(rises)
+## Indicate on the graph
+rug(rises, col='red', lwd=4)
+rug(sets, col='blue', lwd=4)
+legend("topleft", lwd=c(1, 1, 1, 1), 
+       col=c("black", "blue", "red", "blue"),
+       lty=c("solid", "dashed", "solid", "solid"),
+       legend=c("Observed", "Dark level", "Sunrise", "Sunset"),
        cex=3/4, bg="white")
-stop('test')
 dev.off()
 
 ## map
-if (!interactive())
-    png("solar_navigation_map.png", width=800, height=800, pointsize=12)
+png("solar_navigation_map.png", width=800, height=600, pointsize=12)
+lat.hfx <- 44.65
+lon.hfx <- (-63.55274)
 par(mfrow=c(1,1))
 data(coastline.world)
-plot(coastline.world, center=c(lat.hfx, lon.hfx), span=5000)
-points(lons, lats, pch=21, cex=2, bg='white', lwd=5)
-
+plot(coastline.world, center=c(lat.hfx, lon.hfx), span=1000, debug=3)
+## Find lat and lon using all sunrises and sunsets
+o <- optim(c(1,1), mismatch, hessian=TRUE)
+lat <- o$par[1]
+lon <- o$par[2]
+## Indicate the spot on a map, and show the uncertainty
+lat.err <- sqrt(o$value / o$hessian[1,1]) / 2
+lon.err <- sqrt(o$value / o$hessian[2,2]) / 2
+lines(rep(lon, 2), lat + lat.err * c(-1, 1), lwd=3, col='red', lty='dotted')
+lines(lon + lon.err*c(-1, 1), rep(lat, 2), lwd=3, col='red', lty='dotted')
+points(lon.hfx, lat.hfx, pch=20, cex=3, col='blue')
+points(lon, lat, pch=19, cex=3, col='red')
+legend("topright", col=c("blue", "red"), pch=20, pt.cex=3, legend=c("Actual", "Inferred"))
