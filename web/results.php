@@ -24,6 +24,8 @@ if ("$subtab" == "weather") {
         placed on a desk, pointing upwards, and shaded from direct sunlight.  The 
         graph is made by an R script called <a href="code/weather.R">weather.R</a>.</p>
 
+        <p>The light blue trace indicates atmospheric pressure, represented on a different scale.</p>
+
         <p>Unsettled days are typified by rapid variations in light intensity.  
         This was the case early on February 24th, but around noon, the sky 
         cleared up for the rest of the day.  February 25th was stormy, and this 
