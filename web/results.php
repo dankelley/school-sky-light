@@ -36,9 +36,8 @@ if ("$subtab" == "weather") {
         sensor pointing out a window, or on a roof.)</p>
 
         <p>The (experimental) graph below is an image of light intensity, 
-        created by the R script <a 
-        href="code/weather_image.R">weather_image.R</a>, which is updated 
-        daily.</p>
+        created daily by the R script <a 
+        href="code/weather_image.R">weather_image.R</a>.</p>
 
         <p><img src="code/weather_image.png" alt="weather_image.png"/></p>
         ';
