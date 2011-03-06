@@ -17,7 +17,7 @@ if ("$subtab" == "weather") {
         <a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
         </p>';
     echo '<h1>Weather</h1>
-        <p><img src="code/plot.png" alt="plot"/></p>
+        <p><img src="code/weather.png" alt="weather.png"/></p>
         <p>The graph shown above indicates temporal variation of light intensity in 
         an office in Halifax, Nova Scotia, updated at 10-minute intervals based on 
         1-minute averages of data measured at 10-second intervals.  The sensor is
