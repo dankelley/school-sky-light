@@ -57,7 +57,8 @@ if ("$subtab" == "solar_navigation") {
         the observation location in Halifax, Nova Scotia, along with an 
         inference of that location based on sunrise and sunset times.  Both 
         graphs are made by an R script called <a 
-        href="code/solar_navigation.R">solar_navigation.R</a>.</p>
+        href="code/solar_navigation.R">solar_navigation.R</a>, which is 
+        run twice per day.</p>
 
         <p> <img src="code/solar_navigation_map.png" 
         alt="solar_navigation_map.png"/> </p>';
