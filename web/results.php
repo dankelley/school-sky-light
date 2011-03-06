@@ -30,14 +30,18 @@ if ("$subtab" == "weather") {
         This was the case early on February 24th, but around noon, the sky 
         cleared up for the rest of the day.  February 25th was stormy, and this 
         can be seen in both in the rapid variations in light intensity and in 
-        the low intensity, overall.  Students might enjoy consulting graphs of 
-        this sort, updated daily, and noting any relationship to observed 
-        weather.</p>
+        the low intensity, overall.  (The periods of constant and high light 
+        level indicate times when the the lights are turned on in the office.  
+        This is an anomaly that will not cause problems in designs with the 
+        sensor pointing out a window, or on a roof.)</p>
 
-        <p>(The sharp transitions to light levels of approximately 80% result 
-        when the lights are turned on in the office.  This is an anomaly that 
-        will not cause problems in designs with the sensor pointing out a 
-        window, or on a roof.)</p>';
+        <p>The (experimental) graph below is an image of light intensity, 
+        created by the R script <a 
+        href="code/weather_image.R">weather_image.R</a>, which is updated 
+        daily.</p>
+
+        <p><img src="code/weather_image.png" alt="weather_image.png"/></p>
+        ';
 } 
 
 if ("$subtab" == "solar_navigation") {
