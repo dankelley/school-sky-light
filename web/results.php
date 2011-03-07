@@ -16,27 +16,19 @@ if ("$subtab" == "weather") {
         <a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a> |
         <a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
         </p>';
-    echo '<h1>Weather</h1>
-        <p><img src="code/weather.png" alt="weather.png"/></p>
-        <p>The graph shown above indicates temporal variation of light intensity in 
-        an office in Halifax, Nova Scotia, updated at 10-minute intervals based on 
-        1-minute averages of data measured at 10-second intervals.  The sensor is
-        placed on a desk, pointing upwards, and shaded from direct sunlight.  The 
-        graph is made by an R script called <a href="code/weather.R">weather.R</a>.</p>
-
-        <p>The light blue trace indicates atmospheric pressure, represented on a different scale.</p>
-
-        <p>Unsettled days are typified by rapid variations in light intensity.  
-        This was the case early on February 24th, but around noon, the sky 
-        cleared up for the rest of the day.  February 25th was stormy, and this 
-        can be seen in both in the rapid variations in light intensity and in 
-        the low intensity, overall.  (The periods of constant and high light 
-        level indicate times when the the lights are turned on in the office.  
-        This is an anomaly that will not cause problems in designs with the 
-        sensor pointing out a window, or on a roof.)</p>
-
-        <p>The (experimental) graph below is an image of light intensity, 
-        created daily by the R script <a 
+    echo '<h1>Weather</h1> <p><img src="code/weather.png" 
+        alt="weather.png"/></p> <p>The graph shown above indicates temporal 
+        variation of light intensity in an office in Halifax, Nova Scotia.  The 
+        graph is made by an R script called <a 
+        href="code/weather.R">weather.R</a>, which is run every 10 minutes, 
+        using data mesured every 10 seconds and formed into 1-minute averages.  
+        The sensor is placed on a desk, pointing upwards, and shaded from 
+        direct sunlight.  The (rare) use of lights in the office is indicated 
+        by near-constant light levels of 80 percent.  The light blue trace 
+        indicates atmospheric pressure, represented on a different scale.
+        Unsettled weather is typified by low and rapidly-varying light levels.
+        These patterns are also shown in the image below, which is updated daily using 
+        the R script <a 
         href="code/weather_image.R">weather_image.R</a>.</p>
 
         <p><img src="code/weather_image.png" alt="weather_image.png"/></p>

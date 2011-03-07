@@ -1,5 +1,5 @@
 library(oce)
-png("solar_navigation_timeseries.png", width=700, height=300, pointsize=13)
+png("solar_navigation_timeseries.png", width=700, height=200, pointsize=13)
 mismatch <- function(latlon) 
 {
     ##cat(sprintf("%.2f %.2f\n", latlon[1], latlon[2]))
@@ -17,7 +17,7 @@ light.smoothed <- kernapply(light, kernel("daniell", 3), circular=TRUE)
 dim.light <- ifelse(light.smoothed < 5, light, runif(length(light), 0, 5))
 light.floor <- runmed(dim.light, k=25*60+1)
 dn <- smooth(as.numeric((light.smoothed - light.floor) > 1))
-lines(time, light.floor, col='blue', lty='dashed')
+##lines(time, light.floor, col='blue', lty='dashed')
 rises <- time[which(diff(dn) > 0)]
 sets <- time[which(diff(dn) < 0)]
 ## Trim false starts, and then pair up rises and sets
@@ -32,10 +32,9 @@ nrises <- length(rises)
 ## Indicate on the graph
 rug(rises, col='red', lwd=4)
 rug(sets, col='blue', lwd=4)
-legend("topleft", lwd=c(1, 1, 1, 1), 
-       col=c("black", "blue", "red", "blue"),
-       lty=c("solid", "dashed", "solid", "solid"),
-       legend=c("Observed", "Dark level", "Sunrise", "Sunset"),
+legend("topleft", lwd=c(1, 1, 1), 
+       col=c("black", "red", "blue"),
+       legend=c("Observed", "Sunrise", "Sunset"),
        cex=3/4, bg="white")
 dev.off()
 
