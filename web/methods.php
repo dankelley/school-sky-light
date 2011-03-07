@@ -12,8 +12,12 @@ The logging computer also creates the graphs shown on this website at regular in
 
 <p> <b>Data.</b> There are two sensors working at the moment, <a
     href="skynet-01.dat">skynet-01.dat</a> and <a
-    href="skynet-02.dat">skynet-02.dat</a>.
+    href="skynet-02.dat">skynet-02.dat</a>.  An image of them, and their connected micro-controllers, is below.
+Note that one is more shaded than another, at the particular moment of the photo; the shading changes through the hours 
+of the day.
+<img src="images/sensors_phase1.jpg" alt="sensors_phase1"/>
 </p>
+
 
 <p>
 <b>Development.</b> This project is developed in the open on <a 
