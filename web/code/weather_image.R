@@ -8,7 +8,7 @@ light.g <- approx(time, light, time.g, rule=2)$y
 days <- floor(length(light.g)/24/60)
 data.per.day <- 24 * 60
 light.m <- matrix(light.g[1:(days*data.per.day)], ncol=86400/60, byrow=TRUE)
-png("weather_image.png", width=700, height=300, pointsize=13)
+png("weather_image.png", width=700, height=200, pointsize=13)
 imagep(1:days, (1:data.per.day)/60, light.m, xlab="", ylab="Hour", draw.contour=FALSE, col=oce.colors.jet, axes=FALSE)
 axis(2)
 usr <- par('usr')
