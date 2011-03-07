@@ -17,16 +17,17 @@ lines(t2, light2, xlim=tlim, ylim=c(0,100), col='red')
 lines(t2, light2, col='red')
 dev.off()
 
-png("calibration.png", width=600, height=600, pointsize=12)
+png("calibration.png", width=400, height=400, pointsize=12)
 par(mar=c(3,3,2,2))
 light1i <- approx(as.numeric(t1), light1, as.numeric(t2))$y
 ok <- !is.na(light1i) & !is.na(light2)
 light1i <- light1i[ok]
 light2 <- light2[ok]
-plot(light1i, light2, xlab="skynet-0 1", ylab="skynet-0 2", asp=1)
+#plot(light1i, light2, xlab="skynet-0 1", ylab="skynet-0 2", asp=1)
+smoothScatter(light1i, light2, xlab="skynet-0 1", ylab="skynet-0 2", asp=1)
 m <- lm(light2~light1i + I(light1i^2))
 xx <- seq(min(light1i), max(light1i), length.out=100)
-lines(xx, predict(m, list(light1i=xx)), col='blue', lwd=2)
+lines(xx, predict(m, list(light1i=xx)), col='red', lwd=2)
 c <- coef(m)
 title(sprintf("skynet-02 = %.0g + %.3g * skynet-01 + %.3g * skynet-01^2", c[1], c[2], c[3]))
 

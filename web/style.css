@@ -9,11 +9,14 @@ HTML, BODY {
     font-variant:normal;
     font-weight:normal;
     line-height:1.4em;
-    margin: 0;
-    padding: 0;
+    margin: 0 px;
 }
 
-p { margin-bottom: 12px; margin-left: 10px;}
+p  {
+    margin-bottom: 12px;
+    margin-left: 0.8em;
+    margin-right: 0.8em;
+}
 
 .footer {
     clear: both;
@@ -63,9 +66,6 @@ h2 {
 h3 { font-weight: bold; font-size: 1em; line-height: 18px; margin-left: 10px;}
 h4 { font-weight: bold; font-size: 10px; line-height: 18px; margin-left: 10px;}
 
-P  {
-    margin-left: 0.8em;
-}
 .submenu {
     bottom:10px;
     right:0px;
