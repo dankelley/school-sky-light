@@ -67,52 +67,39 @@ h3 { font-weight: bold; font-size: 1em; line-height: 18px; margin-left: 10px;}
 h4 { font-weight: bold; font-size: 10px; line-height: 18px; margin-left: 10px;}
 
 .submenu {
+    font-size: 10px;
     bottom:10px;
+    font-weight: bold;
     right:0px;
     float:right;
     margin-top: 0;
-    padding-right: 10px;
+    padding-right: 1px;
+    padding-left: 1px;
     clear:both;
-    background:url('images/underlay-light.png') repeat right top;
+    background:#999;
 }
 .submenu ul {
     margin:0;
-    padding:1px 10px 0px 3px; /*top right bottom left*/
+    padding:1px 1px 1px 1px; /*top right bottom left*/
     list-style:none;
-    background:url('images/underlay-light.png') repeat right top;
     clear:both;
     height: 20px;
 }
 .submenu li {
-    /* border: 1px solid #ccc;*/
-    /* background:#eee;*/
-    /* display:inline;*/
     float:left;
-    margin:0;
-    /* margin:0px 0px 2px 2px; /*top right bottom left*/
-    padding:0px 5px 0px 5px; /*top right bottom left*/
-    background:url('images/underlay-dark.png') repeat right top;
-    /* background:url('images/tab_off_ns1.png') no-repeat left top;*/
-    /* padding:0 0 0 0px; */
+    text-decoration:none;
+    margin:0px 1px 0px 1px;
+    padding:0px 1px 0px 1px; /*top right bottom left*/
 }
 .submenu ul li a {
     float:left;
-    font-size:0.8em;
-    padding:0px 5px 0px 5px;
-    /* margin: 0px 2px 0px 2px; /*top right bottom left*/
-    /* background:#eee;*/
     text-decoration:none;
-    font-weight: bold;
-    color: #666;
-    background-color: #00ccee;
-    /* padding:2px;*/
-    background:url('images/underlay-dark.png'); /* repeat right top;*/
+    color: black;
+    background-color: #e5e0d0;
 }
 
 .submenu #current, .submenu #current a {
-    background:url('images/underlay-light.png');
-    color: black;
-    background-color: white;
+    background-color: #fbfbf9;
 }
 
 .query {font-family: Lucidatypewriter,monospace; color: black; background-color: #FFFFCC}

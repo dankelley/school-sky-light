@@ -3,25 +3,22 @@
 parse_str($_SERVER['QUERY_STRING']);
 
 if ("$subtab" == "") {
-    echo '<p>
-         <a href="?tab=results&amp;subtab=weather">Weather</a> |
-         <a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a> |
-         <a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
-        </p>';
-    if (0) echo '<div class="submenu">
+    echo '<div class="submenu">
         <ul>
-        <li> <a href="?tab=results&amp;subtab=weather">Weather</a> |
-        <li> <a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a> |
+        <li> <a href="?tab=results&amp;subtab=weather">Weather</a>
+        <li> <a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a>
         <li> <a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
-        </ul>';
+        </ul></div>';
+    echo '<p>Select a sub-menu (above left), to see results.</p>';
 }
 
 if ("$subtab" == "weather") {
-    echo '<p>
-        Weather | 
-        <a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a> |
-        <a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
-        </p>';
+    echo '<div class="submenu">
+        <ul>
+        <li id=current> <a href="?tab=results&amp;subtab=weather">Weather</a>
+        <li> <a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a>
+        <li> <a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
+        </ul></div>';
     echo '<h1>Weather</h1> <p><img src="code/weather.png" 
         alt="weather.png"/></p> <p>The graph shown above indicates temporal 
         variation of light intensity in an office in Halifax, Nova Scotia.  The 
@@ -42,12 +39,12 @@ if ("$subtab" == "weather") {
 } 
 
 if ("$subtab" == "solar_navigation") {
-    echo '<p>
-        <a href="?tab=results&amp;subtab=weather">Weather</a> | 
-        Solar Navigation |
-        <a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
-        </p>';
-
+     echo '<div class="submenu">
+        <ul>
+        <li> <a href="?tab=results&amp;subtab=weather">Weather</a>
+        <li id=current> <a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a>
+        <li> <a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
+        </ul></div>';
     echo '<h1>Solar Navigation</h1>
 
         <p> <img src="code/solar_navigation_timeseries.png" 
@@ -66,10 +63,12 @@ if ("$subtab" == "solar_navigation") {
 }
 
 if ("$subtab" == "sensor_calibration") {
-    echo '<p>
-        <a href="?tab=results&amp;subtab=weather">Weather</a> | 
-        <a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a> |
-        Sensor Calibration </p>';
+     echo '<div class="submenu">
+        <ul>
+        <li><a href="?tab=results&amp;subtab=weather">Weather</a>
+        <li><a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a>
+        <li id=current><a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
+        </ul></div>';
     echo '<h1>Sensor Calibration</h1>
 
         <p> The graph below shows a calibration between two sensors placed near 
