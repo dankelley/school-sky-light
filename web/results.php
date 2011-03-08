@@ -4,10 +4,16 @@ parse_str($_SERVER['QUERY_STRING']);
 
 if ("$subtab" == "") {
     echo '<p>
-        <a href="?tab=results&amp;subtab=weather">Weather</a> |
-        <a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a> |
-        <a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
+         <a href="?tab=results&amp;subtab=weather">Weather</a> |
+         <a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a> |
+         <a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
         </p>';
+    if (0) echo '<div class="submenu">
+        <ul>
+        <li> <a href="?tab=results&amp;subtab=weather">Weather</a> |
+        <li> <a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a> |
+        <li> <a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
+        </ul>';
 }
 
 if ("$subtab" == "weather") {
@@ -27,9 +33,8 @@ if ("$subtab" == "weather") {
         by near-constant light levels of 80 percent.  The light blue trace 
         indicates atmospheric pressure, represented on a different scale.
         Unsettled weather is typified by low and rapidly-varying light levels.
-        These patterns are also shown in the image below, which is updated daily using 
-        the R script <a 
-        href="code/weather_image.R">weather_image.R</a>.</p>
+        These patterns are also seen in the image below, which is created with 
+        the R script <a href="code/weather_image.R">weather_image.R</a>.</p>
 
         <p><img src="code/weather_image.png" alt="weather_image.png"/></p>
         ';
