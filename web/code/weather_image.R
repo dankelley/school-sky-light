@@ -7,8 +7,9 @@ light.g <- approx(time, light, time.g, rule=1)$y
 days <- floor(length(light.g)/24/60)
 data.per.day <- 24 * 60
 light.m <- matrix(light.g[1:(days*data.per.day)], ncol=86400/60, byrow=TRUE)
-png("weather_image.png", width=700, height=200, pointsize=13)
+png("weather_image.png", width=700, height=250, pointsize=13)
 time.axis <- as.POSIXct(seq.POSIXt(min(time.g), min(time.g)+(days-1)*86400, by="day"))
-imagep(time.axis, (1:data.per.day)/60, light.m, xlab="", ylab="Hour", draw.contour=FALSE, col=oce.colors.jet)
+imagep(time.axis, (1:data.per.day)/60, light.m, xlab="", ylab="Hour",
+       zlab="Light Intensity (per cent)", draw.contour=FALSE, col=oce.colors.jet, draw.time.range=FALSE)
 dev.off()
 

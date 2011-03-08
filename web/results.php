@@ -30,11 +30,12 @@ if ("$subtab" == "weather") {
         using data mesured every 10 seconds and formed into 1-minute averages.  
         The sensor is placed on a desk, pointing upwards, and shaded from 
         direct sunlight.  The (rare) use of lights in the office is indicated 
-        by near-constant light levels of 80 percent.  The light blue trace 
-        indicates atmospheric pressure, represented on a different scale.
-        Unsettled weather is typified by low and rapidly-varying light levels.
-        These patterns are also seen in the image below, which is created with 
-        the R script <a href="code/weather_image.R">weather_image.R</a>.</p>
+        by near-constant light levels of 80 percent.  The blue curve 
+        is atmospheric pressure (from Environment Canada), on a different 
+        scale.  Note that unsettled weather is typified by low and 
+        rapidly-varying light levels.  These patterns are also seen in the 
+        image below, which is created with the R script <a 
+        href="code/weather_image.R">weather_image.R</a>.</p>
 
         <p><img src="code/weather_image.png" alt="weather_image.png"/></p>
         ';

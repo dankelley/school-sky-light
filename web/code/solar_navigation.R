@@ -1,5 +1,5 @@
 library(oce)
-png("solar_navigation_timeseries.png", width=700, height=200, pointsize=13)
+png("solar_navigation_timeseries.png", width=700, height=250, pointsize=13)
 mismatch <- function(latlon) 
 {
     ##cat(sprintf("%.2f %.2f\n", latlon[1], latlon[2]))
@@ -12,8 +12,8 @@ hfx.sun.angle <- function(t) sun.angle(t, lat=44+39/60, lon=-(63+36/60))$elevati
 d <- read.table("../skynet-01.dat", header=FALSE)
 time <- as.POSIXct(paste(d$V1, d$V2), tz="UTC") + 4 * 3600
 light <- (100*(1023-d$V3)/1023)
-oce.plot.ts(time, light, ylab="Light intensity (percent)", ylim=c(0, 100))
-light.smoothed <- kernapply(light, kernel("daniell", 3), circular=TRUE)
+light.smoothed <- smooth(light)        #kernapply(as.numeric(runmed(light, k=3)), kernel("daniell", 2), circular=TRUE)
+oce.plot.ts(time, light.smoothed, ylab="Smoothed light intensity (percent)", ylim=c(0, 100))
 dim.light <- ifelse(light.smoothed < 5, light, runif(length(light), 0, 5))
 light.floor <- runmed(dim.light, k=25*60+1)
 dn <- smooth(as.numeric((light.smoothed - light.floor) > 1))
