@@ -3,8 +3,8 @@ png("solar_navigation_timeseries.png", width=700, height=250, pointsize=13)
 mismatch <- function(latlon) 
 {
     ##cat(sprintf("%.2f %.2f\n", latlon[1], latlon[2]))
-    sum(sun.angle(rises, latlon[1], latlon[2])$elevation^2) +
-    sum(sun.angle(sets, latlon[1], latlon[2])$elevation^2)
+    0.5 * (mean(sun.angle(rises, latlon[1], latlon[2])$elevation^2) +
+           mean(sun.angle(sets, latlon[1], latlon[2])$elevation^2))
 }
 
 hfx.sun.angle <- function(t) sun.angle(t, lat=44+39/60, lon=-(63+36/60))$elevation

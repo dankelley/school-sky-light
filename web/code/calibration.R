@@ -29,5 +29,5 @@ m <- lm(light2~light1i + I(light1i^2))
 xx <- seq(min(light1i), max(light1i), length.out=100)
 lines(xx, predict(m, list(light1i=xx)), col='red', lwd=2)
 c <- coef(m)
-title(sprintf("skynet-02 = %.0g + %.3g * skynet-01 + %.3g * skynet-01^2", c[1], c[2], c[3]))
+title(sprintf("s2 = %.0g + %.2g * s1 + %.2g * s1^2", c[1], c[2], c[3]), cex=3/4)
 
