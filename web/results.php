@@ -59,9 +59,8 @@ if ("$subtab" == "solar_navigation") {
         inference of that location based on sunrise and sunset times.  Both 
         graphs are made by an R script called <a 
         href="code/solar_navigation.R">solar_navigation.R</a>, which is 
-        run twice per day.</p>
-        
-        <p>NOTE: the graph is not showing an inferred location lately, because of a problem in the computing method relating to the recent time change.  I will probably fix this over the upcoming weekend.  2011-03-25 DEK.</p>
+        run twice per day.
+        (NOTE: the graph is not showing an inferred location lately, because of a problem in the computing method relating to the recent time change.  I will probably fix this over the upcoming weekend.  2011-03-25 DEK.)</p>
 
 
         <p> <img src="code/solar_navigation_map.png" 
