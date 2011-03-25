@@ -9,7 +9,7 @@ if ("$subtab" == "") {
         <li> <a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a>
         <li> <a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
         </ul></div>';
-    echo '<p>Select a sub-menu (above left), to see results.</p>';
+    echo '<p>Select a sub-menu (top-right of this page, below the main menus), to see results.</p>';
 }
 
 if ("$subtab" == "weather") {
