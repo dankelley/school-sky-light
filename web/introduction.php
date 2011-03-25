@@ -1,12 +1,11 @@
 <!-- vim:set spell filetype=php: -->
-<p>Despite modern weather forecasts, we still use sky brightness as a predictor
-of local weather. Everyone knows that the sky darkens in the minutes before a
-summer-afternoon downpour.  And the slower arrival of fronts is heralded by
-slower darkening.  These are local predictions.  With a little communication,
-they could be leveraged into regional predictions.  For example, a storm moving
-up the coast of Nova Scotia will darken skies in Yarmouth a few hours before
-bad weather gets to Halifax, so it just takes a phone call to improve a
-forecast.</p>
+
+<p>
+The sky darkens in the minutes before an afternoon downpour.  Patient observers 
+will notice that the sky darkens in the hours before a front arrives.  These 
+are predictions of local weather that might be valid across a city.  Since weather moves in 
+patterns, one might wonder whether a network of sky observers might be able to
+make predictions that would be useful over larger regions, such as provinces.</p>
 
 <p>But not everyone can spend the day watching the sky and chatting on the
 phone.  The solution is to set up a network of automated light sensors.  This

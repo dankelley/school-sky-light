@@ -47,6 +47,8 @@ if ("$subtab" == "solar_navigation") {
         </ul></div>';
     echo '<h1>Solar Navigation</h1>
 
+        <p>NOTE: the graph is not showing an inferred location lately, because of a problem in the computing method relating to the recent time change.  I will probably fix this over the upcoming weekend.  2011-03-25 DEK.</p>
+
         <p> <img src="code/solar_navigation_timeseries.png" 
         alt="solar_navigation_timeseries.png"/> </p>
 
