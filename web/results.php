@@ -19,23 +19,28 @@ if ("$subtab" == "weather") {
         <li> <a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a>
         <li> <a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
         </ul></div>';
-    echo '<h1>Weather</h1> <p><img src="code/weather.png" 
-        alt="weather.png"/></p> <p>The graph shown above indicates temporal 
-        variation of light intensity in an office in Halifax, Nova Scotia.  The 
-        graph is made by an R script called <a 
-        href="code/weather.R">weather.R</a>, which is run every 10 minutes, 
-        using data mesured every 10 seconds and formed into 1-minute averages.  
-        The sensor is placed on a desk, pointing upwards, and shaded from 
-        direct sunlight.  The (rare) use of lights in the office is indicated 
-        by near-constant light levels of 80 percent.  The blue curve 
-        is atmospheric pressure (from Environment Canada), on a different 
-        scale.  Note that unsettled weather is typified by low and 
-        rapidly-varying light levels.  These patterns are also seen in the 
-        image below, which is created with the R script <a 
-        href="code/weather_image.R">weather_image.R</a>.</p>
-
-        <p><img src="code/weather_image.png" alt="weather_image.png"/></p>
-        ';
+    echo '<h1>Weather</h1>
+        <p>The graph shown below indicates temporal variation of light 
+        intensity in an office in Halifax, Nova Scotia.  The graph is made by 
+        an R script called <a href="code/weather.R">weather.R</a>, which is run 
+        every 10 minutes, using data mesured every 10 seconds and formed into 
+        1-minute averages.  The sensor is placed on a desk, pointing upwards, 
+        and shaded from direct sunlight.  The (rare) use of lights in the 
+        office is indicated by near-constant light levels of 80 percent.  The 
+        blue curve is atmospheric pressure (from Environment Canada), on a 
+        different scale.  Note that unsettled weather is typified by low and 
+        rapidly-varying light levels.</p>';
+    echo '<p><img src="code/weather.png" alt="weather.png"/></p>';
+    echo '<p>The image below shows the same data, as a function of the 
+        hour of the day and the day of the year.  It is created at a 10-minute 
+        interval with the R script <a 
+        href="code/weather_image.R">weather_image.R</a>.</p>';
+    echo '<p><img src="code/weather_image.png" alt="weather_image.png"/></p>';
+    echo '<p>The graph below highlights the time of day, with deviations from 
+        the "clock" indicating light intensity, and the colour of the lines 
+        indicating time within the whole time series.  The graph is created
+        with the R script <a href="code/light_clock.R">light_clock.R</a>.</p>';
+    echo '<p><img src="code/light_clock.png" alt="light_clock.png"/></p>';
 } 
 
 if ("$subtab" == "solar_navigation") {
