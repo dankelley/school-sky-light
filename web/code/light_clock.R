@@ -1,5 +1,5 @@
 library(oce)
-png("light_clock.png", width=700, height=700, pointsize=18)
+png("light_clock.png", width=500, height=500, pointsize=16)
 d <- read.table("../skynet-01.dat", header=FALSE)
 t <- strptime(paste(d$V1, d$V2), format='%Y-%m-%d %H:%M:%S', tz="America/Halifax")
 time <- as.POSIXct(as.numeric(t), origin="1970-01-01", tz="UTC")
