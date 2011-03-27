@@ -1,17 +1,19 @@
 library(oce)
-png("light_clock.png", width=500, height=500, pointsize=16)
 d <- read.table("../skynet-01.dat", header=FALSE)
 t <- strptime(paste(d$V1, d$V2), format='%Y-%m-%d %H:%M:%S', tz="America/Halifax")
 time <- as.POSIXct(as.numeric(t), origin="1970-01-01", tz="UTC")
 light <- (100*(1023-d$V3)/1023)
 t <- as.POSIXlt(time)
-par(mar=c(0,0,0,0))
 hour <- t$hour + t$min / 60
 light.scale <- 1 * max(light)
 r <- 1 + light / light.scale
 x <- r * sin(2*pi*hour/24)
 y <- r * cos(2*pi*hour/24)
-plot(x,y,asp=1,cex=1/3,axes=FALSE, xlab="", ylab="", col=hsv(rescale(as.numeric(time), c(0,2/3))))
+png("light_clock.png", width=500, height=500, pointsize=14)
+par(mar=c(1,1,1,1))
+drawpalette(c(0,1), zlab="Relative time within sampling period", col=oce.colors.jet)
+col <- oce.colors.jet(100)[rescale(as.numeric(time), c(1,100))]
+plot(x,y,asp=1,cex=1/3,axes=FALSE, xlab="", ylab="", col=col)
 xc <- sin(2*pi*seq(0,23,0.1)/24)
 yc <- cos(2*pi*seq(0,23,0.1)/24)
 lines(xc, yc)
