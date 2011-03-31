@@ -11,7 +11,7 @@ x <- r * sin(2*pi*hour/24)
 y <- r * cos(2*pi*hour/24)
 png("light_clock.png", width=500, height=500, pointsize=14)
 par(mar=c(1,1,1,1))
-drawpalette(c(0,1), zlab="Relative time within sampling period", col=oce.colors.jet)
+drawpalette(c(0,1), zlab="Relative sampling time", col=oce.colors.jet, top=1.5, bottom=1.5)
 col <- oce.colors.jet(100)[rescale(as.numeric(time), c(1,100))]
 plot(x,y,asp=1,cex=1/3,axes=FALSE, xlab="", ylab="", col=col)
 xc <- sin(2*pi*seq(0,23,0.1)/24)
