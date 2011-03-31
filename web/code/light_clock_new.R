@@ -11,7 +11,7 @@ light.scale <- 1 * max(light)
 r <- 1 + light / light.scale
 x <- r * sin(2*pi*hour/24)
 y <- r * cos(2*pi*hour/24)
-png("light_clock.png", width=500, height=500, pointsize=14)
+#png("light_clock.png", width=500, height=500, pointsize=14)
 par(mar=c(1,1,1,1))
 drawpalette(c(1,days), zlab="Day of sampling", col=oce.colors.jet, top=1.5, bottom=1.5)
 col <- oce.colors.jet(100)[rescale(as.numeric(time), c(1,100))]
