@@ -8,8 +8,7 @@ mismatch <- function(latlon)
 }
 
 hfx.sun.angle <- function(t) sun.angle(t, lat=44+39/60, lon=-(63+36/60))$elevation
-##d <- read.table("http://emit.phys.ocean.dal.ca/~kelley/skynet/skynet-01.dat", header=FALSE)
-d <- read.table("../skynet-01.dat", header=FALSE)
+d <- read.table("../skyview-01.dat", header=FALSE)
 ## time <- as.POSIXct(paste(d$V1, d$V2), tz="UTC") + 4 * 3600
 ## strptime is 2.5 times faster than as.POSIXct, and it matters, with weeks of data.
 t <- strptime(paste(d$V1, d$V2), format='%Y-%m-%d %H:%M:%S', tz="America/Halifax")
