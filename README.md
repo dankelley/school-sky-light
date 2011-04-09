@@ -59,7 +59,7 @@ application.
 
 ## Ideas for student work
 
-**skynet** (as above ... many subasts in web design etc)
+**skyview** (as above ... many subasts in web design etc)
 
 **navigator** use sunrise/sunset times to determine latitude and longitude, perhaps using R, with the sun.angle() function in the oce package.
 
