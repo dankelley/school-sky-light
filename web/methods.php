@@ -11,7 +11,7 @@ interfaces to this with a C program called <a href="code/msl.c">msl.c</a>.
 The logging computer also creates the graphs shown on this website at regular intervals, using the unix "cron" system.</p>
 
 <p> <b>Data.</b> There is one sensor working at the moment,
-called <a href="skyview-01.dat">skynet-01.dat</a>.
+called <a href="skyview-01.dat">skyview-01.dat</a>.
 An image of this, along with a pair that was sitting near it for a while, is
 given
 below.
