@@ -1,8 +1,7 @@
 library(oce)
 png("sunrise_sunset.png", width=800, height=300, pointsize=12)
 hfx.sun.angle <- function(t) sun.angle(t, lat=44+39/60, lon=-(63+36/60))$elevation
-##d <- read.table("http://emit.phys.ocean.dal.ca/~kelley/skynet/skynet.dat", header=FALSE)
-d <- read.table("../skynet-01.dat", header=FALSE)
+d <- read.table("../skyview-01.dat", header=FALSE)
 time <- as.POSIXct(paste(d$V1, d$V2), tz="UTC") + 4 * 3600
 time <- time
 light <- (100*(1023-d$V3)/1023)
