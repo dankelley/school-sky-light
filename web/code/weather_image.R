@@ -9,7 +9,7 @@ time.range <- range(time.g)
 days <- floor(0.5 + as.numeric(difftime(time.range[2], time.range[1], "days"))) # round for e.g. daylight-time
 data.per.day <- 86400 / deltat
 light.m <- matrix(light.g[1:(days*data.per.day)], ncol=data.per.day, byrow=TRUE)
-png("weather_image.png", width=700, height=250, pointsize=13)
+png("weather_image.png", width=900, height=400, pointsize=13)
 time.axis <- as.POSIXct(seq.POSIXt(min(time.g), min(time.g)+(days-1)*86400, by="day"))
 imagep(time.axis, (1:data.per.day)/60, light.m, xlab="", ylab="Hour",
        zlab="Light Intensity (per cent)", draw.contour=FALSE, col=oce.colors.jet, draw.time.range=FALSE)
