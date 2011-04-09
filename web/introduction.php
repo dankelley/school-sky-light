@@ -34,6 +34,6 @@ that were once the domain of the professionals.  The popularity of robot
 competitions in schools is proof that students have the ability to do this sort 
 of work, and the interest to do so.</p>
 
-<p>Over time, members of the public would start to consult SkyNet for informal 
+<p>Over time, members of the public would start to consult SkyView for informal 
 short-term local weather forecasts.  The pride that students would feel, 
 knowing that, is justification enough for the project.</p>

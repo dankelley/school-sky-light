@@ -1,5 +1,5 @@
 library(oce)
-d <- read.table('../skynet-01.dat', header=FALSE)
+d <- read.table('../skyview-01.dat', header=FALSE)
 time <- as.POSIXct(paste(d$V1, d$V2))
 light  <- 100 * (1023 - d$V3) / 1023
 time.g <- seq(trunc(time[1], "day"), 86400 + trunc(time[length(time)], "day"), by=60)

@@ -1,5 +1,5 @@
-#define arg_eg1 "10 60 /dev/tty.usbmodem5d11 /Users/kelley/Sites/skynet/skynet-01.dat"
-#define arg_eg2 "10 60 /dev/tty.usbmodem3a21 /Users/kelley/Sites/skynet/skynet-02.dat"
+#define arg_eg1 "10 60 /dev/tty.usbmodem5d11 /Users/kelley/Sites/skyview/skyview-01.dat"
+#define arg_eg2 "10 60 /dev/tty.usbmodem3a21 /Users/kelley/Sites/skyview/skyview-02.dat"
 #define debug 0
 // debug=0 for no debugging
 // debug=1 for moderate debugging, e.g. showing data before statistical reduction
