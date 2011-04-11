@@ -7,8 +7,8 @@ CREATE TABLE observations(
     light_stddev real);
 CREATE TABLE sensors(
     id integer primary key, -- use for JOIN with table 'observations'
-    latitude real,
-    longitude real,
+    latitude real, -- use negative for southern hemisphere
+    longitude real, -- use negative for western hemisphere, e.g. Canada
     direction varchar(20), -- 'east', 'west', 'north', 'south', 'northeast', etc
     name varchar(100));
 
