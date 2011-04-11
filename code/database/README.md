@@ -5,7 +5,7 @@
 **Pro.** It may be faster.  It offers ability to stream data from multiple sensors.
 
 **Con.** Dealing with a database is tricker than with a flat file, e.g. it
-can't simply be listed on a screen or in a webpage.
+cannot simply be listed on a screen or in a webpage.
 
 **Decision.** Use a database.
 
@@ -14,4 +14,5 @@ can't simply be listed on a screen or in a webpage.
 * ``create-db.sql`` creates a database, without populating it
 
 * ``test-db.R`` reads the database in R
+
 
