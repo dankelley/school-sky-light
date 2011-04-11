@@ -1,4 +1,4 @@
--- sqlite3 skyview.db < skyview-create-db.sql
+-- sqlite3 skyview.db < create-db.sql
 CREATE TABLE observations(
     id integer primary key,
     sensor int, -- used with table 'sensors'
