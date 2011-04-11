@@ -15,4 +15,5 @@ cannot simply be listed on a screen or in a webpage.
 
 * ``test-db.R`` reads the database in R
 
+* ``add-station.sql`` adds DEK office as a station
 
