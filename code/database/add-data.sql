@@ -1,3 +1,20 @@
 -- sqlite3 skyview.db < add-data.sql
-INSERT INTO observations (time,station_id,light_mean,light_stddev) VALUES("2011-04-11 15:07:00",1, 90, 1);
-
+INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES("2011-02-28 14:09:02",1,186.0,0.0);
+INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES("2011-02-28 14:10:03",1,186.8,0.4);
+INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES("2011-02-28 14:11:03",1,187.0,0.0);
+INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES("2011-02-28 14:12:04",1,187.7,0.5);
+INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES("2011-02-28 14:13:05",1,188.2,0.4);
+INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES("2011-02-28 14:14:05",1,188.3,0.5);
+INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES("2011-02-28 14:15:06",1,188.7,0.5);
+INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES("2011-02-28 14:16:07",1,189.0,0.0);
+INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES("2011-02-28 14:17:07",1,189.0,0.0);
+INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES("2011-02-28 14:18:08",1,189.3,0.5);
+INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES("2011-02-28 14:19:09",1,189.8,0.4);
+INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES("2011-02-28 14:20:09",1,189.8,0.4);
+INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES("2011-02-28 14:21:10",1,189.5,0.5);
+INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES("2011-02-28 14:22:11",1,189.3,0.5);
+INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES("2011-02-28 14:23:11",1,189.5,0.5);
+INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES("2011-02-28 14:24:12",1,190.0,0.0);
+INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES("2011-02-28 14:25:13",1,189.2,0.4);
+INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES("2011-02-28 14:26:13",1,189.0,0.0);
+INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES("2011-02-28 14:27:14",1,189.2,0.4);

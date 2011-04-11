@@ -1,6 +1,11 @@
 library(RSQLite)
+library(oce)
 m <- dbDriver("SQLite")
 con <- dbConnect(m, dbname="skyview.db")
 dbListTables(con)
-dbGetQuery(con, "select * from observations")
-
+directions <- dbGetQuery(con, "select * from directions")
+stations <- dbGetQuery(con, "select * from stations")
+observations <- dbGetQuery(con, "select * from observations")
+time <- as.POSIXct(observations$time) # timezone?
+light <- 100 * ((1023 - observations$light_mean) / 1023)
+oce.plot.ts(time, light)
