@@ -9,5 +9,6 @@ CREATE TABLE sensors(
     id integer primary key, -- use for JOIN with table 'observations'
     latitude real,
     longitude real,
+    direction varchar(20), -- 'east', 'west', 'north', 'south', 'northeast', etc
     name varchar(100));
 
