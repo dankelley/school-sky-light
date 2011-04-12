@@ -17,3 +17,15 @@ cannot simply be listed on a screen or in a webpage.
 
 * ``add-station.sql`` adds DEK office as a station
 
+## Database performance
+
+### Time
+
+``test-db.R`` can use either the flat file or the database.  The user time to
+read and plot the database was 7.6s, as compared with 8.4s for the flat file.
+**Conclusion.** the database method is 10 percent better, for speed.
+
+### Storage
+
+The flat file was 2.0M, while the database was 2.2M.  **Conclusion.** the
+flat-file method is 10 percent better, for storage.
