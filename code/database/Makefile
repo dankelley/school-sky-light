@@ -17,7 +17,7 @@ access: access.c
 	./access skyview.db 'SELECT * FROM observations'
 
 flat2db: flat2db.c
-	gcc -o flat2db -O -g flat2db.c -lsqlite3
+	gcc -o flat2db -O flat2db.c -lsqlite3
 	cp skyview.db 01.db
 	./flat2db ~/Sites/skyview/skyview-01.dat 01.db
 	
