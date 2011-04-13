@@ -2,7 +2,7 @@
 CREATE TABLE observations(
     id integer primary key,
     station_id int,
-    time datetime,
+    time int,
     light_mean real,
     light_stddev real);
 CREATE TABLE stations(
