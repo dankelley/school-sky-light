@@ -2,17 +2,6 @@
 #include <stdio.h>
 #include <time.h>
 #include <sqlite3.h>
-//2011-02-23 22:14:07 1022.0 0.0
-//2011-02-23 22:15:07 1022.0 0.0
-static int callback(void *NotUsed, int argc, char **argv, char **azColName){
-    int i;
-    for(i=0; i<argc; i++){
-        printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
-    }
-    printf("\n");
-    return 0;
-}
-
 int main(int argc, char **argv)
 {
     sqlite3 *db;
@@ -39,27 +28,27 @@ int main(int argc, char **argv)
     double light_mean, light_stddev;
     char *sql = sqlite3_malloc(1000); // FIXME: think about the length of this
     int line = 0, dots_per_line = 100;
-    int max = 10;
+    int max = -1; // set to a positive number to limit the number of data, for testing
     while (8 == fscanf(infile, "%4d-%2d-%2d %2d:%2d:%2d %lf %lf",
                 &year, &month, &day, &hour, &minute, &second, &light_mean, &light_stddev)) {
         if (!max--)
             break;
         fprintf(stderr, ".");
-        if (0 ==(++line % dots_per_line)) {
+        if (0 ==(++line % dots_per_line))
             fprintf(stderr, " %d\n", line);
-        }
-        printf("%d-%d-%d %d:%d:%d %f %f\n", year, month, day, hour, minute, second, light_mean, light_stddev);
-        struct tm* time;
-        time->tm_year = year - 1900;
-        time->tm_mon = month;
-        time->tm_mday = day;
-        time->tm_hour = hour;
-        time->tm_min = minute;
-        time->tm_sec = second;
-        fprintf(stderr, "  CHECK %s\n", asctime(time));
-        sql = sqlite3_mprintf(
-                "INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES(\"%4d-%02d-%02d %02d:%02d:%02d\",%d,%.0f,%.0f);",
-                year, month, day, hour, minute, second, 1, light_mean, light_stddev);
+        //fprintf(stderr, "%d-%d-%d %d:%d:%d %f %f\n", year, month, day, hour, minute, second, light_mean, light_stddev);
+        struct tm t;
+        t.tm_year = year - 1900;
+        t.tm_mon = month;
+        t.tm_mday = day;
+        t.tm_hour = hour;
+        t.tm_min = minute;
+        t.tm_sec = second;
+        int sec = mktime(&t);
+        //fprintf(stderr, "  CHECK %s", asctime(&t));
+        //fprintf(stderr, "  CHECK %d\n", sec);
+        sql = sqlite3_mprintf("INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES(%d,%d,%.0f,%.0f);",
+                sec, 1, light_mean, light_stddev);
         //printf("%s\n", sql);
         sqlite3_exec(db, sql, 0, 0, 0);
         if (rc != SQLITE_OK) {

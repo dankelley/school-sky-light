@@ -7,7 +7,7 @@ if (!FALSE) {
     dbListTables(con)
     library(RSQLite)
     observations <- dbGetQuery(con, "select time,light_mean from observations")
-    time <- as.POSIXct(observations$time) # timezone?
+    time <- number.as.POSIXct(observations$time) # timezone?
     light <- 100 * ((1023 - observations$light_mean) / 1023)
 } else {
     d  <- read.table("~/Sites/skyview/skyview-01.dat", header=FALSE)

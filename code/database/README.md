@@ -27,5 +27,8 @@ read and plot the database was 7.6s, as compared with 8.4s for the flat file.
 
 ### Storage
 
-The flat file was 2.0M, while the database was 2.2M.  **Conclusion.** the
-flat-file method is 10 percent better, for storage.
+*Trial 1 (datetime type for time)* The flat file was 2.0M, while the database
+was 2.2M.  **Conclusion.** the flat-file method is 10 percent better, for
+storage.
+
+*Trial 2 (integer type for time)* Flat file 2.0M, database 1.3M.
