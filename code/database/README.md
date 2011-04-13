@@ -26,9 +26,10 @@ or the database.  The user time to read and plot the database was 7.6s, as
 compared with 8.4s for the flat file.  **Conclusion.** the database method is
 10 percent better, for speed. (This on a laptop.)
 
-*Trial 2 (integer type for time)* 0.8s for database, 8.5s for flat file.
-**Conclusion.** a database is much faster.  (FIXME: this on desktop; check also
-on laptop.)
+*Trial 2 (integer type for time)* on a desktop, 0.8s for database, 8.5s for
+flat file.  On a laptop, 0.9s for database, 9.1s for flat file.
+**Conclusion.** the database storage method yields an order-of-magntitude
+improvement in time.
 
 ### Storage
 
