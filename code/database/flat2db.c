@@ -1,13 +1,16 @@
+// convert (flat) skyview*.dat file to database file
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
 #include <sqlite3.h>
+#define MONITOR
+//#define DEBUG
 int main(int argc, char **argv)
 {
     sqlite3 *db;
     char *zErrMsg = 0;
     int rc;
-    if( argc!=3 ){
+    if (argc != 3) {
         fprintf(stderr, "Usage example: %s ~/Sites/skyview/skyview-01.dat ~/Sites/skyview/skyview.db\n", argv[0]);
         exit(1);
     }
@@ -33,20 +36,23 @@ int main(int argc, char **argv)
                 &year, &month, &day, &hour, &minute, &second, &light_mean, &light_stddev)) {
         if (!max--)
             break;
-        fprintf(stderr, ".");
+#ifdef MONITOR
+        printf(".");
         if (0 ==(++line % dots_per_line))
-            fprintf(stderr, " %d\n", line);
-        //fprintf(stderr, "%d-%d-%d %d:%d:%d %f %f\n", year, month, day, hour, minute, second, light_mean, light_stddev);
+            printf(" %d\n", line);
+#endif
         struct tm t;
-        t.tm_year = year - 1900;
-        t.tm_mon = month;
+        t.tm_year = year - 1900; // year - 1900
+        t.tm_mon = month - 1; // month of year (0 - 11)
         t.tm_mday = day;
         t.tm_hour = hour;
         t.tm_min = minute;
         t.tm_sec = second;
         int sec = mktime(&t);
         //fprintf(stderr, "  CHECK %s", asctime(&t));
-        //fprintf(stderr, "  CHECK %d\n", sec);
+#ifdef DEBUG
+        printf("%d-%d-%d %d:%d:%d %f %f   %d\n", year, month, day, hour, minute, second, light_mean, light_stddev, sec);
+#endif
         sql = sqlite3_mprintf("INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES(%d,%d,%.0f,%.0f);",
                 sec, 1, light_mean, light_stddev);
         //printf("%s\n", sql);

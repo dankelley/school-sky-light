@@ -21,9 +21,14 @@ cannot simply be listed on a screen or in a webpage.
 
 ### Time
 
-``test-db.R`` can use either the flat file or the database.  The user time to
-read and plot the database was 7.6s, as compared with 8.4s for the flat file.
-**Conclusion.** the database method is 10 percent better, for speed.
+*Trial 1 (datetime type for time)* ``test-db.R`` can use either the flat file
+or the database.  The user time to read and plot the database was 7.6s, as
+compared with 8.4s for the flat file.  **Conclusion.** the database method is
+10 percent better, for speed. (This on a laptop.)
+
+*Trial 2 (integer type for time)* 0.8s for database, 8.5s for flat file.
+**Conclusion.** a database is much faster.  (FIXME: this on desktop; check also
+on laptop.)
 
 ### Storage
 
