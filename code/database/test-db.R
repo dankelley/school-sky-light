@@ -1,5 +1,5 @@
 library(oce)
-if (!FALSE) {
+if (FALSE) {
     library(RSQLite)
     m <- dbDriver("SQLite")
     ##con <- dbConnect(m, dbname="skyview.db")
