@@ -8,13 +8,14 @@ mismatch <- function(latlon)
 }
 
 hfx.sun.angle <- function(t) sun.angle(t, lat=44+39/60, lon=-(63+36/60))$elevation
-d <- read.table("../skyview-01.dat", header=FALSE)
-## time <- as.POSIXct(paste(d$V1, d$V2), tz="UTC") + 4 * 3600
-## strptime is 2.5 times faster than as.POSIXct, and it matters, with weeks of data.
-t <- strptime(paste(d$V1, d$V2), format='%Y-%m-%d %H:%M:%S', tz="America/Halifax")
-time <- as.POSIXct(as.numeric(t), origin="1970-01-01", tz="UTC")
 
-light <- (100*(1023-d$V3)/1023)
+library(RSQLite)
+m <- dbDriver("SQLite")
+con <- dbConnect(m, dbname="../skyview.db")
+observations <- dbGetQuery(con, "select time,light_mean from observations")
+time <- number.as.POSIXct(observations$time) # timezone?
+light <- 100 * ((1023 - observations$light_mean) / 1023)
+
 light.smoothed <- smooth(light)        #kernapply(as.numeric(runmed(light, k=3)), kernel("daniell", 2), circular=TRUE)
 oce.plot.ts(time, light.smoothed, ylab="Smoothed light intensity (percent)", ylim=c(0, 100))
 dim.light <- ifelse(light.smoothed < 5, light, runif(length(light), 0, 5))

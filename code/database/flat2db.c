@@ -49,14 +49,13 @@ int main(int argc, char **argv)
         t.tm_min = minute;
         t.tm_sec = second;
         int sec = mktime(&t);
-        //fprintf(stderr, "  CHECK %s", asctime(&t));
-#ifdef DEBUG
-        printf("%d-%d-%d %d:%d:%d %f %f   %d\n", year, month, day, hour, minute, second, light_mean, light_stddev, sec);
-#endif
         sql = sqlite3_mprintf("INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES(%d,%d,%.0f,%.0f);",
                 sec, 1, light_mean, light_stddev);
-        //printf("%s\n", sql);
-        sqlite3_exec(db, sql, 0, 0, 0);
+#ifdef DEBUG
+        printf("%d-%d-%d %d:%d:%d %f %f   %d\n", year, month, day, hour, minute, second, light_mean, light_stddev, sec);
+        printf("%s\n", sql);
+#endif
+        rc = sqlite3_exec(db, sql, 0, 0, 0);
         if (rc != SQLITE_OK) {
             fprintf(stderr, "SQL error: %s\n", zErrMsg);
             fprintf(stderr, "The command was '%s'\n", sql);

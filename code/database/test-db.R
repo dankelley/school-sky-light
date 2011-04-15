@@ -2,10 +2,8 @@ library(oce)
 if (FALSE) {
     library(RSQLite)
     m <- dbDriver("SQLite")
-    ##con <- dbConnect(m, dbname="skyview.db")
     con <- dbConnect(m, dbname="01.db")
     dbListTables(con)
-    library(RSQLite)
     observations <- dbGetQuery(con, "select time,light_mean from observations")
     time <- number.as.POSIXct(observations$time) # timezone?
     light <- 100 * ((1023 - observations$light_mean) / 1023)

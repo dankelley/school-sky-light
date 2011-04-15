@@ -1,9 +1,12 @@
 library(oce)
-d <- read.table("../skyview-01.dat", header=FALSE)
-t <- strptime(paste(d$V1, d$V2), format='%Y-%m-%d %H:%M:%S', tz="America/Halifax")
-time <- as.POSIXct(as.numeric(t), origin="1970-01-01", tz="UTC")
-light <- (100*(1023-d$V3)/1023)
+library(RSQLite)
+m <- dbDriver("SQLite")
+con <- dbConnect(m, dbname="../skyview.db")
+observations <- dbGetQuery(con, "select time,light_mean from observations")
+time <- number.as.POSIXct(observations$time) # timezone?
+light <- 100 * ((1023 - observations$light_mean) / 1023)
 t <- as.POSIXlt(time)
+
 rt <- range(t)
 days <- round(as.numeric(difftime(rt[2],rt[1],"days")))
 hour <- t$hour + t$min / 60
