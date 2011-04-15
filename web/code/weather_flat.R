@@ -1,10 +1,8 @@
 library(oce)
-library(RSQLite)
-m <- dbDriver("SQLite")
-con <- dbConnect(m, dbname="../skyview.db")
-observations <- dbGetQuery(con, "select time,light_mean from observations")
-t <- number.as.POSIXct(observations$time) # timezone?
-light <- 100 * ((1023 - observations$light_mean) / 1023)
+d <- read.table('../skyview-01.dat', header=FALSE)
+t <- as.POSIXct(paste(d$V1, d$V2))
+light  <- 100 * (1023 - d$V3) / 1023
+std <- d$V4
 png("weather.png", width=900, height=200, pointsize=13)
 oce.plot.ts(t, light, type='l', ylab='Light Intensity (per cent)', ylim=c(0, 100))
 load("~/pressure-halifax.rda")

@@ -1,6 +1,5 @@
-#define STATION 1
-#define arg_eg1 "10 60 /dev/tty.usbmodem5d11 /Users/kelley/Sites/skyview/skyview.db"
-#define arg_eg2 "10 60 /dev/tty.usbmodem3a21 /Users/kelley/Sites/skyview/skyview.db"
+#define arg_eg1 "10 60 /dev/tty.usbmodem5d11 /Users/kelley/Sites/skyview/skyview-01.dat"
+#define arg_eg2 "10 60 /dev/tty.usbmodem3a21 /Users/kelley/Sites/skyview/skyview-02.dat"
 #define debug 0
 // debug=0 for no debugging
 // debug=1 for moderate debugging, e.g. showing data before statistical reduction
@@ -15,36 +14,25 @@
 #include <fcntl.h>
 #include <termios.h>
 #include <math.h>
-#include <sqlite3.h>
 #define NBUF 128
 
 int main(int argc,char** argv)
 {
-    // database
-    sqlite3 *db;
-    char *zErrMsg = 0;
-    int rc;
-    char *sql = sqlite3_malloc(1000); // FIXME: think about the length of this
-    // serial
     struct termios tio;
     int tty_fd;
     fd_set rdset;
     time_t seconds;
     struct tm *timeinfo;
+
+    unsigned char c = 'D';
+    char buf[NBUF];
+    buf[NBUF - 1] = '\0'; 
+    char timeformatted[70];
+
     if (argc != 5) {
         fprintf(stderr, "Usage e.g. %s %s\n           %s %s\n", argv[0], arg_eg1, argv[0], arg_eg2);
         exit(1);
     }
-    rc = sqlite3_open(argv[4], &db);
-    if (0 != rc) {
-        fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
-        sqlite3_close(db);
-        exit(1);
-    }
-    unsigned char c = 'D';
-    char buf[NBUF];
-    buf[NBUF - 1] = '\0'; 
-
     double samplingInterval = atof(argv[1]);
     double reportingInterval = atof(argv[2]);
     char *inFile = argv[3];
@@ -55,6 +43,11 @@ int main(int argc,char** argv)
     int Nx = (int)floor(0.5 + reportingInterval / samplingInterval);
     if (abs(reportingInterval - Nx * samplingInterval) > 0.001 * reportingInterval) {
         fprintf(stderr, "Must have reportingInterval an integral multiple of samplingInterval\n");
+        exit(1);
+    }
+    FILE *outFile_fp = fopen(outFile, "a");
+    if (outFile_fp == NULL) {
+        fprintf(stderr, "Cannot open output file '%s' for appending\n", outFile);
         exit(1);
     }
     //
@@ -111,20 +104,18 @@ int main(int argc,char** argv)
                         if (++ix == Nx) {
                             seconds = (time_t)floor(Sseconds / Nx);
                             timeinfo = localtime(&seconds);
+                            strftime(timeformatted, sizeof(timeformatted)-1, "%Y-%m-%d %H:%M:%S", timeinfo);
                             xbar = Sx / Nx;
                             xvar = (Sxx - Sx * Sx / Nx) / (Nx - 1.0);
                             xstd = sqrt((Sxx - Sx * Sx / Nx) / (Nx - 1.0));
-                            sql = sqlite3_mprintf("INSERT INTO observations(time,station_id,light_mean,light_stddev) VALUES(%d,%d,%.0f,%.0f);",
-                                    seconds, STATION, xbar, xstd);
+                            if (debug >= 2) 
+                                fprintf(stderr, "%s %.1lf %.1lf %.1lf seconds=%ld Sx=%.1lf Sxx=%.1lf\n",
+                                        timeformatted, xbar, xvar, xstd,seconds,Sx,Sxx); //std);
                             if (debug >= 1)
-                                fprintf(stderr, "%s\n", sql);
-                            rc = sqlite3_exec(db, sql, 0, 0, 0);
-                            if (rc != SQLITE_OK) {
-                                fprintf(stderr, "SQL error: %s\n", zErrMsg);
-                                fprintf(stderr, "The command was '%s'\n", sql);
-                                sqlite3_free(zErrMsg);
-                                exit(1);
-                            }
+                                fprintf(stderr, "%ld %.0f %.0f %s\n",
+                                        seconds, xbar, xstd, timeformatted);
+                            fprintf(outFile_fp, "%s %.1lf %.1lf\n", timeformatted, xbar, xstd);
+                            fflush(outFile_fp);
                             ix = 0;
                             Sx = 0.0;
                             Sxx = 0.0;
@@ -143,7 +134,5 @@ int main(int argc,char** argv)
             }
         }
     }
-    sqlite3_free(sql);
-    sqlite3_close(db);
     close(tty_fd);
 }

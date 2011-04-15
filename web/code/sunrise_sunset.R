@@ -1,10 +1,14 @@
 library(oce)
 png("sunrise_sunset.png", width=800, height=300, pointsize=12)
 hfx.sun.angle <- function(t) sun.angle(t, lat=44+39/60, lon=-(63+36/60))$elevation
-d <- read.table("../skyview-01.dat", header=FALSE)
-time <- as.POSIXct(paste(d$V1, d$V2), tz="UTC") + 4 * 3600
-time <- time
-light <- (100*(1023-d$V3)/1023)
+
+library(RSQLite)
+m <- dbDriver("SQLite")
+con <- dbConnect(m, dbname="../skyview.db")
+observations <- dbGetQuery(con, "select time,light_mean from observations")
+time <- number.as.POSIXct(observations$time) # timezone?
+light <- 100 * ((1023 - observations$light_mean) / 1023)
+
 lights.on <- light > 75
 light[lights.on] <- NA
 oce.plot.ts(time, light, ylab="Light intensity (percent)", ylim=c(0, 100))

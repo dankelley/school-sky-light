@@ -1,8 +1,12 @@
 library(oce)
 deltat <- 60 # seconds between sample (nominal)
-d <- read.table('../skyview-01.dat', header=FALSE)
-time <- as.POSIXct(paste(d$V1, d$V2))
-light  <- 100 * (1023 - d$V3) / 1023
+library(RSQLite)
+m <- dbDriver("SQLite")
+con <- dbConnect(m, dbname="../skyview.db")
+observations <- dbGetQuery(con, "select time,light_mean from observations")
+time <- number.as.POSIXct(observations$time) # timezone?
+light <- 100 * ((1023 - observations$light_mean) / 1023)
+
 time.g <- seq(trunc(time[1], "day"), 86400 + trunc(time[length(time)], "day"), by=deltat)
 light.g <- approx(time, light, time.g, rule=1)$y
 time.range <- range(time.g)

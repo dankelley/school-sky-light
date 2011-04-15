@@ -11,18 +11,17 @@ interfaces to this with a C program called <a href="code/msl.c">msl.c</a>.
 The logging computer also creates the graphs shown on this website at regular intervals, using the unix "cron" system.</p>
 
 <p> <b>Data.</b> There is one sensor working at the moment,
-called <a href="skyview-01.dat">skyview-01.dat</a>.
-An image of this, along with a pair that was sitting near it for a while, is
-given
-below.
+an image of which, along with a pair that was sitting near it for a while, is
+at the bottom of this page.
+The data are available in an <a href="skyview.db">sqlite3 file</a>.
 Note that one is more shaded than another, at the particular moment of the 
 photo; the shading changes through the hours of the day.
-<img src="images/sensors_phase1.jpg" alt="sensors_phase1"/>
 </p>
-
 
 <p>
 <b>Development.</b> This project is developed in the open on <a 
 href="http://github.com/dankelley/school-sky-light/">github.com</a>.
 </p>
+
+<p><img src="images/sensors_phase1.jpg" alt="sensors_phase1"/></p>
 
