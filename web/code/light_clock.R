@@ -3,7 +3,7 @@ library(RSQLite)
 m <- dbDriver("SQLite")
 con <- dbConnect(m, dbname="../skyview.db")
 observations <- dbGetQuery(con, "select time,light_mean from observations")
-time <- number.as.POSIXct(observations$time) # timezone?
+time <- numberAsPOSIXct(observations$time) # timezone?
 light <- 100 * ((1023 - observations$light_mean) / 1023)
 t <- as.POSIXlt(time)
 
@@ -16,8 +16,8 @@ x <- r * sin(2*pi*hour/24)
 y <- r * cos(2*pi*hour/24)
 png("light_clock.png", width=500, height=500, pointsize=14)
 par(mar=c(1,1,1,1))
-drawpalette(c(1,days), zlab="Day of sampling", col=oce.colors.jet, top=1.5, bottom=1.5)
-col <- oce.colors.jet(100)[rescale(as.numeric(time), rlow=1, rhigh=100)]
+drawpalette(c(1,days), zlab="Day of sampling", col=oceColorsJet, top=1.5, bottom=1.5)
+col <- oceColorsJet(100)[rescale(as.numeric(time), rlow=1, rhigh=100)]
 plot(x,y,asp=1,cex=1/3,axes=FALSE, xlab="", ylab="", col=col)
 xc <- sin(2*pi*seq(0,23,0.1)/24)
 yc <- cos(2*pi*seq(0,23,0.1)/24)

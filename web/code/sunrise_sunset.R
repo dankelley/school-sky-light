@@ -6,7 +6,7 @@ library(RSQLite)
 m <- dbDriver("SQLite")
 con <- dbConnect(m, dbname="../skyview.db")
 observations <- dbGetQuery(con, "select time,light_mean from observations")
-time <- number.as.POSIXct(observations$time) # timezone?
+time <- numberAsPOSIXct(observations$time) # timezone?
 light <- 100 * ((1023 - observations$light_mean) / 1023)
 
 lights.on <- light > 75
@@ -18,9 +18,9 @@ tr <- range(time)
 days <- seq(trunc(tr[1], "days"), trunc(tr[2]+86400), "days")
 for (day in days) {
     sunrise <- oce.bisect(hfx.sun.angle, day, day + 12 * 3600)
-    abline(v=number.as.POSIXct(sunrise), col='red')
+    abline(v=numberAsPOSIXct(sunrise), col='red')
     sunset <- oce.bisect(hfx.sun.angle, day + 12*3600, day + 24 * 3600)
-    abline(v=number.as.POSIXct(sunset), col='blue')
+    abline(v=numberAsPOSIXct(sunset), col='blue')
 }
 legend("topleft", lwd=c(1, 4, 1, 1), col=c("black", "gray", "red", "blue"),
        legend=c("Observed", "Inferred daytime", "Sunrise", "Sunset"),

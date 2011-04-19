@@ -3,7 +3,7 @@ library(RSQLite)
 m <- dbDriver("SQLite")
 con <- dbConnect(m, dbname="../skyview.db")
 observations <- dbGetQuery(con, "select time,light_mean from observations")
-t <- number.as.POSIXct(observations$time) # timezone?
+t <- numberAsPOSIXct(observations$time) # timezone?
 light <- 100 * ((1023 - observations$light_mean) / 1023)
 png("weather.png", width=900, height=200, pointsize=13)
 oce.plot.ts(t, light, type='l', ylab='Light Intensity (per cent)', ylim=c(0, 100))

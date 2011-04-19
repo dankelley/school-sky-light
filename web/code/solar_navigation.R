@@ -3,8 +3,8 @@ png("solar_navigation_timeseries.png", width=700, height=250, pointsize=13)
 mismatch <- function(latlon) 
 {
     ##cat(sprintf("%.2f %.2f\n", latlon[1], latlon[2]))
-    0.5 * (mean(sun.angle(rises, latlon[1], latlon[2])$elevation^2) +
-           mean(sun.angle(sets, latlon[1], latlon[2])$elevation^2))
+    0.5 * (mean(sunAngle(rises, latlon[1], latlon[2])$elevation^2) +
+           mean(sunAngle(sets, latlon[1], latlon[2])$elevation^2))
 }
 
 hfx.sun.angle <- function(t) sun.angle(t, lat=44+39/60, lon=-(63+36/60))$elevation
@@ -13,7 +13,7 @@ library(RSQLite)
 m <- dbDriver("SQLite")
 con <- dbConnect(m, dbname="../skyview.db")
 observations <- dbGetQuery(con, "select time,light_mean from observations")
-time <- number.as.POSIXct(observations$time) # timezone?
+time <- numberAsPOSIXct(observations$time) # timezone?
 light <- 100 * ((1023 - observations$light_mean) / 1023)
 
 light.smoothed <- smooth(light)        #kernapply(as.numeric(runmed(light, k=3)), kernel("daniell", 2), circular=TRUE)
@@ -44,21 +44,21 @@ dev.off()
 
 ## map
 png("solar_navigation_map.png", width=700, height=300, pointsize=13)
-lat.hfx <- 44.65
-lon.hfx <- (-63.55274)
+latHfx <- 44.65
+lonHfx <- (-63.55274)
 par(mfrow=c(1,1))
-data(coastline.world)
-plot(coastline.world, center=c(lat.hfx, lon.hfx), span=700)
+data(coastlineWorld)
+plot(coastlineWorld, center=c(latHfx, lonHfx), span=700)
 ## Find lat and lon using all sunrises and sunsets
 o <- optim(c(1,1), mismatch, hessian=TRUE)
 lat <- o$par[1]
 lon <- o$par[2]
 ## Indicate the spot on a map, and show the uncertainty
-lat.err <- sqrt(o$value / o$hessian[1,1]) / 2
-lon.err <- sqrt(o$value / o$hessian[2,2]) / 2
-lines(rep(lon, 2), lat + lat.err * c(-1, 1), lwd=3, col='red')
-lines(lon + lon.err*c(-1, 1), rep(lat, 2), lwd=3, col='red')
-points(lon.hfx, lat.hfx, pch=0, cex=2, col='blue', lwd=2)
+latErr <- sqrt(o$value / o$hessian[1,1]) / 2
+lonErr <- sqrt(o$value / o$hessian[2,2]) / 2
+lines(rep(lon, 2), lat + latErr * c(-1, 1), lwd=3, col='red')
+lines(lon + lonErr*c(-1, 1), rep(lat, 2), lwd=3, col='red')
+points(lonHfx, latHfx, pch=0, cex=2, col='blue', lwd=2)
 points(lon, lat, pch=1, cex=2, col='red', lwd=2)
 legend("topright", col=c("blue", "red"), pch=c(0,1), pt.cex=2,
        legend=c("Actual", "Inferred"))

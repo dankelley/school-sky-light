@@ -10,6 +10,6 @@ light.m <- matrix(light.g[1:(days*data.per.day)], ncol=86400/60, byrow=TRUE)
 png("weather_image_2.png", width=1000, height=1000, pointsize=24)
 time.axis <- as.POSIXct(seq.POSIXt(min(time.g), min(time.g)+(days-1)*86400, by="day"))
 imagep(time.axis, (1:data.per.day)/60, light.m, xlab="", ylab="Hour",
-       zlab="Light Intensity (per cent)", draw.contour=FALSE, col=oce.colors.jet, draw.time.range=FALSE)
+       zlab="Light Intensity (per cent)", drawContour=FALSE, col=oceColorsJet, draw.time.range=FALSE)
 dev.off()
 
