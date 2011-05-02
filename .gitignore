@@ -5,5 +5,3 @@ README.html
 .Rhistory
 *pdf
 *.out
-send.py
-receive.py
