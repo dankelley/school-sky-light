@@ -1,7 +1,11 @@
+import socket
 import serial
 from time import sleep, time
 from string import atoi
 from sys import argv, exit
+UDP_IP="129.173.23.36" # emit.phys.ocean.dal.ca
+UDP_PORT=5005
+sensor_code=1
 # FIXME: udp work
 # FIXME: database work
 if 5 != len(argv):
@@ -23,6 +27,7 @@ def meanstd(x):
     std = sqrt(std / float(n-1))
     return mean, std
 
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 baud = 9600
 ser = serial.Serial(usb, baud)
 ser.write('>')
@@ -45,7 +50,9 @@ while (True):
                 if len(values) == max:
                     light_mean, light_stdev = meanstd(values)
                     time_mean, time_stdev = meanstd(times)
-                    print int(round(time_mean)), int(round(light_mean)), int(round(light_stdev))
+                    #print int(round(time_mean)), int(round(light_mean)), int(round(light_stdev))
+                    msg = "%d %d %d %d" % (sensor_code, int(round(time_mean)), int(round(light_mean)), int(round(light_stdev)))
+                    sock.sendto(msg, (UDP_IP, UDP_PORT))
                     times = []
                     values = []
             ser.write('>')
