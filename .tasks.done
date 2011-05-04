@@ -1,4 +1,5 @@
 use master-slave logging | id:4a452fd961aa36d16d171276c3cb9e2e116ce785
+figure out daemons | id:731ede2ab11fefa61a967e037787919fbcacee21
 add latlon determination | id:748fe6374fdc6084a878af1c9b6e586bfcd816d0
 use database | id:9310299c26bec24091cc8a40ff91113d084fe4da
 slave logger should not mess with the digital pin | id:a047af91ca5908dbe67a75229e8d0f0c8909379c
