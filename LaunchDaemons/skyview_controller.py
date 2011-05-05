@@ -3,26 +3,25 @@ import serial
 from time import sleep, time
 from string import atoi
 import sys
-sys.path.append("../")
-import secret
-
+import skyview_secret
+DEBUG = True
 # FIXME: database work
-if 6 != len(sys.argv):
+if 5 != len(sys.argv):
     print "Usage examples:"
-    print "  python " + sys.argv[0] +  " 1 10 60 /dev/tty.usbmodem411    /Users/kelley/Sites/skyview/skyview.db"
-    print "  python " + sys.argv[0] +  " 1 10 60 /dev/tty.usbmodemfa2131 /Users/kelley/Sites/skyview/skyview.db"
-    print "(meaning: station secret-index code, sample every 10s, report every 60s, sensor on named /dev, local store db)"
+    print "  python " + sys.argv[0] +  " 0 10 60 /dev/tty.usbmodem5d11   # dal 1"
+    print "  python " + sys.argv[0] +  " 1 10 60 /dev/tty.usbmodem411    # home 1"
+    print "  python " + sys.argv[0] +  " 1 10 60 /dev/tty.usbmodemfa2131 # test home1 from dal"
+    print "(meaning: station secret-index code, sample every 10s, avg/report every 60s, sensor on named /dev)"
     exit(2)
 secret_station_id = atoi(sys.argv[1])
-if (secret_station_id >= len(secret.station_id)):
+if (secret_station_id >= len(skyview_secret.station_id)):
     print "no such station"
     exit(2)
-this_station_id = secret.station_id[secret_station_id]
-this_station_code = secret.station_code[secret_station_id]
+this_station_id = skyview_secret.station_id[secret_station_id]
+this_station_code = skyview_secret.station_code[secret_station_id]
 sampling_interval = atoi(sys.argv[2])
 reporting_interval = atoi(sys.argv[3])
 usb = sys.argv[4]
-db = sys.argv[5]
 def meanstd(x):
     from math import sqrt
     n, mean, std = len(x), 0, 0
@@ -58,9 +57,11 @@ while (True):
                     light_mean, light_stdev = meanstd(values)
                     time_mean, time_stdev = meanstd(times)
                     #print int(round(time_mean)), int(round(light_mean)), int(round(light_stdev))
-                    msg = "%d %4s %d %d %d" % (this_station_id, this_station_code, int(round(time_mean)), int(round(light_mean)), int(round(light_stdev)))
-                    print msg
-                    sock.sendto(msg, (secret.aggregator_ip, secret.aggregator_port))
+                    msg = "%d %4s %d %d %d" % (
+                            this_station_id, this_station_code, int(round(time_mean)), int(round(light_mean)), int(round(light_stdev)))
+                    if DEBUG:
+                        print msg
+                    sock.sendto(msg, (skyview_secret.aggregator_ip, skyview_secret.aggregator_port))
                     times = []
                     values = []
             ser.write('>')
