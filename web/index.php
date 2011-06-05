@@ -7,6 +7,8 @@ $ts = new tabbed_site(
 	$title         = "SkyView",
 	$tab_titles    = $tab_titles,
 	$tab_nicknames = $tab_nicknames,
-	$tab_pages     = $tab_pages);
+        $tab_pages     = $tab_pages
+    );
+$ts->set_keywords("light skyview school arduino sensor education");
 $ts->create(); 
 ?>
