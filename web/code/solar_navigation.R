@@ -1,10 +1,11 @@
 library(oce)
-png("solar_navigation_timeseries.png", width=700, height=250, pointsize=13)
-mismatch <- function(latlon) 
+if (!interactive())
+    png("solar_navigation_timeseries.png", width=700, height=250, pointsize=13)
+mismatch <- function(latlon, twilight=5)  # FIXME why does -6 not work?
 {
     ##cat(sprintf("%.2f %.2f\n", latlon[1], latlon[2]))
-    0.5 * (mean(sunAngle(rises, latlon[1], latlon[2])$elevation^2) +
-           mean(sunAngle(sets, latlon[1], latlon[2])$elevation^2))
+    0.5 * (mean((twilight - sunAngle(rises, latlon[1], latlon[2])$elevation)^2) +
+           mean((twilight - sunAngle(sets, latlon[1], latlon[2])$elevation)^2))
 }
 
 hfx.sun.angle <- function(t) sun.angle(t, lat=44+39/60, lon=-(63+36/60))$elevation
@@ -54,11 +55,12 @@ o <- optim(c(1,1), mismatch, hessian=TRUE)
 lat <- o$par[1]
 lon <- o$par[2]
 ## Indicate the spot on a map, and show the uncertainty
-latErr <- sqrt(o$value / o$hessian[1,1]) / 2
-lonErr <- sqrt(o$value / o$hessian[2,2]) / 2
+latErr <- sqrt(abs(o$value / o$hessian[1,1])) / 2
+lonErr <- sqrt(abs(o$value / o$hessian[2,2])) / 2
 lines(rep(lon, 2), lat + latErr * c(-1, 1), lwd=3, col='red')
 lines(lon + lonErr*c(-1, 1), rep(lat, 2), lwd=3, col='red')
 points(lonHfx, latHfx, pch=0, cex=2, col='blue', lwd=2)
 points(lon, lat, pch=1, cex=2, col='red', lwd=2)
+cat("lon=", lon, "lat=", lat, "distance", geodDist(lonHfx, latHfx, lon, lat), "\n")
 legend("topright", col=c("blue", "red"), pch=c(0,1), pt.cex=2,
        legend=c("Actual", "Inferred"))
