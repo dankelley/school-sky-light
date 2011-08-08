@@ -18,7 +18,7 @@ time <- numberAsPOSIXct(observations$time) # timezone?
 light <- 100 * ((1023 - observations$light_mean) / 1023)
 
 light.smoothed <- smooth(light)        #kernapply(as.numeric(runmed(light, k=3)), kernel("daniell", 2), circular=TRUE)
-oce.plot.ts(time, light.smoothed, ylab="Smoothed light intensity (percent)", ylim=c(0, 100))
+oce.plot.ts(time, light.smoothed, type='l', ylab="Smoothed light intensity (percent)", ylim=c(0, 100))
 dim.light <- ifelse(light.smoothed < 5, light, runif(length(light), 0, 5))
 light.floor <- runmed(dim.light, k=25*60+1)
 dn <- smooth(as.numeric((light.smoothed - light.floor) > 1))
