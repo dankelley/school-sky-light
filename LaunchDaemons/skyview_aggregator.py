@@ -20,6 +20,9 @@ if DEBUG:
 
 # Open communication to UDP, on secret ip address and port number
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+if DEBUG:
+    print "ip:", skyview_secret.aggregator_ip
+    print "port:", skyview_secret.aggregator_port
 sock.bind((skyview_secret.aggregator_ip, skyview_secret.aggregator_port))
 
 while True:
