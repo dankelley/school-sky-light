@@ -3,8 +3,7 @@ import socket
 import datetime
 import sqlite3
 import skyview_secret
-#DEBUG = False
-DEBUG = True
+DEBUG = False
 
 # Find list of allowed stations.
 conn = sqlite3.connect(skyview_secret.db)

@@ -4,7 +4,7 @@ import serial
 from time import sleep, time
 from string import atoi
 import skyview_secret
-DEBUG = True
+DEBUG = False 
 # FIXME: database work
 if 5 != len(sys.argv):
     print "Usage examples:"
