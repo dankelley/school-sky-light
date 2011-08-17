@@ -1,8 +1,9 @@
+import sys
+sys.path.append('/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages')
 import socket
 import serial
 from time import sleep, time
 from string import atoi
-import sys
 import skyview_secret
 DEBUG = True
 # FIXME: database work
