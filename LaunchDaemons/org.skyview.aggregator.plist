@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Label</key>
+        <string>org.skyview.aggregator</string>
+        <key>ProgramArguments</key>
+        <array>
+            <string>python</string>
+            <string>/Users/kelley/school-sky-light/LaunchDaemons/skyview_aggregator.py</string>
+        </array>
+        <key>KeepAlive</key>
+        <true/>
+    </dict>
+</plist>

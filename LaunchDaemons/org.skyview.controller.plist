@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Label</key>
+        <string>org.skyview.controller</string>
+        <key>EnvironmentVariables</key>
+	<dict>
+		<key>PYTHONPATH</key>
+		<string>/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages</string>
+	</dict>
+        <key>ProgramArguments</key>
+        <array>
+            <string>python</string>
+            <string>-v</string>
+            <string>/Users/kelley/school-sky-light/LaunchDaemons/skyview_controller.py</string>
+            <string>0</string>
+            <string>10</string>
+            <string>60</string>
+            <string>/dev/tty.usbmodem5d11</string>
+        </array>
+        <key>KeepAlive</key>
+        <true/>
+    </dict>
+</plist>
