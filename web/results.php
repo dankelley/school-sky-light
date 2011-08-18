@@ -34,7 +34,9 @@ if ("$subtab" == "weather") {
     echo '<p>The image below shows the same data, as a function of the 
         hour of the day and the day of the year.  It is created at a 10-minute 
         interval with the R script <a 
-        href="code/weather_image.R">weather_image.R</a>.</p>';
+        href="code/weather_image.R">weather_image.R</a>.  Note that the 
+        sensor was disconnected for about a month, yielding a "dark" period
+        from mid July to mid August.</p>';
     echo '<p><img src="code/weather_image.png" alt="weather_image.png"/></p>';
     echo '<p>The graph below highlights the time of day, with deviations from 
         the "clock" indicating light intensity, and the colour of the lines 
