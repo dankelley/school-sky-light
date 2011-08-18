@@ -11,7 +11,7 @@ time.g <- seq(trunc(time[1], "day"), 86400 + trunc(time[length(time)], "day"), b
 light.g <- approx(time, light, time.g, rule=1)$y
 ## Blank out a time when the device was off
 light.g[ISOdatetime(2011,7,21,12,15,14,tz="UTC") <= time.g & 
-        time.g <= ISOdatetime(2011,8,16,17,55,31,tz="UTC")] <- 0
+        time.g <= ISOdatetime(2011,8,18,10,00,00,tz="UTC")] <- 0
 time.range <- range(time.g)
 days <- floor(0.5 + as.numeric(difftime(time.range[2], time.range[1], "days"))) # round for e.g. daylight-time
 data.per.day <- 86400 / deltat
