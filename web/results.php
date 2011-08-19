@@ -20,7 +20,7 @@ if ("$subtab" == "weather") {
         <li> <a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
         </ul></div>';
     echo '<h1>Weather</h1>
-        <p>The graph shown below indicates temporal variation of light 
+        <p>The graph shown below indicates recent variations in light 
         intensity in an office in Halifax, Nova Scotia.  The graph is made by 
         an R script called <a href="code/weather.R">weather.R</a>, which is run 
         every 10 minutes, using data mesured every 10 seconds and formed into 
@@ -31,7 +31,8 @@ if ("$subtab" == "weather") {
         different scale.  Note that unsettled weather is typified by low and 
         rapidly-varying light levels.</p>';
     echo '<p><img src="code/weather.png" alt="weather.png"/></p>';
-    echo '<p>The image below shows the same data, as a function of the 
+    echo '<p>The image below shows light measured since March 2011,
+        color-coded for intensity and shown as a function of the 
         hour of the day and the day of the year.  It is created at a 10-minute 
         interval with the R script <a 
         href="code/weather_image.R">weather_image.R</a>.  Note that the 
