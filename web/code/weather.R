@@ -7,8 +7,23 @@ t <- numberAsPOSIXct(observations$time) # timezone?
 light <- 100 * ((1023 - observations$light_mean) / 1023)
 now <- as.POSIXct(Sys.time())
 look <- (now - 7*86400) < t
-png("weather.png", width=900, height=200, pointsize=13)
-oce.plot.ts(t[look], light[look], type='l', ylab='Light Intensity (per cent)', ylim=c(0, 100))
+if (!interactive())
+    png("weather.png", width=900, height=200, pointsize=13)
+source('~/src/R-kelley/oce/R/oce.R')
+oce.plot.ts(t[look], light[look], type='l',
+            mar=c(2,3.5,2,3.5),
+            axes=FALSE,
+            xlab="", ylab='Light Intensity (per cent)', ylim=c(0, 100))
+box()
+oce.axis.POSIXct(1)
+axis(2)
 load("~/pressure-halifax.rda")
-lines(station8539$time, 10 + 5*(station8539$pressure - mean(station8539$pressure,na.rm=TRUE)), col='lightblue', lwd=3)
-dev.off()
+par(new=TRUE, mgp=c(2,0.7,0))
+ta <- station8539$time
+pa <- station8539$pressure
+looka <- (now - 7*86400) < ta
+plot(ta[looka], pa[looka], ylab="", xlab="", axes=FALSE, type='l', col='blue')
+axis(4, col.axis='blue', col.lab='blue')
+mtext("Pressure [kPa]", line=2, side=4, col='blue')
+if (!interactive())
+    dev.off()
