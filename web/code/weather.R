@@ -19,8 +19,8 @@ oce.axis.POSIXct(1)
 axis(2)
 load("~/pressure-halifax.rda")
 par(new=TRUE, mgp=c(2,0.7,0))
-ta <- station8539$time
-pa <- station8539$pressure
+ta <- station6358$time
+pa <- station6358$pressure
 looka <- (now - 7*86400) < ta
 cat("max(ta)=", format(max(ta)), "\n")
 plot(ta[looka], pa[looka], ylab="", xlab="", axes=FALSE, type='l', col='blue', xlim=par('usr')[1:2])
