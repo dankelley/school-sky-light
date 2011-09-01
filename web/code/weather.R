@@ -6,7 +6,8 @@ observations <- dbGetQuery(con, "select time,light_mean from observations")
 t <- numberAsPOSIXct(observations$time) # timezone?
 light <- 100 * ((1023 - observations$light_mean) / 1023)
 now <- as.POSIXct(Sys.time())
-look <- (now - 10*86400) < t
+days <- 10
+look <- (now - days*86400) < t
 if (!interactive())
     png("weather.png", width=900, height=200, pointsize=13)
 #source('~kelley/src/R-kelley/oce/R/oce.R')
@@ -21,7 +22,7 @@ load("~/pressure-halifax.rda")
 par(new=TRUE, mgp=c(2,0.7,0))
 ta <- station6358$time
 pa <- station6358$pressure
-looka <- (now - 7*86400) < ta
+looka <- (now - days*86400) < ta
 cat("max(ta)=", format(max(ta)), "\n")
 plot(ta[looka], pa[looka], ylab="", xlab="", axes=FALSE, type='l', col='blue', xlim=par('usr')[1:2])
 cat("max(ta[looka])=", format(max(ta[looka])), "\n")
