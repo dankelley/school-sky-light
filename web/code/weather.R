@@ -6,7 +6,7 @@ observations <- dbGetQuery(con, "select time,light_mean from observations")
 t <- numberAsPOSIXct(observations$time) # timezone?
 light <- 100 * ((1023 - observations$light_mean) / 1023)
 now <- as.POSIXct(Sys.time())
-look <- (now - 7*86400) < t
+look <- (now - 10*86400) < t
 if (!interactive())
     png("weather.png", width=900, height=200, pointsize=13)
 #source('~kelley/src/R-kelley/oce/R/oce.R')
