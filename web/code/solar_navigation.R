@@ -49,7 +49,7 @@ latHfx <- 44.65
 lonHfx <- (-63.55274)
 par(mfrow=c(1,1))
 data(coastlineWorld)
-plot(coastlineWorld, center=c(latHfx, lonHfx), span=700)
+plot(coastlineWorld, clatitude=latHfx, clongitude=lonHfx, span=700)
 ## Find lat and lon using all sunrises and sunsets
 o <- optim(c(1,1), mismatch, hessian=TRUE)
 lat <- o$par[1]
