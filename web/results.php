@@ -54,7 +54,8 @@ if ("$subtab" == "solar_navigation") {
         <li> <a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
         </ul></div>';
     echo '<h1>Solar Navigation</h1>
-
+        <p>NOTE: navigation is not working properly lately, because it is dark in the morning and evening
+        in Halifax, so office lights are creating false sunrises and sunsets.</p>
 
         <p> <img src="code/solar_navigation_timeseries.png" 
         alt="solar_navigation_timeseries.png"/> </p>
