@@ -22,7 +22,7 @@ drawPalette(c(1,days), zlab="Day of sampling", col=oceColorsJet, top=0.3, bottom
 col <- oceColorsJet(100)[rescale(as.numeric(time), rlow=1, rhigh=100)]
 plot(x,y,asp=1,cex=1/3,axes=FALSE, xlab="", ylab="", col=col)
 ignore <- hourLocal > 5 & (light > 4.0 * hourLocal)
-points(x[ignore], y[ignore], col='white', cex=1/3)
+points(x[ignore], y[ignore], col='white', cex=0.9*1/3)
 h <- seq(0, 23, 0.1) - 12
 xc <- sin(2*pi*h/24)
 yc <- cos(2*pi*h/24)
@@ -37,3 +37,4 @@ xcc <- .8*sin(2*pi*h/24)
 ycc <- .8*cos(2*pi*h/24)
 text(xcc, ycc, seq(0,23,1))
 text(0, 0, "site: skyview-01\ncolor: time in series\nhour: UTC")
+##par(mfrow=c(3,4));for (h in seq(11, 22, 1)) {look <- (hour>h-1/2 & hour<h+1/2);hist(light[look], breaks=seq(0,100,1),main=sprintf("hour=%d",h))}
