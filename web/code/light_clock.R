@@ -2,9 +2,9 @@ library(oce)
 library(RSQLite)
 m <- dbDriver("SQLite")
 con <- dbConnect(m, dbname="../skyview.db")
-##con <- dbConnect(m, dbname="~/Dropbox/skyview.db")
 observations <- dbGetQuery(con, "select time,light_mean from observations")
-time <- numberAsPOSIXct(observations$time) # timezone?
+## FIXME: check timezone
+time <- numberAsPOSIXct(observations$time)
 light <- 100 * ((1023 - observations$light_mean) / 1023)
 t <- as.POSIXlt(time)
 hourLocal <- t$hour
@@ -37,4 +37,3 @@ xcc <- .8*sin(2*pi*h/24)
 ycc <- .8*cos(2*pi*h/24)
 text(xcc, ycc, seq(0,23,1))
 text(0, 0, "site: skyview-01\ncolor: time in series\nhour: UTC")
-##par(mfrow=c(3,4));for (h in seq(11, 22, 1)) {look <- (hour>h-1/2 & hour<h+1/2);hist(light[look], breaks=seq(0,100,1),main=sprintf("hour=%d",h))}

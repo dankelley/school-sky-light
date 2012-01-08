@@ -337,3 +337,48 @@ a.member_action {
     font-weight: bold;
     padding: 5px;
 }
+
+@media only screen and (max-width: 481px), only screen and (max-device-width: 480px) {
+    body{
+        -webkit-text-size-adjust:none;
+        padding:5px;
+        width:100%;
+        font: 3em Arial, Helvetica, sans-serif;
+    }
+    .main-base{
+        background: gray;
+        font: 3em Arial, Helvetica, sans-serif;
+    }
+    .main-logo{
+        background: gray;
+        font: 3em Arial, Helvetica, sans-serif;
+    }
+    .main-logo-2 {
+    }
+    .main-nav{
+        display: block;
+        position:left;
+    }
+    .main-nav ul{
+        display:block;
+        color:green;
+        font:1em Arial, Helvetica, sans-serif;
+    }
+    .main-nav li{display:block}
+    .main-nav a{display:block; background:#CCC;}
+    .main-nav #current {display:block;background:white;}
+    .main-nav #current a{display:block; background:white;}
+    ol li {margin-left:1em; padding:5px;}
+    div{
+        clear:both!important;
+        display:block!important;
+        width:100%!important;
+        float:none!important;
+        margin:0!important;
+        padding:0!important;
+    }
+    div.submenu {
+        font:1em Arial, Helvetica, sans-serif;
+    }
+}
+
