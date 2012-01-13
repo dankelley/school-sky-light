@@ -41,7 +41,6 @@ if (length(sets) > nrises)
 ## remove odd points (from lights, probably)
 h <- as.POSIXlt(rises)$hour+as.POSIXlt(rises)$min/60
 keep <- abs(h - median(h)) < 2
-print(keep)
 rises <- rises[keep]
 sets <- sets[keep]
 nrises <- length(rises)
