@@ -19,8 +19,7 @@ if ("$subtab" == "weather") {
         <li> <a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a>
         <li> <a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
         </ul></div>';
-    echo '<h1>Weather</h1>
-        <p>The graph shown below indicates recent variations in light 
+    echo '<p>The graph shown below indicates recent variations in light 
         intensity in an office in Halifax, Nova Scotia.  The graph is made by 
         an R script called <a href="code/weather.R">weather.R</a>, which is run 
         every 10 minutes, using data measured every 10 seconds and formed into 
@@ -53,8 +52,7 @@ if ("$subtab" == "solar_navigation") {
         <li id=current> <a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a>
         <li> <a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
         </ul></div>';
-    echo '<h1>Solar Navigation</h1>
-        <p>NOTE: navigation is not working properly lately, because it is dark in the morning and evening
+    echo '<p>NOTE: navigation is not working properly lately, because it is dark in the morning and evening
         in Halifax, so office lights are creating false sunrises and sunsets.</p>
 
         <p> <img src="code/solar_navigation_timeseries.png" 
@@ -83,9 +81,7 @@ if ("$subtab" == "sensor_calibration") {
         <li><a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a>
         <li id=current><a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
         </ul></div>';
-    echo '<h1>Sensor Calibration</h1>
-
-        <p> The graph below shows a calibration between two sensors placed near 
+    echo '<p> The graph below shows a calibration between two sensors placed near 
         each other.  It seems reasonable to take the main shape as a measure of 
         inter-sensor differences, although the detailed trajectories in the 
         calibration space may also relate to differences in light intensity at 
