@@ -18,7 +18,7 @@ y <- r * cos(2*pi*(hour-12)/24)
 if (!interactive())
     png("light_clock.png", width=500, height=500, pointsize=14)
 par(mar=c(1,1,1,1))
-drawPalette(c(1,days), zlab="Day of sampling", col=oceColorsJet, mai=c(3, 0, 3, 2))
+drawPalette(c(1,days), zlab="Day of sampling", col=oceColorsJet, mai=c(1, 0, 1, 1.5))
 col <- oceColorsJet(100)[rescale(as.numeric(time), rlow=1, rhigh=100)]
 plot(x,y,asp=1,cex=1/3,axes=FALSE, xlab="", ylab="", col=col)
 ignore <- hourLocal > 5 & (light > 4.0 * hourLocal)
