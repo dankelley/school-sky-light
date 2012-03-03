@@ -2,7 +2,6 @@ library(oce)
 library(RSQLite)
 m <- dbDriver("SQLite")
 con <- dbConnect(m, dbname="../skyview.db")
-##con <- dbConnect(m, dbname="~/Dropbox/skyview.db")
 observations <- dbGetQuery(con, "select time,light_mean from observations")
 t <- numberAsPOSIXct(observations$time) # timezone?
 light <- 100 * ((1023 - observations$light_mean) / 1023)
@@ -13,7 +12,6 @@ days <- 10
 look <- (now - days*86400) < t
 if (!interactive())
     png("weather.png", width=900, height=200, pointsize=13)
-#source('~kelley/src/R-kelley/oce/R/oce.R')
 oce.plot.ts(t[look], light[look], type='l',
             mar=c(2,3.5,2,3.5),
             axes=FALSE,
