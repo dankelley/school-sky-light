@@ -1,7 +1,7 @@
 library(oce)
 windowDays <- 20
 if (!interactive())
-    png("solar_navigation_timeseries.png", width=700, height=500, pointsize=13)
+    png("solar_navigation_timeseries.png", width=700, height=250, pointsize=13)
 mismatch <- function(latlon, twilight=5)  # FIXME why does -6 not work?
 {
     ##cat(sprintf("%.2f %.2f\n", latlon[1], latlon[2]))
@@ -57,7 +57,7 @@ if (!interactive())
 
 ## map
 if (!interactive())
-    png("solar_navigation_map.png", width=700, height=300, pointsize=13)
+    png("solar_navigation_map.png", width=700, height=700, pointsize=13)
 latHfx <- 44.65
 lonHfx <- (-63.55274)
 par(mfrow=c(1,1))
