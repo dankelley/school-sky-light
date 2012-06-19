@@ -1,6 +1,6 @@
 library(oce)
 png("sunrise_sunset.png", width=800, height=300, pointsize=12)
-hfx.sun.angle <- function(t) sun.angle(t, lat=44+39/60, lon=-(63+36/60))$elevation
+hfx.sun.angle <- function(t) sun.angle(t, lat=44+39/60, lon=-(63+36/60))$altitude
 
 library(RSQLite)
 m <- dbDriver("SQLite")
