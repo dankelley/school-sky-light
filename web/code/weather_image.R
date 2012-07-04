@@ -6,17 +6,16 @@ con <- dbConnect(m, dbname="../skyview.db")
 observations <- dbGetQuery(con, "select time,light_mean from observations")
 time <- numberAsPOSIXct(observations$time) # timezone?
 light <- 100 * ((1023 - observations$light_mean) / 1023)
-dt <- diff(as.numeric(time))
-gap <- c(FALSE, dt > 10 * mean(dt))
-time[gap] <- NA
-light[gap] <- NA
-
 
 time.g <- seq(trunc(time[1], "day"), 86400 + trunc(time[length(time)], "day"), by=deltat)
 light.g <- approx(time, light, time.g, rule=1)$y
-## Blank out a time when the device was off
+## Blank out times when the device was off
 light.g[ISOdatetime(2011,7,21,12,15,14,tz="UTC") <= time.g & 
         time.g <= ISOdatetime(2011,8,18,10,00,00,tz="UTC")] <- NA
+
+light.g[as.POSIXct("2012-06-27 18:15:32", tz="UTC") <= time.g &
+        time.g <= as.POSIXct("2012-07-03 17:12:28", tz="UTC")] <- NA
+
 time.range <- range(time.g)
 days <- floor(0.5 + as.numeric(difftime(time.range[2], time.range[1], "days"))) # round for e.g. daylight-time
 data.per.day <- 86400 / deltat
