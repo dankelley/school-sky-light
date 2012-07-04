@@ -34,8 +34,8 @@ if ("$subtab" == "weather") {
         color-coded for intensity and shown as a function of the 
         hour of the day and the day of the year.  It is created at a 10-minute 
         interval with the R script <a 
-        href="code/weather_image.R">weather_image.R</a>.  White and
-        gray regions of the image correspond to times when the sensor
+        href="code/weather_image.R">weather_image.R</a>.  The white 
+        regions of the image correspond to times when the sensor
         was disconnected from the logging computer.</p>';
     echo '<p><img src="code/weather_image.png" alt="weather_image.png"/></p>';
     echo '<p>The graph below highlights the time of day, with deviations from 
