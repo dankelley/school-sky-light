@@ -5,11 +5,11 @@ if (!interactive())
 mismatch <- function(latlon, twilight=5)  # FIXME why does -6 not work?
 {
     ##cat(sprintf("%.2f %.2f\n", latlon[1], latlon[2]))
-    0.5 * (mean((twilight - sunAngle(rises, latlon[1], latlon[2])$altitude)^2) +
-           mean((twilight - sunAngle(sets, latlon[1], latlon[2])$altitude)^2))
+    0.5 * (mean((twilight - sunAngle(rises, latlon[1], latlon[2], useRefraction=TRUE)$altitude)^2) +
+           mean((twilight - sunAngle(sets, latlon[1], latlon[2], useRefraction=TRUE)$altitude)^2))
 }
 
-hfx.sun.angle <- function(t) sunAngle(t, lat=44+39/60, lon=-(63+36/60))$altitude
+hfx.sun.angle <- function(t) sunAngle(t, lat=44+39/60, lon=-(63+36/60), useRefraction=TRUE)$altitude
 
 library(RSQLite)
 m <- dbDriver("SQLite")
