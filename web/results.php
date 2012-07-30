@@ -9,7 +9,8 @@ if ("$subtab" == "") {
         <li> <a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a>
         <li> <a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
         </ul></div>';
-    echo '<p>Select a sub-menu to see results.</p>';
+    echo '<p>Select a sub-menu to see results, up to 2012-07-26, when the sensor
+        was turned off owing to (a) the uselessness of measuring light in a room now in the shadow of a new building and (b) the evacuation of the room owing to water damage from a leaking roof (caused by the attachment of that same new building).</p>';
 }
 
 if ("$subtab" == "weather") {
