@@ -17,23 +17,25 @@ could be done in schools, by students.  That is the idea of SkyView.</p>
 populated areas have schools.  Since schools already have computers, data 
 logging and transmission will not require new infrastructure.  As for the work 
 of building sensors, calibrating them, connecting them to a network, creating 
-analysis tools, etc., this could all be done by the students.  This is the real 
-point of SkyView: to show students that they are capable of doing cutting-edge 
-scientific and technical work.</p> 
+analysis tools, etc., this could all be done by the students.  This is the real
+point of SkyView: to show students that they can do cutting-edge scientific and
+technical work.</p> 
 
 <p>SkyView offers broad learning experiences, in environmental sciences, basic 
-sciences, mathematics, and computing.  There are also roles for students more 
-interested in business and management (organizing the scientists!), in communication 
-and public relations (websites, lectures, etc.), in
-such fields as archaeology (observatories like Stonehenge) and history 
+sciences, mathematics, and computing.  There are also roles for students more
+interested in business and management (organizing the scientists!), in
+communication and public relations (websites, lectures, etc.), and in such
+fields as archaeology (observatories like Stonehenge) and history
 (navigation).</p>
 
-<p>There project need not be limited to the measurement of light.  With modern 
-micro-controllers and sensors, students could measure many aspects of weather 
-that were once the domain of the professionals.  The popularity of robot 
-competitions in schools is proof that students have the ability to do this sort 
-of work, and the interest to do so.</p>
+<p>The project need not be limited to the measurement of light. We now have
+available a range of inexpensive sensors that measure aspects of weather that
+were once the sole domain of professionals. Who knows what students might come
+up with, once they get going?</p>
 
-<p>Over time, members of the public would start to consult SkyView for informal 
-short-term local weather forecasts.  The pride that students would feel, 
-knowing that, is justification enough for the project.</p>
+<p>Imagine what will happen when members of the public start to consult SkyView
+for informal short-term local weather forecasts, and when professional weather
+forecasters start to link the school data into longer-range weather
+predictions. Imagine the pride students will feel, when they stand back and
+look at what they have done.</p>
+
