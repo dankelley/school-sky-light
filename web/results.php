@@ -26,12 +26,13 @@ if ("$subtab" == "weather") {
         every 10 minutes, using data measured every 10 seconds and formed into 
         1-minute averages.  The sensor is placed on a desk, pointing upwards, 
         and shaded from direct sunlight.  The (rare) use of lights in the 
-        office is indicated by near-constant light levels of 80 percent.  The 
-        blue curve is atmospheric pressure (from Environment Canada), on a 
-        different scale.  Note that unsettled weather is typified by low and 
-        rapidly-varying light levels.</p>';
-    echo '<p><img src="code/weather.png" alt="weather.png"/></p>';
-    echo '<p>The image below shows light measured since March 2011,
+        office is indicated by near-constant light levels of 80 percent.</p>';
+        #  The 
+        # blue curve is atmospheric pressure (from Environment Canada), on a 
+        # different scale.  Note that unsettled weather is typified by low and 
+        # rapidly-varying light levels.</p>';
+    #echo '<p><img src="code/weather.png" alt="weather.png"/></p>';
+    echo '<p>The image is 
         color-coded for intensity and shown as a function of the 
         hour of the day and the day of the year.  It is created at a 10-minute 
         interval with the R script <a 
