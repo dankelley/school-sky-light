@@ -21,10 +21,7 @@ if ("$subtab" == "weather") {
         <li> <a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
         </ul></div>';
     echo '<p>The graph shown below indicates recent variations in light 
-        intensity in an office in Halifax, Nova Scotia.  The graph is made by 
-        an R script called <a href="code/weather.R">weather.R</a>, which is run 
-        every 10 minutes, using data measured every 10 seconds and formed into 
-        1-minute averages.  The sensor is placed on a desk, pointing upwards, 
+        intensity in an office in Halifax, Nova Scotia.   The sensor is placed on a desk, pointing upwards, 
         and shaded from direct sunlight.  The (rare) use of lights in the 
         office is indicated by near-constant light levels of 80 percent.</p>';
         #  The 
