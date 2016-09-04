@@ -39,11 +39,11 @@ if ("$subtab" == "weather") {
         regions of the image correspond to times when the sensor
         was disconnected from the logging computer.</p>';
     echo '<p><img src="code/weather_image.png" alt="weather_image.png"/></p>';
-    echo '<p>The graph below highlights the time of day, with deviations from 
-        the "clock" indicating light intensity, and the colour of the lines 
-        indicating time within the whole time series.  The graph is created
-        with the R script <a href="code/light_clock.R">light_clock.R</a>.</p>';
-    echo '<p><img src="code/light_clock.png" alt="light_clock.png"/></p>';
+    # echo '<p>The graph below highlights the time of day, with deviations from 
+    #     the "clock" indicating light intensity, and the colour of the lines 
+    #     indicating time within the whole time series.  The graph is created
+    #     with the R script <a href="code/light_clock.R">light_clock.R</a>.</p>';
+    # echo '<p><img src="code/light_clock.png" alt="light_clock.png"/></p>';
 } 
 
 if ("$subtab" == "solar_navigation") {
@@ -69,7 +69,10 @@ if ("$subtab" == "solar_navigation") {
         inference of that location based on sunrise and sunset times.  Both 
         graphs are made by an R script called <a 
         href="code/solar_navigation.R">solar_navigation.R</a>, which is 
-        run twice per day.
+        run twice per day. Before the new building turned the office into
+a dark cave, the graph below would have a red circle somewhat near the blue
+square, except within a week or so of the equinoxes, when the solar navigation method
+fails.
         </p>
 
 
