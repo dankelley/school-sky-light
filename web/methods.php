@@ -2,7 +2,7 @@
 <p> <b>Apparatus.</b> The measurements are made with a <a 
 href="http://www.robotshop.ca/dfrobot-ambient-light-sensor.html">DFRobot
             Ambient Light Sensor</a> connected to a "slave" <a
-            href="http://www.robotshop.ca/arduino-uno-microcontroller-2.html">Arduino
+            href="http://www.robotshop.com/ca/en/arduino-uno-r3-usb-microcontroller.html">Arduino
             Uno microcontroller</a> that transmits data 
         to a "master" computer over a USB interface.
 The microcontroller runs an Arduino script named <a 
