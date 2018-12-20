@@ -52,30 +52,32 @@ if ("$subtab" == "solar_navigation") {
         <li> <a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
         </ul></div>';
 
-     echo '<p>NOTE: navigation is not working well lately, because the new 
-         "Ocean Excellence" building shades the office so completely that 
-         overhead lights must be used much of the day.</p>
+echo '
+<p>A couple of days of clear sunrise and sunset can be sufficient to navigate
+infer an observation location to within a few hundred kilometers (see Section
+5.9 of Kelley, Dan E. Oceanographic Analysis with R. New York: Springer-Verlag,
+2018.  https://www.springer.com/us/book/9781493988426).  Even the shad-affected
+observations made in author\'s office can provide a reasonable estimate, if a
+longer time interval is used, as illustrated below.</p>
 
-        <p> <img src="code/solar_navigation_timeseries.png" 
-        alt="solar_navigation_timeseries.png"/> </p>
+        <p> <img src="code/solar_navigation_timeseries.png"
+alt="solar_navigation_timeseries.png"/></p>
 
-        <p>The graph shown above is the result of early tests with automatic 
-        detection of sunrise and sunset times.
-        </p>
-      <p>  The graph shown below indicates 
-        the observation location in Halifax, Nova Scotia, along with an 
-        inference of that location based on sunrise and sunset times.  Both 
-        graphs are made by an R script called <a 
-        href="code/solar_navigation.R">solar_navigation.R</a>, which is 
-        run twice per day. Before the new building turned the office into
-a dark cave, the graph below would have a red circle somewhat near the blue
-square, except within a week or so of the equinoxes, when the solar navigation method
-fails.
-        </p>
+        <p>The graph shown above is the result of early tests with automatic
+detection of sunrise and sunset times.</p>
+
+      <p>The graph shown below indicates the observation location in Halifax,
+Nova Scotia, along with an inference of that location based on sunrise and
+sunset times.  Both graphs are made by an R script called <a
+href="code/solar_navigation.R">solar_navigation.R</a>, which is run twice per
+day. Before the new building turned the office into a dark cave, the graph
+below would have a red circle somewhat near the blue square, except within a
+week or so of the equinoxes, when the solar navigation method fails.</p>
 
 
-        <p> <img src="code/solar_navigation_map.png" 
-        alt="solar_navigation_map.png"/> </p>';
+        <p> <img src="code/solar_navigation_map.png"
+alt="solar_navigation_map.png"/> </p>';
+
 }
 
 if ("$subtab" == "sensor_calibration") {
