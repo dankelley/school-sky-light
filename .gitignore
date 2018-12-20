@@ -8,3 +8,5 @@ README.html
 *.out
 secret.py
 skyview.db
+.DS_Store
+.Rapp.history
