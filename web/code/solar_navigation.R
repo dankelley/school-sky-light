@@ -63,7 +63,7 @@ latHfx <- 44.65
 lonHfx <- (-63.55274)
 par(mfrow=c(1,1))
 data(coastlineWorldMedium, package="ocedata")
-plot(coastlineWorldMedium, projection="+proj=lcc +lon+0=-63 +lat_0=45 +lat_1=35 +lat_2=55",
+plot(coastlineWorldMedium, projection="+proj=lcc +lon_0=-63 +lat_0=45 +lat_1=35 +lat_2=55",
      clatitude=latHfx, clongitude=lonHfx, span=3000, col="gray")
 ## Find lat and lon using all sunrises and sunsets
 o <- optim(c(1,1), mismatch, hessian=TRUE)
