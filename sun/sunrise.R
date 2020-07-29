@@ -2,7 +2,7 @@
 library(oce)
 use.refraction <- TRUE
 elevation <- function(x) { # given longitude
-    mean(sun.angle(t0, x[1], lon[i], use.refraction)$elevation^2)^0.5
+    mean(sunAngle(t0, x[1], lon[i], use.refraction)$elevation^2)^0.5
 }
 hlat <-   44+38/60                     # http://www.timeanddate.com/worldclock/city.html?n=286
 hlon <- -(63+35/60)                    # http://www.timeanddate.com/worldclock/city.html?n=286
