@@ -1,11 +1,9 @@
 <!-- vim:set spell filetype=php: -->
-<p>
-A darkening sky is a good indicator of the onset of bad weather.  We look up at 
-the sky to decide whether to run to the shelter, on an unsettled day.  Weather
-forecasts do not address broad issues of weather variations over days and
-hundreds of kilometers, but people have still rely on the sky for quick,
-localized forecasts.
-</p>
+<p> A darkening sky is a good indicator of the onset of bad weather. On an
+unsettled day, we keep an eye on the sky, to decide whether to run to the
+shelter before a downpour. Although weather forecasts do very well at
+predicting weather variations over days and hundreds of kilometers, people have
+still rely on the sky for quick, localized forecasts.</p>
 
 <p>
 A limitation of this observer-based forecasting is that even small-scale
