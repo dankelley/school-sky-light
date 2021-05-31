@@ -55,3 +55,5 @@ This project may be interesting to students even at the very early stages, and
 should garner more and more attention as widening data streams suggest widening
 application.
 
+![a weather_image.png](weather_image.png)
+

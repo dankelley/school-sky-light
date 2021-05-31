@@ -2,7 +2,7 @@ library(oce)
 deltat <- 60 # seconds between sample (nominal)
 library(RSQLite)
 m <- dbDriver("SQLite")
-con <- dbConnect(m, dbname="../skyview.db")
+con <- dbConnect(m, dbname="~/Dropbox/skyview.db")
 observations <- dbGetQuery(con, "select time,light_mean from observations")
 time <- numberAsPOSIXct(observations$time) # timezone?
 light <- 100 * ((1023 - observations$light_mean) / 1023)
@@ -23,6 +23,7 @@ light.m <- matrix(light.g[1:(days*data.per.day)], ncol=data.per.day, byrow=TRUE)
 png("weather_image.png", width=900, height=400, pointsize=13)
 time.axis <- as.POSIXct(seq.POSIXt(min(time.g), min(time.g)+(days-1)*86400, by="day"))
 imagep(time.axis, (1:data.per.day)/60, light.m, xlab="", ylab="Hour",
-       zlab="Light Intensity (per cent)", drawContour=FALSE, col=oceColorsJet, drawTimeRange=FALSE)
+       zlab="Light Intensity (per cent)", drawContour=FALSE,
+       col=oceColorsTurbo, drawTimeRange=FALSE)
 dev.off()
 
