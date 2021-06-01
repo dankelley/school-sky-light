@@ -1,4 +1,4 @@
-See also: [introduction](introduction.md) and [methods](methods.md).
+See also: [introduction](index.md) and [methods](methods.md).
 
 # Weather
 

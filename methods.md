@@ -1,4 +1,4 @@
-See also: [introduction](introduction.md) and [results](results.md).
+See also: [introduction](index.md) and [results](results.md).
 
 # Apparatus
 
