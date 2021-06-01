@@ -1,6 +1,8 @@
+# Results
+
 See also: [introduction](index.md) and [methods](methods.md).
 
-# Weather
+## Weather
 
 The graph shown below indicates recent variations in light intensity in an
 office in Halifax, Nova Scotia.   The sensor is placed on a desk, pointing
@@ -16,7 +18,7 @@ regions of the image correspond to times when the sensor was disconnected from
 the logging computer.
 
 
-# Solar navigation
+## Solar navigation
 
 A couple of days of clear sunrise and sunset can be sufficient to navigate
 infer an observation location to within a few hundred kilometers (see Section
@@ -39,7 +41,7 @@ would have a red circle somewhat near the blue square, except within a week or
 so of the equinoxes, when the solar navigation method fails.
 
 
-# Sensor calibration
+## Sensor calibration
 
 The graph below shows a calibration between two sensors placed near each other.
 It seems reasonable to take the main shape as a measure of inter-sensor

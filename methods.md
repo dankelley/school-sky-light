@@ -1,6 +1,6 @@
-See also: [introduction](index.md) and [results](results.md).
-
 # Apparatus
+
+See also: [introduction](index.md) and [results](results.md).
 
 The measurements are made with a
 [http://www.robotshop.ca/dfrobot-ambient-light-sensor.html](DFRobot Ambient
