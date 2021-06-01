@@ -1,101 +1,54 @@
-**This is not yet translated to markdown**
+See also: [introduction](introduction.md) and [methods](methods.md).
+
+# Weather
+
+The graph shown below indicates recent variations in light intensity in an
+office in Halifax, Nova Scotia.   The sensor is placed on a desk, pointing
+upwards, and shaded from direct sunlight.  The (rare) use of lights in the
+office is indicated by near-constant light levels of 80 percent.
+
+![a weather_image.png](weather_image.png)
+
+The image is color-coded for intensity and shown as a function of the hour of
+the day and the day of the year.  It is created at a 10-minute interval with
+the R script <a href="code/weather_image.R">weather_image.R</a>.  The white
+regions of the image correspond to times when the sensor was disconnected from
+the logging computer.
 
 
-if ("$subtab" == "") {
-    echo '<div class="submenu">
-        <ul>
-        <li> <a href="?tab=results&amp;subtab=weather">Weather</a>
-        <li> <a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a>
-        <li> <a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
-        </ul></div>';
-    echo '<p>Select a sub-menu to see results, up to 2012-07-26, when the sensor
-        was turned off owing to (a) the uselessness of measuring light in a room now in the shadow of a new building and (b) the evacuation of the room owing to water damage from a leaking roof (caused by the attachment of that same new building).</p>';
-}
+# Solar navigation
 
-if ("$subtab" == "weather") {
-    echo '<div class="submenu">
-        <ul>
-        <li id=current> <a href="?tab=results&amp;subtab=weather">Weather</a>
-        <li> <a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a>
-        <li> <a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
-        </ul></div>';
-    echo '<p>The graph shown below indicates recent variations in light 
-        intensity in an office in Halifax, Nova Scotia.   The sensor is placed on a desk, pointing upwards, 
-        and shaded from direct sunlight.  The (rare) use of lights in the 
-        office is indicated by near-constant light levels of 80 percent.</p>';
-        #  The 
-        # blue curve is atmospheric pressure (from Environment Canada), on a 
-        # different scale.  Note that unsettled weather is typified by low and 
-        # rapidly-varying light levels.</p>';
-    #echo '<p><img src="code/weather.png" alt="weather.png"/></p>';
-    echo '<p>The image is 
-        color-coded for intensity and shown as a function of the 
-        hour of the day and the day of the year.  It is created at a 10-minute 
-        interval with the R script <a 
-        href="code/weather_image.R">weather_image.R</a>.  The white 
-        regions of the image correspond to times when the sensor
-        was disconnected from the logging computer.</p>';
-    echo '<p><img src="code/weather_image.png" alt="weather_image.png"/></p>';
-    # echo '<p>The graph below highlights the time of day, with deviations from 
-    #     the "clock" indicating light intensity, and the colour of the lines 
-    #     indicating time within the whole time series.  The graph is created
-    #     with the R script <a href="code/light_clock.R">light_clock.R</a>.</p>';
-    # echo '<p><img src="code/light_clock.png" alt="light_clock.png"/></p>';
-} 
-
-if ("$subtab" == "solar_navigation") {
-     echo '<div class="submenu">
-        <ul>
-        <li> <a href="?tab=results&amp;subtab=weather">Weather</a>
-        <li id=current> <a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a>
-        <li> <a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
-        </ul></div>';
-
-echo '
-<p>A couple of days of clear sunrise and sunset can be sufficient to navigate
+A couple of days of clear sunrise and sunset can be sufficient to navigate
 infer an observation location to within a few hundred kilometers (see Section
 5.9 of Kelley, Dan E. Oceanographic Analysis with R. New York: Springer-Verlag,
 2018.  https://www.springer.com/us/book/9781493988426).  Even the shad-affected
-observations made in author\'s office can provide a reasonable estimate, if a
-longer time interval is used, as illustrated below.</p>
+       observations made in author\'s office can provide a reasonable estimate,
+if a longer time interval is used, as illustrated below.
 
-        <p> <img src="code/solar_navigation_timeseries.png"
-alt="solar_navigation_timeseries.png"/></p>
+![solar_navigation_timeseries]([solar_navigation_timeseries.png)
 
-        <p>The graph shown above is the result of early tests with automatic
-detection of sunrise and sunset times.</p>
+The graph shown above is the result of early tests with automatic detection of
+sunrise and sunset times.
 
-      <p>The graph shown below indicates the observation location in Halifax,
-Nova Scotia, along with an inference of that location based on sunrise and
-sunset times.  Both graphs are made by an R script called <a
-href="code/solar_navigation.R">solar_navigation.R</a>, which is run twice per
-day. Before the new building turned the office into a dark cave, the graph
-below would have a red circle somewhat near the blue square, except within a
-week or so of the equinoxes, when the solar navigation method fails.</p>
+The graph shown below indicates the observation location in Halifax, Nova
+Scotia, along with an inference of that location based on sunrise and sunset
+times.  Both graphs are made by an R script called
+[solar_navigation.R](code/solar_navigation.R), which is run twice per day.
+Before the new building turned the office into a dark cave, the graph below
+would have a red circle somewhat near the blue square, except within a week or
+so of the equinoxes, when the solar navigation method fails.
 
 
-        <p> <img src="code/solar_navigation_map.png"
-alt="solar_navigation_map.png"/> </p>';
+# Sensor calibration
 
-}
+The graph below shows a calibration between two sensors placed near each other.
+It seems reasonable to take the main shape as a measure of inter-sensor
+differences, although the detailed trajectories in the calibration space may
+also relate to differences in light intensity at the two sensors, since they
+are nestled between various bits of equipment on a table, and one is sometimes
+in brighter light than the other, as light passes through the room through the
+course of the day.  The graph is created by an R script called
+href=[calibration.R](code/calibration.R)
 
-if ("$subtab" == "sensor_calibration") {
-     echo '<div class="submenu">
-        <ul>
-        <li><a href="?tab=results&amp;subtab=weather">Weather</a>
-        <li><a href="?tab=results&amp;subtab=solar_navigation">Solar Navigation</a>
-        <li id=current><a href="?tab=results&amp;subtab=sensor_calibration">Sensor Calibration</a>
-        </ul></div>';
-    echo '<p> The graph below shows a calibration between two sensors placed near 
-        each other.  It seems reasonable to take the main shape as a measure of 
-        inter-sensor differences, although the detailed trajectories in the 
-        calibration space may also relate to differences in light intensity at 
-        the two sensors, since they are nestled between various bits of 
-        equipment on a table, and one is sometimes in brighter light than the 
-        other, as light passes through the room through the course of the day.  
-        The graph is created by an R script called <a 
-        href="code/calibration.R">calibration.R</a>.</p>
-
-        <p> <img src="code/calibration.png" alt="calibration.png"/> </p>';
-}
+![calibration.png](code/calibration.png)
 

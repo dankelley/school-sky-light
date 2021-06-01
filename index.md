@@ -1,8 +1,6 @@
 ![a weather_image.png](weather_image.png)
 
-[methods](methods.md)
-
-[results](results.md)
+See also: [methods](methods.md) and [results](results.md).
 
 A darkening sky is a good indicator of the onset of bad weather. On an
 unsettled day, we keep an eye on the sky, to decide whether to run to the

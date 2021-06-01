@@ -1,3 +1,5 @@
+See also: [introduction](introduction.md) and [results](results.md).
+
 # Apparatus
 
 The measurements are made with a
