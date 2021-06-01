@@ -13,7 +13,7 @@ sunset <- as.POSIXct(paste(d$V1, d$V3), tz="UTC") + tz + 12 * 3600
 data(coastlineWorldFine, package="ocedata")
 
 if (!interactive())
-    png("map-with-lines.png", unit="in", width=8, height=10.5, res=200, pointsize=12)
+    png("solar_navigation.png", unit="in", width=8, height=10.5, res=200, pointsize=12)
 n <- 100
 lon <- seq(-180, 180, length.out=n)
 lat <- vector(length=n)
