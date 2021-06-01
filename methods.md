@@ -25,6 +25,6 @@ through the hours of the day.
 This project is developed in the open on
 [http://github.com/dankelley/school-sky-light](github.com).
 
-![images/sensors_phase1.jpg](images/sensors_phase1)
+![Sensors and wiring](images/sensors_and_wiring.jpg)
 
 

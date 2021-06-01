@@ -9,7 +9,7 @@ office in Halifax, Nova Scotia.   The sensor is placed on a desk, pointing
 upwards, and shaded from direct sunlight.  The (rare) use of lights in the
 office is indicated by near-constant light levels of 80 percent.
 
-![a weather_image.png](weather_image.png)
+![Light in an office](figures/office_light.png)
 
 The image is color-coded for intensity and shown as a function of the hour of
 the day and the day of the year.  It is created at a 10-minute interval with
@@ -35,7 +35,7 @@ sunrise and sunset times.
 The graph shown below indicates the observation location in Halifax, Nova
 Scotia, along with an inference of that location based on sunrise and sunset
 times.  Both graphs are made by an R script called
-[solar_navigation.R](code/solar_navigation.R), which is run twice per day.
+[solar_navigation.R](https://github.com/dankelley/school-sky-light/blob/main/web/code/solar_navigation.R), which is run twice per day.
 Before the new building turned the office into a dark cave, the graph below
 would have a red circle somewhat near the blue square, except within a week or
 so of the equinoxes, when the solar navigation method fails.
@@ -50,7 +50,7 @@ also relate to differences in light intensity at the two sensors, since they
 are nestled between various bits of equipment on a table, and one is sometimes
 in brighter light than the other, as light passes through the room through the
 course of the day.  The graph is created by an R script called
-href=[calibration.R](code/calibration.R)
+[calibration.R](https://github.com/dankelley/school-sky-light/blob/main/web/code/calibration.R).
 
-![calibration.png](code/calibration.png)
+![calibration.png](figures/calibration.png)
 
