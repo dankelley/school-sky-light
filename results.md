@@ -27,7 +27,7 @@ infer an observation location to within a few hundred kilometers (see Section
        shade-affected observations made in author\'s office can provide a
 reasonable estimate, if a longer time interval is used, as illustrated below.
 
-![Solar Navigation]([figures/solar_navigation.png)
+![Solar Navigation](figures/solar_navigation.png)
 
 The graph shown above indicates the observation location in Halifax, Nova
 Scotia with a circle, along with an inference of that location based on sunrise
