@@ -23,22 +23,16 @@ the logging computer.
 A couple of days of clear sunrise and sunset can be sufficient to navigate
 infer an observation location to within a few hundred kilometers (see Section
 5.9 of Kelley, Dan E. Oceanographic Analysis with R. New York: Springer-Verlag,
-2018.  https://www.springer.com/us/book/9781493988426).  Even the shad-affected
-       observations made in author\'s office can provide a reasonable estimate,
-if a longer time interval is used, as illustrated below.
+2018.  https://www.springer.com/us/book/9781493988426).  Even the
+       shade-affected observations made in author\'s office can provide a
+reasonable estimate, if a longer time interval is used, as illustrated below.
 
-![solar_navigation_timeseries]([solar_navigation_timeseries.png)
-
-The graph shown above is the result of early tests with automatic detection of
-sunrise and sunset times.
-
-The graph shown below indicates the observation location in Halifax, Nova
-Scotia, along with an inference of that location based on sunrise and sunset
-times.  Both graphs are made by an R script called
-[solar_navigation.R](https://github.com/dankelley/school-sky-light/blob/main/web/code/solar_navigation.R), which is run twice per day.
-Before the new building turned the office into a dark cave, the graph below
-would have a red circle somewhat near the blue square, except within a week or
-so of the equinoxes, when the solar navigation method fails.
+![Solar Navigation]([figures/solar_navigation.png)
+The graph shown above indicates the observation location in Halifax, Nova
+Scotia with a circle, along with an inference of that location based on sunrise
+and sunset times (intersection of solid and dashed curved lines).  It is made
+with an R script called
+[solar_navigation.R](https://github.com/dankelley/school-sky-light/blob/main/web/code/solar_navigation.R).
 
 
 ## Sensor calibration
