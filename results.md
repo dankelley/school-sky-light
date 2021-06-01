@@ -32,7 +32,7 @@ The graph shown above indicates the observation location in Halifax, Nova
 Scotia with a circle, along with an inference of that location based on sunrise
 and sunset times (intersection of solid and dashed curved lines).  It is made
 with an R script called
-[solar_navigation.R](https://github.com/dankelley/school-sky-light/blob/main/web/code/solar_navigation.R).
+[solar_navigation.R](https://github.com/dankelley/school-sky-light/blob/main/sun/solar_navigation.R).
 
 
 ## Sensor calibration
