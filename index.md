@@ -1,3 +1,9 @@
+![a weather_image.png](weather_image.png)
+
+[methods](methods.md)
+
+[results](results.md)
+
 A darkening sky is a good indicator of the onset of bad weather. On an
 unsettled day, we keep an eye on the sky, to decide whether to run to the
 shelter before a downpour. Although weather forecasts do very well at
@@ -55,5 +61,4 @@ This project may be interesting to students even at the very early stages, and
 should garner more and more attention as widening data streams suggest widening
 application.
 
-![a weather_image.png](weather_image.png)
 
